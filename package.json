@@ -4,7 +4,8 @@
   "description": "Website code for webboot.io",
   "main": "index.js",
   "scripts": {
-    "build": "npm-run-all compile:sass copy:public compile:html",
+    "build": "",
+    "build:backup": "npm-run-all compile:sass copy:public compile:html",
     "watch:sass": "node-sass scss/*.scss public/style.css -w",
     "compile:sass": "node-sass --output-style compressed scss/*.scss public/style.css",
     "copy:public": "cp -r public/* ../spudunk.github.io/",

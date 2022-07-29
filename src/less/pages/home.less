@@ -1,0 +1,112 @@
+.vh40 {
+  min-height: 40vh;
+}
+
+.container {
+  padding-left: @border-gap;
+  padding-right: @border-gap;
+  width: 100%;
+  max-width: @bp-largest;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-variation-settings: 'wght' 700;
+  &--primary {
+    background-color: @color-primary-3;
+  }
+  &--light {
+    background-color: @color-grey-1;
+    color: @color-grey-4;
+  }
+}
+//////////////////////////////////
+// HERO SECTION
+.hero {
+  &__background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 101vh;
+    // background-color: @color-grey-4;
+    background: linear-gradient(
+      to bottom,
+      @color-grey-4 @header-height + 1,
+      @color-grey-3,
+      @color-grey-4 95%
+    );
+    color: white;
+  }
+  
+  &__contents {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  &__heading--primary {
+    font-size: 3.5rem;
+    letter-spacing: .3rem;
+    font-variation-settings: 'wght' 650;
+    color: @color-primary-1;
+    text-shadow: @text-shadow;
+  }
+
+  &__heading--primary-span {
+    color: @color-primary-2;
+  }
+
+  &__heading--secondary {
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    text-shadow: @text-shadow;
+  }
+
+  &__buttons {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+
+//////////////////////////////////
+// ABOUT SECTION
+.about {
+  .vh40();
+  line-height: 1.4;
+
+  p {
+    margin-top: 1rem;
+  }
+}
+
+//////////////////////////////////
+// WORK SECTION
+.work {
+  .vh40();
+}
+
+//////////////////////////////////
+// PRICING SECTION
+.pricing {
+  .vh40();
+  display: grid;
+}
+
+//////////////////////////////////
+// CONTACT SECTION
+
+.contact {
+  .vh40();
+}

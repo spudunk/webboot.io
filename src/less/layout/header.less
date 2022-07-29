@@ -1,0 +1,40 @@
+// Helper class for fixing navigation 
+.shift-down {
+  padding-top: @header-height;
+  margin-top:  @header-height * -1;
+}
+
+main {
+  z-index: 10;
+  gap: 1rem;
+  position: static;  
+  display: grid;
+}
+
+.header {
+  z-index: 25;
+  height: 100%;
+  width: 100%;
+  padding-left: @border-gap;
+  padding-right: @border-gap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo-container {
+    display: inline-block;
+    padding: 1em;
+    margin-left: -1em;
+  }
+
+  &__background {
+    z-index: 20;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: @header-height;
+    background-color: @color-grey-4;
+    color: @color-grey-1;
+  }
+}

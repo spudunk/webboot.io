@@ -1,0 +1,38 @@
+@font-face {
+  font-family: Nunito;
+  src: url('nunito-var.ttf');
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+html {
+  line-height: 1;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+}
+
+body {
+  font-size: 160%;
+  // font-family: "Open Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
+  font-variation-settings: 'wght' 500;
+  // line-height: 1.6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  // padding: @border-gap;
+}

@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "description": "Website code for webboot.io",
   "main": "index.js",
+  "private": "true",
   "scripts": {
-    "build": "",
-    "build:backup": "npm-run-all compile:sass copy:public compile:html",
-    "watch:sass": "node-sass scss/*.scss public/style.css -w",
-    "compile:sass": "node-sass --output-style compressed scss/*.scss public/style.css",
-    "copy:public": "cp -r public/* ../spudunk.github.io/",
-    "compile:html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true public/index.html > ../spudunk.github.io/index.html",
-    "dev-server": "live-server public",
-    "start": "npm-run-all --parallel dev-server watch:sass",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm-run-all test:less test:html",
+    "test:less": "lessc src/less/main.less public/style.css",
+    "test:html": "cp src/index.html public/index.html",
+    "build": "npm-run-all build:less build:html build:js",
+    "build:less": "lessc src/less/main.less public/style.css --clean-css=\"--s1 --advanced --compatibility=ie8\"",
+    "build:html": "html-minifier --collapse-whitespace --remove-comments  --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype --minify-css true --minify-js true src/index.html > public/index.html",
+    "build:js": "webpack",
+    "dev-server": "webpack serve --open",
+    "watch": "onchange -i --await-write-finish 500 'src/**/*' -- npm run test",
+    "start": "npm-run-all --parallel dev-server"
   },
   "repository": {
     "type": "git",
@@ -26,7 +28,15 @@
   "homepage": "https://github.com/spudunk/webboot.io#readme",
   "devDependencies": {
     "html-minifier": "^4.0.0",
-    "node-sass": "^7.0.1",
-    "npm-run-all": "^4.1.5"
+    "less": "^4.1.3",
+    "less-plugin-clean-css": "^1.5.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3"
+  },
+  "dependencies": {
+    "firebase": "^9.9.1"
   }
 }

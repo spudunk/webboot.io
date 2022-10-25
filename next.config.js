@@ -1,0 +1,20 @@
+const withExportImages = require('next-export-optimize-images')
+
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ['@svgr/webpack'],
+    })
+
+    return config
+  },
+  reactStrictMode: true,
+  swcMinify: true,
+}
+
+
+module.exports = withExportImages(nextConfig)

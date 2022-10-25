@@ -7,7 +7,7 @@ const iconSize = '1.4em';
 
 export default function About() {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} id="contact">
       <h2 className={styles.heading}>Contact</h2>
       <div className={styles.content}>
         <a href="tel:+13608272736" className={styles.button}>

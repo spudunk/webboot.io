@@ -1,11 +1,10 @@
 import Head from "next/head";
-import styles from "../styles/Contact.module.css";
 import Icon from '@mdi/react'
 import { mdiInstagram, mdiEmail, mdiPhone } from '@mdi/js'
-
+import styles from '../styles/index.module.css'
 const iconSize = '1.4em';
 
-export default function About() {
+export default function Contact() {
   return (
     <div className={styles.container} id="contact">
       <h2 className={styles.heading}>Contact</h2>

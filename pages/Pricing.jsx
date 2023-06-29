@@ -11,13 +11,13 @@ export default function About() {
       <div className={styles.content}>
         <div className={styles.card}>
           <h3>Website</h3>
-          <p>Landing Page Design - $100</p>
+          <p>Landing Page Design - $400 - $1000</p>
           <ul>
             <li>Starting price for basic design (like ours)</li>
             <li>More extensive designs available</li>
             <li>Figma mockup w/ branding</li>
           </ul>
-          <p>Landing Page Dev - $200</p>
+          <p>Landing Page Development - $1000 - $2000</p>
           <ul>
             <li>Fully custom</li>
             <li>SEO optimised</li>
@@ -34,11 +34,11 @@ export default function About() {
         </div>
         <div className={styles.card}>
           <h3>Social Media</h3>
-          <p>8 posts per month - $100</p>
+          <p>8 posts per month - $200</p>
           <ul>
             <li>2 scheduled posts per week</li>
           </ul>
-          <p>24 posts per month - $300</p>
+          <p>24 posts per month - $900</p>
           <ul>
             <li>4 scheduled posts per week</li>
             <li>1 Reel per week</li>

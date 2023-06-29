@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Hero.module.css";
-import Logo from "../public/logo_white.svg";
+import Logo from "../public/logo_nofill.svg";
 
 export default function Hero() {
   return (

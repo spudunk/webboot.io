@@ -72,8 +72,8 @@ a {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: black;
-    --color-text: whitesmoke;
+    --color-background: #252525;
+    --color-text: #eff5f1;
     --color-primary: #dd8c34;
   }
   html {

@@ -30,9 +30,39 @@
   gap: 2rem;
 }
 
-.photo_container {
-  width: 40vw;
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
+
+.photo {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.copy {
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.services {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+.service {
+  border: 1px solid black;
+  /* margin-top: 3rem; */
+  padding: 1rem;
+  border-radius: 5px;
+}
+.service h4 {
+  margin: 0;
+  padding-bottom: .5rem;
+  font-size: 2rem;
+}
+
 
 
 
@@ -41,17 +71,4 @@
     width: 100%;
     flex-direction: column;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  /* .card,
-  .footer {
-    border-color: #222;
-  }
-  .code {
-    background: #111;
-  }
-  .logo img {
-    filter: invert(1);
-  } */
 }

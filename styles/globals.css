@@ -2,22 +2,37 @@
   --color-background: #eff5f1;
   --color-text: #252525;
   --color-primary: #a45f15;
+  --border-radius: 5px;
 }
 
 .container {
   max-width: 80rem;
   padding: 0 auto;
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 
-.btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-background);
+.service-buttons div {
+  margin-bottom: 1rem;
+}
+
+.btn {
   font-weight: 700;
   font-family: "Noto Sans", sans-serif;
   padding: .5rem 1rem;
   width: fit-content;
   border-radius: 3px;
+  border: 2px solid var(--color-primary);
+  cursor: pointer;
+
 }
+
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
 
 .text-lg {
   font-size: 1.8rem;

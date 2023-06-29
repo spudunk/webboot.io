@@ -1,37 +1,127 @@
-import Head from "next/head";
-import Icon from '@mdi/react'
-import { mdiInstagram, mdiEmail, mdiPhone } from '@mdi/js'
-import styles from '../styles/index.module.css'
-const iconSize = '1.4em';
+import styles from "../styles/Contact.module.css";
+import { useState } from "react";
+import initFirebase from "../firebase/initFirebase";
+import { getDatabase, ref, push } from "firebase/database";
+
+const app = initFirebase();
+const db = getDatabase(app);
+
+const initialFormData = {
+  email: "",
+  name: "",
+  phone: "",
+  company: "",
+  location: "",
+};
 
 export default function Contact() {
+  const [formData, setFormData] = useState(initialFormData);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    if (formData.email == "") {
+      setError("email required");
+      return;
+    }
+    setError("");
+    setSubmitting(true);
+    push(ref(db, 'submissions'),formData)
+    .then((r) => {
+      setSubmitting(false);
+      setFormData(initialFormData);
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+      // console.log(r);
+    })
+  }
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setFormData((s) => {
+      let d = { ...s };
+      d[e.target.name] = e.target.value;
+      return d;
+    });
+  };
+
   return (
-    <div className={styles.container} id="contact">
-      <h2 className={styles.heading}>Contact</h2>
+    <div className={`container ${styles.container}`} id="contact">
       <div className={styles.content}>
-        <a href="tel:+13608272736" className={styles.button}>
-          <Icon path={mdiPhone} size={iconSize}/>
-          (360) 827-2736
-        </a>
-
-        <a href="mailto:info@webboot.io" className={styles.button}>
-          <Icon path={mdiEmail} size={iconSize}/>
-          info@webboot.io
-        </a>
-
-        <a
-          href="https://www.instagram.com/angelvictoriaallen/"
-          target="_blank"
-          rel="noreferrer"
-          className={styles.button}
-        >
-          <Icon 
-          path={mdiInstagram}
-          size={iconSize}
-          />
-          angelvictoriaallen
-        </a>
-        
+        <h2 className={styles.heading}>Contact</h2>
+        <p>
+          Leave your information here and I&apos;ll reach out to schedule a free
+          consultation within a few days.
+        </p>
+        <div className={styles.content}>
+          <form action="" className={styles.form}>
+            <div className={styles.formitem}>
+              <label htmlFor="email">Email
+              <input
+                onChange={handleChange}
+                name="email"
+                type="email"
+                value={formData.email}
+              />
+              </label>
+            </div>
+            <div className={styles.formitem}>
+              <label htmlFor="name">Name
+              <input
+                onChange={handleChange}
+                name="name"
+                type="text"
+                value={formData.name}
+              />
+              </label>
+            </div>
+            <div className={styles.formitem}>
+              <label htmlFor="phone">Phone
+              <input
+                onChange={handleChange}
+                name="phone"
+                type="phone"
+                value={formData.phone}
+              />
+              </label>
+            </div>
+            <div className={styles.formitem}>
+              <label htmlFor="company">Company
+              <input
+                onChange={handleChange}
+                name="company"
+                type="text"
+                value={formData.company}
+              />
+              </label>
+            </div>
+            <div className={styles.formitem}>
+              <label htmlFor="phone">Location
+              <input
+                onChange={handleChange}
+                name="location"
+                type="text"
+                value={formData.location}
+              />
+              </label>
+            </div>
+            <button
+              className={`btn btn-primary ${styles.formbtn}`}
+              onClick={handleSubmit}
+            >
+              Submit
+            </button>
+            <div className={styles.formmsg}>
+              {submitting && <div>Submitting Form...</div>}
+              {submitted && <div>Form Submitted!</div>}
+              {error}
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

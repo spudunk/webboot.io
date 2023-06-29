@@ -1,0 +1,31 @@
+.footer {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.container {
+  border-top: 1px solid black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+  padding-bottom: 2rem;
+}
+
+.content a {
+  /* margin: 0 1rem; */
+  display: flex;
+  gap: .5rem;
+  padding: .5rem;
+}
+

@@ -17,7 +17,7 @@
     "@vercel/analytics": "^1.0.1",
     "firebase": "^9.9.1",
     "next": "^12.3.1",
-    "npm": "^8.19.2",
+    "npm": "^9.7.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-firebase-hooks": "^5.0.3"
@@ -25,7 +25,7 @@
   "devDependencies": {
     "@svgr/webpack": "^6.5.0",
     "eslint": "8.20.0",
-    "eslint-config-next": "12.2.3",
+    "eslint-config-next": "^12.0.4",
     "next-export-optimize-images": "^1.6.0"
   }
 }

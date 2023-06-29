@@ -46,5 +46,6 @@ export default function initFirebase () {
   
   // Initialize Firebase if it is supported (not in Dev environment)
   const analytics = isSupported().then(yes => yes ? getAnalytics(app) : null);
+  return app;
 }
 

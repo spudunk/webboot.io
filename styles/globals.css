@@ -1,36 +1,32 @@
 :root {
   --color-background: #eff5f1;
   --color-text: #252525;
-  --color-primary: #a45f15;
+  --color-primary: #9d5304;
   --border-radius: 5px;
 }
 
 .container {
   max-width: 80rem;
-  padding: 0 auto;
-  margin-left: 4rem;
-  margin-right: 4rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
-.service-buttons div {
-  margin-bottom: 1rem;
-}
 
 .btn {
   font-weight: 700;
   font-family: "Noto Sans", sans-serif;
   padding: .5rem 1rem;
   width: fit-content;
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   border: 2px solid var(--color-primary);
   cursor: pointer;
-
 }
 
 
 .btn-primary {
   background-color: var(--color-primary);
   color: var(--color-background);
+  font-weight: bold;
 }
 
 
@@ -78,6 +74,7 @@ a {
   :root {
     --color-background: black;
     --color-text: whitesmoke;
+    --color-primary: #dd8c34;
   }
   html {
     color-scheme: dark;

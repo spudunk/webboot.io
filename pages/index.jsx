@@ -8,11 +8,11 @@ import photo from "../public/us.jpg";
 import { useState } from "react";
 import Footer from "./Footer";
 
-import dynamic from 'next/dynamic'
- 
-const Contact = dynamic(() => import('./Contact'), {
+import dynamic from "next/dynamic";
+
+const Contact = dynamic(() => import("./Contact"), {
   loading: () => <p>Loading...</p>,
-})
+});
 
 const services = [
   {
@@ -156,13 +156,11 @@ export default function Home() {
         <div className={`container`}>
           <h2 className={styles.heading}>About Us</h2>
           <div className={styles.about}>
-            <div className={styles.photobox}>
-              <Image
-                alt="Photo of Chris and Angel"
-                className={styles.photo}
-                src={photo}
-              />
-            </div>
+            <Image
+              alt="Photo of Chris and Angel"
+              className={styles.photo}
+              src={photo}
+            />
 
             <div className={styles.copy}>
               <p>

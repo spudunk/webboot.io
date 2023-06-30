@@ -166,7 +166,7 @@ export default function Home() {
               alt="Photo of Chris and Angel"
               className={styles.photo}
               src={photo}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="(max-width: 500px) 90vw, (max-width: 800px) 40vw, 25vw"
               />
 
             <div className={styles.copy}>

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/index.module.css";
+import { Noto_Sans, Noto_Sans_Display } from "next/font/google";
 
 import Logo from "../public/logo.svg";
 import photo from "../public/us.jpg";
@@ -9,6 +10,9 @@ import { useState } from "react";
 import Footer from "./Footer";
 
 import dynamic from "next/dynamic";
+
+const notoSans = Noto_Sans({ subsets: ["latin"], weight: ["500", "700"] });
+const notoSansDisplay = Noto_Sans_Display({ subsets: ["latin"] });
 
 const Contact = dynamic(() => import("./Contact"), {
   loading: () => <p>Loading...</p>,
@@ -135,15 +139,15 @@ export default function Home() {
         <link rel="manifest" href="/site.webmanifest"></link>
       </Head>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         {/* HERO SECTION */}
         <div className={`container ${styles.hero}`}>
           <div>
             <Logo className={`${styles.hero_logo}`} />
           </div>
           <div className={styles.hero_content}>
-            <div>
-              <p className="text-xl">Modern Digital Marketing</p>
+            <div className={notoSans.className}>
+              <p className={`text-xl`}>Modern Digital Marketing</p>
               <p className="text-lg">Make connections in the online space</p>
             </div>
             <a href="#contact" className="btn btn-primary text-lg">
@@ -154,7 +158,9 @@ export default function Home() {
 
         {/* ABOUT SECTION */}
         <div className={`container`}>
-          <h2 className={styles.heading}>About Us</h2>
+          <h2 className={`${styles.heading} ${notoSansDisplay.className}`}>
+            About Us
+          </h2>
           <div className={styles.about}>
             <Image
               alt="Photo of Chris and Angel"
@@ -180,7 +186,9 @@ export default function Home() {
         {/* PRICING SECTION */}
 
         <div className={`container`}>
-          <h2 className={styles.heading}>Services</h2>
+          <h2 className={`${styles.heading} ${notoSansDisplay.className}`}>
+            Services
+          </h2>
 
           <p>Building a website consists of several steps: </p>
           <div className={styles.servicebuttons}>
@@ -207,7 +215,7 @@ export default function Home() {
               if (s.type == productFilter) {
                 return (
                   <div key={i} className={styles.service}>
-                    <h3>{s.name}</h3>
+                    <h3 className={`${notoSans.className}`}>{s.name}</h3>
                     <p>
                       <em>{s.price}</em>
                     </p>
@@ -222,9 +230,15 @@ export default function Home() {
             Additional pricing and plans available. Contact us for details.
           </p>
         </div>
-
-        <Contact />
-      </main>
+        <div className={`container ${styles.container}`} id="contact">
+          <h2 className={styles.heading}>Contact</h2>
+          <p>
+            Leave your information here and I&apos;ll reach out to schedule a
+            free consultation within a few days.
+          </p>
+          <Contact />
+        </div>
+      </div>
 
       <Footer />
     </>

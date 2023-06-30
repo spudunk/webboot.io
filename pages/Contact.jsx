@@ -50,13 +50,6 @@ export default function Contact() {
   };
 
   return (
-    <div className={`container ${styles.container}`} id="contact">
-      <div className={styles.content}>
-        <h2 className={styles.heading}>Contact</h2>
-        <p>
-          Leave your information here and I&apos;ll reach out to schedule a free
-          consultation within a few days.
-        </p>
         <div className={styles.content}>
           <form action="" className={styles.form}>
             <div className={styles.formitem}>
@@ -122,7 +115,5 @@ export default function Contact() {
             </div>
           </form>
         </div>
-      </div>
-    </div>
   );
 }

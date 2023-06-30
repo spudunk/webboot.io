@@ -2,6 +2,8 @@
 
 .DS_Store
 .firebase/
+.env
+.env*
 
 # dependencies
 /node_modules

@@ -13,18 +13,12 @@ import photo from "/public/us.jpg";
 
 // Components
 // import Contact from "./Contact";
-import Footer from "./Footer";
+import Footer from "../components/Footer";
 
-// Fonts
-import { Noto_Sans, Noto_Sans_Display } from "next/font/google";
+import { notoSans, notoSansDisplay } from "../lib/fonts";
 
-// Font Declarations
-const notoSans = Noto_Sans({ subsets: ["latin"], weight: ["500", "700"] });
-const notoSansDisplay = Noto_Sans_Display({ subsets: ["latin"] });
-
-
-// Dynamic components
-const Contact = dynamic(() => import("./Contact"), {
+// Dynamic components for Performance
+const Contact = dynamic(() => import("../components/Contact"), {
   loading: () => <p>Loading...</p>,
 });
 

@@ -12,7 +12,6 @@ import Logo from "/public/logo.svg";
 import photo from "/public/us.jpg";
 
 // Components
-// import Contact from "./Contact";
 import Footer from "../components/Footer";
 
 import { notoSans, notoSansDisplay } from "../lib/fonts";

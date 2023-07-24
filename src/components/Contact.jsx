@@ -3,18 +3,18 @@ import { useState } from "react";
 import initFirebase from "../../firebase/initFirebase";
 import { getDatabase, ref, push } from "firebase/database";
 
-const app = initFirebase();
-const db = getDatabase(app);
-
-const initialFormData = {
-  email: "",
-  name: "",
-  phone: "",
-  company: "",
-  location: "",
-};
 
 export default function Contact() {
+  const app = initFirebase();
+  const db = getDatabase(app);
+  
+  const initialFormData = {
+    email: "",
+    name: "",
+    phone: "",
+    company: "",
+    location: "",
+  };
   const [formData, setFormData] = useState(initialFormData);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);

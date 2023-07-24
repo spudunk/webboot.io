@@ -1,5 +1,5 @@
 // Fonts
-import { Noto_Sans, Noto_Sans_Display } from "next/font/google";
+import { Noto_Sans, Noto_Sans_Display, Noto_Serif } from "next/font/google";
 
 // Font Declarations
 export const notoSans = Noto_Sans({
@@ -7,3 +7,5 @@ export const notoSans = Noto_Sans({
   weight: ["500", "700"],
 });
 export const notoSansDisplay = Noto_Sans_Display({ subsets: ["latin"] });
+
+export const notoSerif = Noto_Serif({ subsets: ['latin'] });

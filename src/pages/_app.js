@@ -1,9 +1,6 @@
 // NextJS Default styles import
-import '../styles/globals.css'
-import { Noto_Serif } from 'next/font/google'
-
-const notoSerif = Noto_Serif({ subsets: ['latin'] })
-
+import "../styles/globals.css";
+import { notoSerif } from "../lib/fonts";
 
 // Next App Default component export
 function MyApp({ Component, pageProps }) {
@@ -11,8 +8,7 @@ function MyApp({ Component, pageProps }) {
     <main className={notoSerif.className}>
       <Component {...pageProps} />
     </main>
-  )
+  );
 }
 
-export default MyApp
-
+export default MyApp;

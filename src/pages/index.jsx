@@ -1,19 +1,29 @@
+// NextJS & React
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/index.module.css";
-import { Noto_Sans, Noto_Sans_Display } from "next/font/google";
-
-import Logo from "../public/logo.svg";
-import photo from "../public/us.jpg";
-// import Contact from "./Contact";
+import dynamic from "next/dynamic";
 import { useState } from "react";
+
+// Styles
+import styles from "../styles/index.module.css";
+
+// Assets
+import Logo from "/public/logo.svg";
+import photo from "/public/us.jpg";
+
+// Components
+// import Contact from "./Contact";
 import Footer from "./Footer";
 
-import dynamic from "next/dynamic";
+// Fonts
+import { Noto_Sans, Noto_Sans_Display } from "next/font/google";
 
+// Font Declarations
 const notoSans = Noto_Sans({ subsets: ["latin"], weight: ["500", "700"] });
 const notoSansDisplay = Noto_Sans_Display({ subsets: ["latin"] });
 
+
+// Dynamic components
 const Contact = dynamic(() => import("./Contact"), {
   loading: () => <p>Loading...</p>,
 });

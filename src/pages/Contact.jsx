@@ -1,6 +1,6 @@
 import styles from "../styles/Contact.module.css";
 import { useState } from "react";
-import initFirebase from "../firebase/initFirebase";
+import initFirebase from "../../firebase/initFirebase";
 import { getDatabase, ref, push } from "firebase/database";
 
 const app = initFirebase();

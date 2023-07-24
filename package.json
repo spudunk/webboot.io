@@ -14,18 +14,18 @@
   "dependencies": {
     "@mdi/js": "^7.2.96",
     "@mdi/react": "^1.6.1",
-    "firebase": "^9.23.0",
-    "next": "^13.4.7",
-    "npm": "^9.7.2",
+    "firebase": "^10.1.0",
+    "next": "^13.4.12",
+    "npm": "^9.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.1.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.0.1",
-    "eslint": "^8.43.0",
-    "eslint-config-next": "^13.4.7",
-    "next-export-optimize-images": "^2.1.0"
+    "eslint": "^8.45.0",
+    "eslint-config-next": "^13.4.12",
+    "next-export-optimize-images": "^3.1.0"
 
   }
 }

@@ -24,7 +24,7 @@ body {
 
 .btn {
   font-weight: 700;
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 0.75rem;
   width: fit-content;
   border-radius: var(--border-radius);
   border: 2px solid var(--color-primary);

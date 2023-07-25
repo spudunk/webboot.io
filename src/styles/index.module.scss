@@ -69,6 +69,8 @@
   );
 
   &__content {
+    font-size: 1.3rem;
+
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -88,6 +90,7 @@
 
 .service {
   margin-top: 3rem;
+  font-size: 1.3rem;
   &__buttons {
     display: flex;
     flex-wrap: wrap;
@@ -96,7 +99,7 @@
   }
 
   &__description {
-    min-height: 10rem;
+    min-height: 8rem;
     margin-bottom: 1rem;
   }
   &__list {
@@ -126,6 +129,7 @@
 
 .contact {
   margin-top: 4rem;
+  font-size: 1.3rem;
 }
 
 @media (min-width: 500px) {

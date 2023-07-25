@@ -1,4 +1,5 @@
 .form {
+  font-size: 1rem;
   padding-top: 2rem;
   padding-bottom: 1rem;
   width: 100%;
@@ -9,8 +10,6 @@
 }
 
 .formitem {
-  // min-width: 30rem;
-  // width: min;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -19,6 +18,7 @@
 }
 
 .formitem input {
+  font-size: 1rem;
   min-height: 2.2rem;
   padding: 0.5rem;
   background-color: var(--color-background);

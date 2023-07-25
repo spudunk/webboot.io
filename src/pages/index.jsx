@@ -9,7 +9,7 @@ import styles from "../styles/index.module.scss";
 
 // Assets
 import photo from "/public/us.jpg";
-import { notoSans, notoSansDisplay } from "../lib/fonts";
+import { poppins } from "../lib/fonts";
 import { home as copy } from "../lib/copy";
 
 // Components
@@ -56,14 +56,12 @@ export default function Home() {
         {/* HERO SECTION */}
         <div className={`${styles.hero}`}>
           <div className={`container ${styles.hero__container}`}>
-            <div>
-              <WBLogo className={`${styles.hero_logo}`} />
-            </div>
-            <div className={styles.hero_content}>
-              <div className={notoSans.className}>
-                <p>Modern Digital Marketing</p>
-                <p>Don&apos;t get looked over online</p>
-              </div>
+            <WBLogo className={`${styles.hero__logo}`} />
+
+            <div className={`${styles.hero__content} ${poppins.className}`}>
+              <p>Modern Digital Marketing</p>
+              <h1>Don&apos;t get overlooked online</h1>
+
               <a
                 onClick={(e) => {
                   e.preventDefault;
@@ -71,7 +69,7 @@ export default function Home() {
                     .getElementById("contact")
                     .scrollIntoView({ behavior: "smooth" });
                 }}
-                className="btn btn-primary text-lg"
+                className="btn btn-primary"
               >
                 Contact Us
               </a>
@@ -80,44 +78,43 @@ export default function Home() {
         </div>
 
         {/* ABOUT SECTION */}
-        <div className={`container ${styles.about}`}>
-          <h2 className={`${styles.heading} ${notoSansDisplay.className}`}>
-            About Us
-          </h2>
-          <div className={styles.about__content}>
-            <Image
-              alt="Photo of Chris and Angel"
-              className={styles.about__photo}
-              src={photo}
-              sizes="(max-width: 500px) 90vw, (max-width: 800px) 40vw, 25vw"
-            />
-
-            <div className={styles.about__copy}>
-              <p>
-                We are a digital marketing couple living in SW Washington, USA
-                building modern digital assets for businesses we are passionate
-                about.
-              </p>
-              <p>
-                We specialize in helping small local businesses create
-                attractive online presence that shows credibility in their
-                market.
-              </p>
+        <section className={`${styles.about}`}>
+          <div className={`container`}>
+            <h2 className={`${styles.heading} ${poppins.className}`}>
+              About Us
+            </h2>
+            <div className={styles.about__content}>
+              <Image
+                alt="Photo of Chris and Angel"
+                className={styles.about__photo}
+                src={photo}
+                sizes="(max-width: 500px) 90vw, (max-width: 800px) 40vw, 25vw"
+              />
+              <div className={styles.about__copy}>
+                <p>
+                  We are a digital marketing couple living in SW Washington, USA
+                  building modern digital assets for businesses we are
+                  passionate about.
+                </p>
+                <p>
+                  We specialize in helping small local businesses create
+                  attractive online presence that shows credibility in their
+                  market.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* SERVICE SECTION */}
 
         <div className={`container ${styles.service}`}>
-          <h2 className={`${notoSansDisplay.className}`}>
-            Services
-          </h2>
+          <h2 className={`${poppins.className}`}>Services</h2>
 
           <p>Building a website consists of several steps: </p>
 
           {/* Create buttons to filter services */}
-          <div className={styles.service__buttons}>
+          <div className={`${styles.service__buttons} ${poppins.className}`}>
             {copy.serviceButtons.map((b, i) => {
               return (
                 <ServiceButton
@@ -131,7 +128,7 @@ export default function Home() {
               );
             })}
           </div>
-          
+
           {/* Service Category Description paragraph */}
           <div className={styles.service__description}>
             {copy.serviceDescriptions[productFilter]}
@@ -143,7 +140,7 @@ export default function Home() {
               if (s.type == productFilter) {
                 return (
                   <div key={i} className={styles.service__card}>
-                    <h3 className={`${notoSans.className}`}>{s.name}</h3>
+                    <h3 className={`${poppins.className}`}>{s.name}</h3>
                     <p>
                       <em>{s.price}</em>
                     </p>
@@ -160,7 +157,7 @@ export default function Home() {
           </p>
         </div>
         <div className={`container ${styles.contact}`} id="contact">
-          <h2 className={`${styles.heading} ${notoSansDisplay.className}`}>
+          <h2 className={`${styles.heading} ${poppins.className}`}>
             Contact
           </h2>
           <p>

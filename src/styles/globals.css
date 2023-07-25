@@ -1,7 +1,9 @@
 :root {
-  --color-background: #eff5f1;
-  --color-text: #121212;
-  --color-primary: #9c19b6;
+  --color-background: #121212;
+  --color-text: #eff5f1;
+  --color-primary: #ad19cb;
+  --hero-background: #121212;
+  --hero-text: #eff5f1;
   --hero-stripe-color: #29152d;
   --border-radius: 5px;
 }
@@ -21,7 +23,6 @@ body {
 
 .btn {
   font-weight: 700;
-  font-family: "Noto Sans", sans-serif;
   padding: 0.5rem 1rem;
   width: fit-content;
   border-radius: var(--border-radius);
@@ -59,11 +60,11 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --color-background: #121212;
-    --color-text: #eff5f1;
-    --color-primary: #ad19cb;
+    --color-background: #ddd;
+    --color-text: #121212;
+    --color-primary: #9c19b6;
   }
   html {
     color-scheme: dark;

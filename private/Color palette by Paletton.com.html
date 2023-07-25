@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)https://paletton.com/export/index.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Color palette by Paletton.com</title>
+	<meta name="generator" content="Paletton.com">
+
+<style type="text/css">
+
+/* Palette color codes */
+/* Feel free to copy&paste color codes to your application */
+
+.primary-1 { background-color: #A55EB4 }
+.primary-2 { background-color: #8A399B }
+.primary-0 { background-color: #7B208E }
+.primary-3 { background-color: #621074 }
+.primary-4 { background-color: #4B025A }
+
+.secondary-1-1 { background-color: #B7EB78 }
+.secondary-1-2 { background-color: #98D64C }
+.secondary-1-0 { background-color: #7EC528 }
+.secondary-1-3 { background-color: #60A012 }
+.secondary-1-4 { background-color: #457D00 }
+
+.secondary-2-1 { background-color: #FFF082 }
+.secondary-2-2 { background-color: #EBD853 }
+.secondary-2-0 { background-color: #D8C32C }
+.secondary-2-3 { background-color: #B09C14 }
+.secondary-2-4 { background-color: #897800 }
+
+/* end */
+
+
+body {
+	margin:0; padding: 2em;
+	background: #fff;
+	color: #000;
+	font: 12px/1.33 "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
+	text-align:left;
+	}
+h1 {
+	margin: 0.5em 0;
+	font-size: 200%;
+	}
+p {
+	margin: 0.5em 0;
+	}
+
+.color-table {
+	margin: 2em 2em 5em;
+	border-collapse:collapse;
+	border:none;
+	border-spacing:0;
+	font-size:100%;
+	}
+.color-table th {
+	padding: 0 1em 0 0;
+	text-align: right;
+	vertical-align: middle;
+	font-size: 100%;
+	font-weight: normal;
+	border: none;
+	}
+.color-table td.sample {
+	width:6em; height:6em;
+	padding: 10px;
+	text-align:center;
+	vertical-align:middle;
+	font-size:90%;
+	border: 1px solid white;
+	white-space:nowrap;
+	}
+.color-table td.sample-0 {
+	width:18em;
+	}
+.color-table.small td.sample {
+	width:3em; height:3em;
+	padding:0;
+	border:none;
+	}
+.color-table.small td.sample-0 {
+	width:9em;
+	}
+.color-table .white { margin-bottom:0.2em; color:white }
+.color-table .black { margin-top:0.2em; color:black }
+
+hr {
+	margin: 2em 0 1em 0;
+	border:none;
+	border-bottom:1px solid silver;
+	}
+#footer {
+	padding:1em;
+	text-align:center;
+	font-size:80%;
+	}
+
+</style>
+
+<script>/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+
+;// CONCATENATED MODULE: ../core/dist/flash-identifiers.js
+const FLASH_MIMETYPE = "application/x-shockwave-flash";
+const FUTURESPLASH_MIMETYPE = "application/futuresplash";
+const FLASH7_AND_8_MIMETYPE = "application/x-shockwave-flash2-preview";
+const FLASH_MOVIE_MIMETYPE = "application/vnd.adobe.flash.movie";
+const FLASH_ACTIVEX_CLASSID = "clsid:D27CDB6E-AE6D-11cf-96B8-444553540000";
+
+;// CONCATENATED MODULE: ../core/dist/plugin-polyfill.js
+
+/**
+ * Replacement object for `MimeTypeArray` that lets us install new fake mime
+ * types.
+ *
+ * Unlike plugins we can at least enumerate mime types in Firefox, so we don't
+ * lose data.
+ *
+ * We also expose a method called `install` which adds a new plugin. This is
+ * used to falsify Flash detection. If the existing `navigator.mimeTypes` has an
+ * `install` method, you should not use `RuffleMimeTypeArray` as some other
+ * plugin emulator is already present.
+ */
+class RuffleMimeTypeArray {
+    constructor(mimeTypes) {
+        this.__mimeTypes = [];
+        this.__namedMimeTypes = {};
+        if (mimeTypes) {
+            for (let i = 0; i < mimeTypes.length; i++) {
+                this.install(mimeTypes[i]);
+            }
+        }
+    }
+    /**
+     * Install a MIME Type into the array.
+     *
+     * @param mimeType The mime type to install
+     */
+    install(mimeType) {
+        const index = this.__mimeTypes.length;
+        this.__mimeTypes.push(mimeType);
+        this.__namedMimeTypes[mimeType.type] = mimeType;
+        this[mimeType.type] = mimeType;
+        this[index] = mimeType;
+    }
+    item(index) {
+        // This behavior is done to emulate a 32-bit uint,
+        // which browsers use.
+        return this.__mimeTypes[index >>> 0];
+    }
+    namedItem(name) {
+        return this.__namedMimeTypes[name];
+    }
+    get length() {
+        return this.__mimeTypes.length;
+    }
+    [Symbol.iterator]() {
+        return this.__mimeTypes[Symbol.iterator]();
+    }
+}
+/**
+ * Equivalent object to `Plugin` that allows us to falsify plugins.
+ */
+class RufflePlugin extends RuffleMimeTypeArray {
+    constructor(name, description, filename) {
+        super();
+        this.name = name;
+        this.description = description;
+        this.filename = filename;
+    }
+}
+/**
+ * Replacement object for `PluginArray` that lets us install new fake plugins.
+ *
+ * This object needs to wrap the native plugin array, since the user might have
+ * actual plugins installed. Firefox doesn't let us enumerate the array, though,
+ * which has some consequences. Namely, we can't actually perfectly wrap the
+ * native plugin array, at least unless there's some secret "unresolved object
+ * property name handler" that I've never known before in JS...
+ *
+ * We can still wrap `namedItem` perfectly at least.
+ *
+ * We also expose a method called `install` which adds a new plugin. This is
+ * used to falsify Flash detection. If the existing `navigator.plugins` has an
+ * `install` method, you should not use `RufflePluginArray` as some other plugin
+ * emulator is already present.
+ */
+class RufflePluginArray {
+    constructor(plugins) {
+        this.__plugins = [];
+        this.__namedPlugins = {};
+        for (let i = 0; i < plugins.length; i++) {
+            this.install(plugins[i]);
+        }
+    }
+    install(plugin) {
+        const index = this.__plugins.length;
+        this.__plugins.push(plugin);
+        this.__namedPlugins[plugin.name] = plugin;
+        this[plugin.name] = plugin;
+        this[index] = plugin;
+    }
+    item(index) {
+        // This behavior is done to emulate a 32-bit uint,
+        // which browsers use. Cloudflare's anti-bot
+        // checks rely on this.
+        return this.__plugins[index >>> 0];
+    }
+    namedItem(name) {
+        return this.__namedPlugins[name];
+    }
+    refresh() {
+        // Nothing to do, we just need to define the method.
+    }
+    [Symbol.iterator]() {
+        return this.__plugins[Symbol.iterator]();
+    }
+    get length() {
+        return this.__plugins.length;
+    }
+}
+/**
+ * A fake plugin designed to trigger Flash detection scripts.
+ */
+const FLASH_PLUGIN = new RufflePlugin("Shockwave Flash", "Shockwave Flash 32.0 r0", "ruffle.js");
+/**
+ * A fake plugin designed to allow early detection of if the Ruffle extension is in use.
+ */
+const RUFFLE_EXTENSION = new RufflePlugin("Ruffle Extension", "Ruffle Extension", "ruffle.js");
+FLASH_PLUGIN.install({
+    type: FUTURESPLASH_MIMETYPE,
+    description: "Shockwave Flash",
+    suffixes: "spl",
+    enabledPlugin: FLASH_PLUGIN,
+});
+FLASH_PLUGIN.install({
+    type: FLASH_MIMETYPE,
+    description: "Shockwave Flash",
+    suffixes: "swf",
+    enabledPlugin: FLASH_PLUGIN,
+});
+FLASH_PLUGIN.install({
+    type: FLASH7_AND_8_MIMETYPE,
+    description: "Shockwave Flash",
+    suffixes: "swf",
+    enabledPlugin: FLASH_PLUGIN,
+});
+FLASH_PLUGIN.install({
+    type: FLASH_MOVIE_MIMETYPE,
+    description: "Shockwave Flash",
+    suffixes: "swf",
+    enabledPlugin: FLASH_PLUGIN,
+});
+RUFFLE_EXTENSION.install({
+    type: "",
+    description: "Ruffle Detection",
+    suffixes: "",
+    enabledPlugin: RUFFLE_EXTENSION,
+});
+/**
+ * Install a fake plugin such that detectors will see it in `navigator.plugins`.
+ *
+ * This function takes care to check if the existing implementation of
+ * `navigator.plugins` already accepts fake plugin entries. If so, it will use
+ * that version of the plugin array. This allows the plugin polyfill to compose
+ * across multiple plugin emulators with the first emulator's polyfill winning.
+ *
+ * @param plugin The plugin to install
+ */
+function installPlugin(plugin) {
+    if (!("install" in navigator.plugins) || !navigator.plugins["install"]) {
+        Object.defineProperty(navigator, "plugins", {
+            value: new RufflePluginArray(navigator.plugins),
+            writable: false,
+        });
+    }
+    const plugins = navigator.plugins;
+    plugins.install(plugin);
+    if (plugin.length > 0 &&
+        (!("install" in navigator.mimeTypes) || !navigator.mimeTypes["install"])) {
+        Object.defineProperty(navigator, "mimeTypes", {
+            value: new RuffleMimeTypeArray(navigator.mimeTypes),
+            writable: false,
+        });
+    }
+    const mimeTypes = navigator.mimeTypes;
+    for (let i = 0; i < plugin.length; i += 1) {
+        mimeTypes.install(plugin[i]);
+    }
+}
+
+;// CONCATENATED MODULE: ./src/plugin-polyfill.ts
+// This file is compiled and then injected into content.ts's compiled form.
+
+installPlugin(FLASH_PLUGIN);
+installPlugin(RUFFLE_EXTENSION);
+
+/******/ })()
+;</script><script charset="utf-8" src="chrome-extension://donbcfbmhbcapadipfkeojnmajbakjdc/dist/ruffle.js?id=87757770592"></script></head>
+<body>
+
+<h1>Color Palette by Paletton.com</h1>
+<p>Palette URL: <a href="http://paletton.com/#uid=34Q0u0kpzr8fH--kItwsnm2wshd">http://paletton.com/#uid=34Q0u0kpzr8fH--kItwsnm2wshd</a></p>
+
+<table class="color-table">
+	<tbody><tr>
+		<th>Primary color:</th>
+		<td class="sample sample-1 primary-1">
+			<div class="white">#A55EB4</div>
+			<div class="black">#A55EB4</div>
+		</td>
+		<td class="sample sample-2 primary-2">
+			<div class="white">#8A399B</div>
+			<div class="black">#8A399B</div>
+		</td>
+		<td class="sample sample-0 primary-0">
+			<div class="white">#7B208E</div>
+			<div class="black">#7B208E</div>
+		</td>
+		<td class="sample sample-3 primary-3">
+			<div class="white">#621074</div>
+			<div class="black">#621074</div>
+		</td>
+		<td class="sample sample-4 primary-4">
+			<div class="white">#4B025A</div>
+			<div class="black">#4B025A</div>
+		</td>
+	</tr>
+	<tr>
+		<th>Secondary color (1):</th>
+		<td class="sample sample-1 secondary-1-1">
+			<div class="white">#B7EB78</div>
+			<div class="black">#B7EB78</div>
+		</td>
+		<td class="sample sample-2 secondary-1-2">
+			<div class="white">#98D64C</div>
+			<div class="black">#98D64C</div>
+		</td>
+		<td class="sample sample-0 secondary-1-0">
+			<div class="white">#7EC528</div>
+			<div class="black">#7EC528</div>
+		</td>
+		<td class="sample sample-3 secondary-1-3">
+			<div class="white">#60A012</div>
+			<div class="black">#60A012</div>
+		</td>
+		<td class="sample sample-4 secondary-1-4">
+			<div class="white">#457D00</div>
+			<div class="black">#457D00</div>
+		</td>
+	</tr>
+	<tr>
+		<th>Secondary color (2):</th>
+		<td class="sample sample-1 secondary-2-1">
+			<div class="white">#FFF082</div>
+			<div class="black">#FFF082</div>
+		</td>
+		<td class="sample sample-2 secondary-2-2">
+			<div class="white">#EBD853</div>
+			<div class="black">#EBD853</div>
+		</td>
+		<td class="sample sample-0 secondary-2-0">
+			<div class="white">#D8C32C</div>
+			<div class="black">#D8C32C</div>
+		</td>
+		<td class="sample sample-3 secondary-2-3">
+			<div class="white">#B09C14</div>
+			<div class="black">#B09C14</div>
+		</td>
+		<td class="sample sample-4 secondary-2-4">
+			<div class="white">#897800</div>
+			<div class="black">#897800</div>
+		</td>
+	</tr>
+</tbody></table>
+
+<table class="color-table small">
+	<tbody><tr>
+		<th>Primary color:</th>
+		<td class="sample sample-1 primary-1"></td>
+		<td class="sample sample-2 primary-2"></td>
+		<td class="sample sample-0 primary-0"></td>
+		<td class="sample sample-3 primary-3"></td>
+		<td class="sample sample-4 primary-4"></td>
+	</tr>
+	<tr>
+		<th>Secondary color (1):</th>
+		<td class="sample sample-1 secondary-1-1"></td>
+		<td class="sample sample-2 secondary-1-2"></td>
+		<td class="sample sample-0 secondary-1-0"></td>
+		<td class="sample sample-3 secondary-1-3"></td>
+		<td class="sample sample-4 secondary-1-4"></td>
+	</tr>
+	<tr>
+		<th>Secondary color (2):</th>
+		<td class="sample sample-1 secondary-2-1"></td>
+		<td class="sample sample-2 secondary-2-2"></td>
+		<td class="sample sample-0 secondary-2-0"></td>
+		<td class="sample sample-3 secondary-2-3"></td>
+		<td class="sample sample-4 secondary-2-4"></td>
+	</tr>
+</tbody></table>
+
+<p>
+See the HTML source for more details.<br>
+Use the <em>Save / Save As...</em> command in your browser to store the document for latter use.
+</p>
+
+<hr>
+
+<p id="footer">Generated by <a href="http://paletton.com/">Paletton.com</a> © 2002-2014</p>
+
+
+
+</body></html>

@@ -5,10 +5,9 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 
 // Styles
-import styles from "../styles/index.module.css";
+import styles from "../styles/index.module.scss";
 
 // Assets
-import Logo from "/public/logo.svg";
 import photo from "/public/us.jpg";
 
 // Components
@@ -16,13 +15,17 @@ import Footer from "../components/Footer";
 
 import { notoSans, notoSansDisplay } from "../lib/fonts";
 
+import { home as copy } from "../lib/copy";
+import Meta from "../components/Meta";
+import Favicon from "../components/Favicon";
+import { WBLogo } from "../components/Graphics";
+
 // Dynamic components for Performance
 const Contact = dynamic(() => import("../components/Contact"), {
   loading: () => <p>Loading...</p>,
 });
 
-import { home as copy } from "../lib/copy"; 
-
+// For setting the product filter
 function ServiceButton(props) {
   const setProductFilter = props.setProductFilter;
   const productFilter = props.productFilter;
@@ -37,6 +40,7 @@ function ServiceButton(props) {
   );
 }
 
+// index page main function
 export default function Home() {
   const [productFilter, setProductFilter] = useState("design");
 
@@ -44,53 +48,41 @@ export default function Home() {
     <>
       <Head>
         <title>webboot.io</title>
-        <meta
-          name="description"
-          content="Fast, Simple Effective - Digital Marketing for Small Business."
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest"></link>
+        <Meta />
+        <Favicon />
       </Head>
 
       <div className={styles.main}>
         {/* HERO SECTION */}
+        <div className={styles.hero_art}></div>
         <div className={`container ${styles.hero}`}>
           <div>
-            <Logo className={`${styles.hero_logo}`} />
+            <WBLogo className={`${styles.hero_logo}`} />
           </div>
           <div className={styles.hero_content}>
             <div className={notoSans.className}>
               <p className={`text-xl`}>Modern Digital Marketing</p>
               <p className="text-lg">Make connections in the online space</p>
             </div>
-            <a href="#contact" className="btn btn-primary text-lg">
+            <a
+              onClick={(e) => {
+                document
+                  .getElementById("contact")
+                  .scrollIntoView({ behavior: "smooth" });
+              }}
+              className="btn btn-primary text-lg"
+            >
               Contact Us
             </a>
           </div>
         </div>
 
         {/* ABOUT SECTION */}
-        <div className={`container`}>
+        <div className={`container ${styles.about}`}>
           <h2 className={`${styles.heading} ${notoSansDisplay.className}`}>
             About Us
           </h2>
-          <div className={styles.about}>
+          <div className={styles.about__content}>
             <Image
               alt="Photo of Chris and Angel"
               className={styles.photo}

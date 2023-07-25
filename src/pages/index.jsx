@@ -107,7 +107,7 @@ export default function Home() {
 
         {/* SERVICE SECTION */}
 
-        <div className={`container`}>
+        <div className={`container ${styles.services}`}>
           <h2 className={`${styles.heading} ${notoSansDisplay.className}`}>
             Services
           </h2>
@@ -132,7 +132,7 @@ export default function Home() {
             {copy.serviceDescriptions[productFilter]}
           </div>
 
-          <div className={styles.services}>
+          <div className={styles.services__list}>
             {copy.services.map((s, i) => {
               if (s.type == productFilter) {
                 return (
@@ -152,7 +152,7 @@ export default function Home() {
             Additional pricing and plans available. Contact us for details.
           </p>
         </div>
-        <div className={`container ${styles.container}`} id="contact">
+        <div className={`container ${styles.contact}`} id="contact">
           <h2 className={`${styles.heading} ${notoSansDisplay.className}`}>
             Contact
           </h2>

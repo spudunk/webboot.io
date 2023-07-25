@@ -70,6 +70,10 @@
   ;
 }
 
+.services {
+  margin-top: 6rem;
+}
+
 .servicebuttons {
   display: flex;
   flex-wrap: wrap;
@@ -82,7 +86,7 @@
   margin-bottom: 1rem;
 }
 
-.services {
+.services__list {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
@@ -110,6 +114,9 @@
   font-size: 2rem;
 }
 
+.contact {
+  margin-top: 6rem;
+}
 
 
 

@@ -1,46 +1,52 @@
 
 .main {
   /* padding: 0; */
-  display: flex;
-  flex-direction: column;
+  // width: 100%;
+  // display: flex;
+  // flex-direction: column;
   position: relative;
-  /* justify-content: center; */
-  align-items: center;
-  background-color: var(--color-background);
+  // align-items: center;
+  overflow: hidden;
+  // background-color: var(--color-background);
 }
 
-.hero_art {
-  position: absolute;
-}
 
 .hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-  /* padding-top: 10rem; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
+  background: linear-gradient(-75deg, #00000000, #00000000 20%, var(--hero-stripe-color) 25%, var(--hero-stripe-color) 55%, #00000000 60%);
+  background-attachment: fixed;
+  
+  &__container {
+    min-height: 95vh;
+    padding-bottom: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+
+  }
+
+  &_logo {
+    fill: var(--color-text);
+    width: 100%;
+  }
+  &_content {
+    display: flex;
+    font-size: 2.2rem;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+  &_content p {
+    margin-top: 1rem;
+  }
+
 }
 
-.hero_logo {
-  fill: var(--color-text);
-  width: 100%;
-}
 
-.hero_content {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-}
-.hero_content p {
-  margin-top: 1rem;
-}
 
 .about {
-  margin-top: -10vh; 
+  margin-top: -15vh; 
 
   &__content {
     display: grid;
@@ -108,13 +114,14 @@
 
 
 @media (min-width: 500px) {
-  .about {
+  
+  .about__content {
     grid-template-columns: 1fr 1fr;
   }
   .services {
     grid-template-columns: 1fr 1fr;
   }
-  .hero {
+  .hero__container {
     flex-direction: row;
   }
   .hero_content {

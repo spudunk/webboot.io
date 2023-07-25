@@ -9,13 +9,11 @@ import styles from "../styles/index.module.scss";
 
 // Assets
 import photo from "/public/us.jpg";
+import { notoSans, notoSansDisplay } from "../lib/fonts";
+import { home as copy } from "../lib/copy";
 
 // Components
 import Footer from "../components/Footer";
-
-import { notoSans, notoSansDisplay } from "../lib/fonts";
-
-import { home as copy } from "../lib/copy";
 import Meta from "../components/Meta";
 import Favicon from "../components/Favicon";
 import { WBLogo } from "../components/Graphics";
@@ -54,26 +52,28 @@ export default function Home() {
 
       <div className={styles.main}>
         {/* HERO SECTION */}
-        <div className={styles.hero_art}></div>
-        <div className={`container ${styles.hero}`}>
-          <div>
-            <WBLogo className={`${styles.hero_logo}`} />
-          </div>
-          <div className={styles.hero_content}>
-            <div className={notoSans.className}>
-              <p className={`text-xl`}>Modern Digital Marketing</p>
-              <p className="text-lg">Make connections in the online space</p>
+        <div className={`${styles.hero}`}>
+          <div className={`container ${styles.hero__container}`}>
+            <div>
+              <WBLogo className={`${styles.hero_logo}`} />
             </div>
-            <a
-              onClick={(e) => {
-                document
-                  .getElementById("contact")
-                  .scrollIntoView({ behavior: "smooth" });
-              }}
-              className="btn btn-primary text-lg"
-            >
-              Contact Us
-            </a>
+            <div className={styles.hero_content}>
+              <div className={notoSans.className}>
+                <p>Modern Digital Marketing</p>
+                <p>Don&apos;t get looked over online</p>
+              </div>
+              <a
+                onClick={(e) => {
+                  e.preventDefault;
+                  document
+                    .getElementById("contact")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
+                className="btn btn-primary text-lg"
+              >
+                Contact Us
+              </a>
+            </div>
           </div>
         </div>
 
@@ -153,7 +153,9 @@ export default function Home() {
           </p>
         </div>
         <div className={`container ${styles.container}`} id="contact">
-          <h2 className={styles.heading}>Contact</h2>
+          <h2 className={`${styles.heading} ${notoSansDisplay.className}`}>
+            Contact
+          </h2>
           <p>
             Leave your information here and I&apos;ll reach out to schedule a
             free consultation within a few days.

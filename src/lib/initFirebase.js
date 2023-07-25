@@ -2,6 +2,7 @@
 // FIREBASE Import needed functions from the SDKs 
 import { initializeApp } from "firebase/app";
 import { getAnalytics, isSupported } from "firebase/analytics";
+import { getDatabase } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -30,9 +31,8 @@ const recaptchaKey = "6LcaiSchAAAAAGCbEDLOdj7055zB60p21wrgdg1T"
 // self.FIREBASE_APPCHECK_DEBUG_TOKEN = process.env.APPCHECK_DEBUG_TOKEN;
 // self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
 
-export default function initFirebase () {
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+
+ export const app = initializeApp(firebaseConfig);
   
   // Pass your reCAPTCHA v3 site key (public key) to activate(). Make sure this
   // key is the counterpart to the secret key you set in the Firebase console.
@@ -45,7 +45,8 @@ export default function initFirebase () {
   // });
   
   // Initialize Firebase if it is supported (not in Dev environment)
-  const analytics = isSupported().then(yes => yes ? getAnalytics(app) : null);
-  return app;
-}
+  export const analytics = isSupported().then(yes => yes ? getAnalytics(app) : null);
+
+  export const db = getDatabase(app);
+
 

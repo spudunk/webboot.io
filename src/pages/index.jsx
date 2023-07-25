@@ -38,7 +38,9 @@ function ServiceButton(props) {
   );
 }
 
-// index page main function
+// -----------------------------------------
+// ----- MAIN INDEX PAGE FUNCTION ----------
+// -----------------------------------------
 export default function Home() {
   const [productFilter, setProductFilter] = useState("design");
 
@@ -85,12 +87,12 @@ export default function Home() {
           <div className={styles.about__content}>
             <Image
               alt="Photo of Chris and Angel"
-              className={styles.photo}
+              className={styles.about__photo}
               src={photo}
               sizes="(max-width: 500px) 90vw, (max-width: 800px) 40vw, 25vw"
             />
 
-            <div className={styles.copy}>
+            <div className={styles.about__copy}>
               <p>
                 We are a digital marketing couple living in SW Washington, USA
                 building modern digital assets for businesses we are passionate
@@ -107,13 +109,15 @@ export default function Home() {
 
         {/* SERVICE SECTION */}
 
-        <div className={`container ${styles.services}`}>
-          <h2 className={`${styles.heading} ${notoSansDisplay.className}`}>
+        <div className={`container ${styles.service}`}>
+          <h2 className={`${notoSansDisplay.className}`}>
             Services
           </h2>
 
           <p>Building a website consists of several steps: </p>
-          <div className={styles.servicebuttons}>
+
+          {/* Create buttons to filter services */}
+          <div className={styles.service__buttons}>
             {copy.serviceButtons.map((b, i) => {
               return (
                 <ServiceButton
@@ -127,27 +131,30 @@ export default function Home() {
               );
             })}
           </div>
-
-          <div className={styles.servicedescription}>
+          
+          {/* Service Category Description paragraph */}
+          <div className={styles.service__description}>
             {copy.serviceDescriptions[productFilter]}
           </div>
 
-          <div className={styles.services__list}>
+          {/* Service Cards */}
+          <div className={styles.service__list}>
             {copy.services.map((s, i) => {
               if (s.type == productFilter) {
                 return (
-                  <div key={i} className={styles.service}>
+                  <div key={i} className={styles.service__card}>
                     <h3 className={`${notoSans.className}`}>{s.name}</h3>
                     <p>
                       <em>{s.price}</em>
                     </p>
                     <p>{s.description}</p>
-                    <p className={styles.servicetime}>{s.time || null}</p>
+                    <p className={styles.service__time}>{s.time || null}</p>
                   </div>
                 );
               }
             })}
           </div>
+
           <p className={styles.footnote}>
             Additional pricing and plans available. Contact us for details.
           </p>

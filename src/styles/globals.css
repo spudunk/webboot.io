@@ -2,6 +2,7 @@
   --color-background: #121212;
   --color-text: #eff5f1;
   --color-primary: #ad19cb;
+  --color-secondary: #7EC528;
   --hero-background: #121212;
   --hero-text: #eff5f1;
   --hero-stripe-color: #29152d;
@@ -41,7 +42,6 @@ body {
 }
 
 html {
-  font-size: 62.5%;
   padding: 0;
   margin: 0;
 }
@@ -49,7 +49,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Noto Serif", serif;
-  font-size: 1.6rem;
+
 }
 p {
   margin: 0;
@@ -59,6 +59,25 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.wiggle {
+  animation: leHorizontalShake 100ms linear 0ms 1;
+}
+@keyframes leHorizontalShake {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  25% {
+    transform: translateY(-5px);
+  }
+
+  75% {
+    transform: translateY(5px);
+  }
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -72,6 +91,6 @@ a {
 }
 @media (min-width: 800px) {
   html {
-    font-size: 80%;
+    font-size: 110%;
   }
 }

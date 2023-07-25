@@ -1,10 +1,9 @@
-import styles from "../styles/Contact.module.css";
+import styles from "../styles/Contact.module.scss";
 import { useState } from "react";
 import { db } from "../lib/initFirebase";
 import { ref, push } from "firebase/database";
 
 export default function Contact() {
-
   const initialFormData = {
     email: "",
     name: "",
@@ -46,75 +45,68 @@ export default function Contact() {
   };
 
   return (
-    <div className={styles.content}>
-      <form action="" className={styles.form}>
-        <div className={styles.formitem}>
-          <label htmlFor="email">
-            Email
-            <input
-              onChange={handleChange}
-              name="email"
-              type="email"
-              value={formData.email}
-            />
-          </label>
-        </div>
-        <div className={styles.formitem}>
-          <label htmlFor="name">
-            Name
-            <input
-              onChange={handleChange}
-              name="name"
-              type="text"
-              value={formData.name}
-            />
-          </label>
-        </div>
-        <div className={styles.formitem}>
-          <label htmlFor="phone">
-            Phone
-            <input
-              onChange={handleChange}
-              name="phone"
-              type="phone"
-              value={formData.phone}
-            />
-          </label>
-        </div>
-        <div className={styles.formitem}>
-          <label htmlFor="company">
-            Company
-            <input
-              onChange={handleChange}
-              name="company"
-              type="text"
-              value={formData.company}
-            />
-          </label>
-        </div>
-        <div className={styles.formitem}>
-          <label htmlFor="phone">
-            Location
-            <input
-              onChange={handleChange}
-              name="location"
-              type="text"
-              value={formData.location}
-            />
-          </label>
-        </div>
-        <button
-          className={`btn btn-primary ${styles.formbtn}`}
-          onClick={handleSubmit}
-        >
-          Submit
-        </button>
-        <div className={styles.formmsg}>
-          {submitting && <div>Submitting Form...</div>}
-          {submitted && <div>Form Submitted!</div>}
-          {error}
-        </div>
-      </form>
-    </div>
+    <form action="" className={styles.form}>
+      <label htmlFor="email" className={styles.formitem}>
+        Email
+        <input
+          onChange={handleChange}
+          name="email"
+          type="email"
+          value={formData.email}
+        />
+      </label>
+
+      <label htmlFor="name" className={styles.formitem}>
+        Name
+        <input
+          onChange={handleChange}
+          name="name"
+          type="text"
+          value={formData.name}
+        />
+      </label>
+
+      <label htmlFor="phone" className={styles.formitem}>
+        Phone
+        <input
+          onChange={handleChange}
+          name="phone"
+          type="phone"
+          value={formData.phone}
+        />
+      </label>
+
+      <label htmlFor="company" className={styles.formitem}>
+        Company
+        <input
+          onChange={handleChange}
+          name="company"
+          type="text"
+          value={formData.company}
+        />
+      </label>
+
+      <label htmlFor="phone" className={styles.formitem}>
+        Location
+        <input
+          onChange={handleChange}
+          name="location"
+          type="text"
+          value={formData.location}
+        />
+      </label>
+
+      <button
+        className={`btn btn-primary ${styles.formbtn}`}
+        onClick={handleSubmit}
+      >
+        Submit
+      </button>
+      <div className={styles.formmsg}>
+        {submitting && <div>Submitting Form...</div>}
+        {submitted && <div>Form Submitted!</div>}
+        {error}
+      </div>
+    </form>
   );
 }

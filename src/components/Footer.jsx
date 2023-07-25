@@ -1,6 +1,6 @@
 import Icon from "@mdi/react";
 import { mdiInstagram, mdiEmail, mdiPhone } from "@mdi/js";
-import styles from "../styles/Footer.module.css";
+import styles from "../styles/Footer.module.scss";
 const iconSize = "1.4em";
 
 export default function Footer() {
@@ -28,7 +28,7 @@ export default function Footer() {
             angelvictoriaallen
           </a>
         </div>
-        &copy;2022 webboot.io
+        &copy;2023 webboot.io
       </div>
     </footer>
   );

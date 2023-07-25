@@ -44,13 +44,13 @@ export const home = {
       description: "Basic SEO, Analytics Reports",
     },
     {
-      type: "social",
+      type: "promotion",
       name: "Advanced Social Media",
       price: "$900 / month",
       description: `24 posts per month (4 scheduled posts per week, 1 Reel per week, 1 extra per week)`,
     },
     {
-      type: "social",
+      type: "promotion",
       name: "Basic Social Media",
       price: "$200 / month",
       description: `8 posts per month (2 scheduled posts per week)`,
@@ -64,13 +64,13 @@ export const home = {
       "In the development phase I'll take the design and turn it into a fully function web app ready to deploy to the internet. This will be delivered as a git repo for convenient deployment and maintenance.",
     management:
       "After development your site will need to be deployed and managed. Our management services include everything you need to start driving traffic to your site and optimizing it so you can capture leads.",
-    social:
-      "Social media content is optional but can be a very effective way to create interest from potential customers and direct them to your website for conversion. It's common to use social media posts that link back to articles or content with lead capture forms at the bottom.",
+    promotion:
+      "Content creation for a blog or Social Media is optional but can be a very effective way to create interest from potential customers and direct them to your website for conversion. It's common to use social media posts that link back to articles or content with lead capture forms at the bottom.",
   },
   serviceButtons: [
-    { label: "Design", filter: "design" },
-    { label: "Development", filter: "development" },
-    { label: "Deployment and Managment", filter: "management" },
-    { label: "Social Media", filter: "social" },
+    { label: "1. Design", filter: "design" },
+    { label: "2. Development", filter: "development" },
+    { label: "3. Managment", filter: "management" },
+    { label: "4. Promotion", filter: "promotion" },
   ],
 };

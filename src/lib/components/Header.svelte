@@ -1,6 +1,6 @@
 <script>
 	import { Logo } from '$lib/components';
-	let y = 26;
+	let y = 0;
 </script>
 
 <svelte:window bind:scrollY={y} />

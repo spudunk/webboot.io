@@ -1,5 +1,5 @@
-// import adapter from '@sveltejs/adapter-auto';
-import adapter from 'svelte-adapter-bun';
+import adapter from '@sveltejs/adapter-auto';
+// import adapter from 'svelte-adapter-bun';
 import { preprocessMeltUI } from '@melt-ui/pp';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import sequence from 'svelte-sequential-preprocessor';

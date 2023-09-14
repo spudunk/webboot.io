@@ -25,7 +25,9 @@ export const sendEmail = (data) => {
     "From": data.from,
     "To": data.to,
     "Subject": data.subject,
-    "TextBody": data.textBody
+    // "HtmlBody": "<strong>Hello</strong> dear Postmark user.",
+    "TextBody": data.textBody,
+    "MessageStream": "outbound"
   });
   return
 }

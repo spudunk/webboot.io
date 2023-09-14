@@ -1,9 +1,4 @@
 // place files you want to import through the `$lib` alias in this folder.
-import { env } from "$env/dynamic/private";
-import postmark from "postmark";
-
-const token = env.PMKEY;
-const client = new postmark.ServerClient(token || "");
 
 /**
  * @typedef {Object} EmailData
@@ -20,14 +15,28 @@ const client = new postmark.ServerClient(token || "");
  * @returns 
  */
 export const sendEmail = async (data) => {
-  return await client.sendEmail({
-    "From": data.from,
-    "To": data.to,
-    "Subject": data.subject,
-    // "HtmlBody": "<strong>Hello</strong> dear Postmark user.",
-    "TextBody": data.textBody,
-    "MessageStream": "outbound"
+  return await fetch('https://api.mailchannels.net/tx/v1/send', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      personalizations: [
+        {
+          to: [{ email: data.to, name: '' }],
+        },
+      ],
+      from: {
+        email: data.from,
+        name: '',
+      },
+      subject: data.subject,
+      content: [
+        {
+          type: 'text/plain',
+          value: data.textBody,
+        },
+      ],
+    })
   });
 }
-
-

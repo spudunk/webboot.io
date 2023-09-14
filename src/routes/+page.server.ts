@@ -52,12 +52,12 @@ export const actions = {
         if (!res1.ok) {
             const json = await res1.json();
             console.error(res1, json)
-            return fail(res1.status, {error: json})
+            return fail(res1.status, {error: JSON.stringify(json)})
         }
         if (!res2.ok) {
             const json = await res2.json();
             console.error(res2, json)
-            return fail(res2.status, {error: json})
+            return fail(res2.status, {error: JSON.stringify(json)})
         } 
         return { success: true };
     },

@@ -1,11 +1,14 @@
-import adapter from '@sveltejs/adapter-auto';
+// import adapter from '@sveltejs/adapter-auto';
+import adapter from 'svelte-adapter-bun';
+import { preprocessMeltUI } from '@melt-ui/pp';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+import sequence from 'svelte-sequential-preprocessor';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
-	preprocess: vitePreprocess(),
+	preprocess: sequence([vitePreprocess(), preprocessMeltUI()]),
 
 	kit: {
 		// adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.

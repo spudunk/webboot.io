@@ -41,10 +41,9 @@ export const actions = {
             `tel: ${tel}\n` +
             `business: ${business}\n` +
             `website: ${website}`
-
         })
 
-        console.log(email, name, tel, business, website);
+        // console.log(email, name, tel, business, website);
 
         return { success: true };
 

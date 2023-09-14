@@ -1,4 +1,5 @@
 // place files you want to import through the `$lib` alias in this folder.
+import { DKIMKEY } from "$env/static/private";
 
 /**
  * @typedef {Object} EmailData
@@ -21,11 +22,12 @@ export const sendEmail = async (data) => {
       'content-type': 'application/json',
     },
     body: JSON.stringify({
-      personalizations: [
-        {
+      personalizations: [{
           to: [{ email: data.to, name: '' }],
-        },
-      ],
+          dkim_domain: "webboot.io",
+          dkim_selector: "dkim",
+          dkim_private_key: DKIMKEY
+        }],
       from: {
         email: data.from,
         name: '',

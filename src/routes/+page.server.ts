@@ -8,15 +8,15 @@ export const actions = {
         const data = await request.formData();
         const email = data.get('email')?.toString();
         const name = data.get('name')?.toString();
-        const tel = data.get('tel')?.toString();
-        const business = data.get('business')?.toString();
-        const website = data.get('website')?.toString();
+        // const tel = data.get('tel')?.toString();
+        // const business = data.get('business')?.toString();
+        // const website = data.get('website')?.toString();
 
         if (!email) {
-			return fail(400, { email, missing: true });
+			return fail(400, { email, emailMissing: true });
 		}
         if (!name) {
-            return fail(400, { name, missing: true });
+            return fail(400, { name, nameMissing: true });
         }
 
         const p1 = sendEmail({
@@ -31,29 +31,29 @@ export const actions = {
             `chris@webboot.io`
         })
 
-        const p2 = sendEmail({
-            to: 'chris@webboot.io',
-            from: 'forms@webboot.io',
-            subject: `New submission${business?` from ${business}`:''}`,
-            textBody: 
-            `email: ${email}\n` + 
-            `name: ${name}\n` +
-            `tel: ${tel}\n` +
-            `business: ${business}\n` +
-            `website: ${website}`
-        })
+        // const p2 = sendEmail({
+        //     to: 'chris@webboot.io',
+        //     from: 'forms@webboot.io',
+        //     subject: `New submission${business?` from ${business}`:''}`,
+        //     textBody: 
+        //     `email: ${email}\n` + 
+        //     `name: ${name}\n` +
+        //     `tel: ${tel}\n` +
+        //     `business: ${business}\n` +
+        //     `website: ${website}`
+        // })
 
         const res1 = await p1;
-        const res2 = await p2;
+        // const res2 = await p2;
 
         if (res1.ErrorCode) {
             console.error(res1)
-            return fail(res1.ErrorCode)
+            return fail(res1.ErrorCode, {error: res1})
         }
-        if (res2.ErrorCode) {
-            console.error(res2)
-            return fail(res2.ErrorCode)
-        } 
+        // if (res2.ErrorCode) {
+        //     console.error(res2)
+        //     return fail(res2.ErrorCode, {error: res2})
+        // } 
         return { success: true };
     },
 } satisfies Actions;

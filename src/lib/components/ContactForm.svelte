@@ -2,6 +2,7 @@
 	import { Phone, Mail, User, Building, Link2 } from 'lucide-svelte';
 	import type { ActionData } from '../../routes/$types';
 	import { enhance } from '$app/forms';
+	import { error } from '@sveltejs/kit';
 
 	export let form: ActionData;
 
@@ -15,11 +16,13 @@
 	on:submit={(e) => e.preventDefault}
 	class="flex flex-col gap-2 w-full"
 >
-	{#if form?.missing}<p class="error">The email field is required</p>{/if}
+	{#if form?.emailMissing}<p class="text-red-600">The email field is required</p>{/if}
+	{#if form?.nameMissing}<p class="text-red-600">The name field is required</p>{/if}
+	{#if form?.error}<p class="text-red-600">{form.error}</p>{/if}
 	{#if form?.success}
 		<!-- this message is ephemeral; it exists because the page was rendered in
            response to a form submission. it will vanish if the user reloads -->
-		<p>Successfully submitted!</p>
+		<p class="text-green-600">Successfully submitted!</p>
 	{/if}
 	<label for="email" class="flex gap-4">
 		<div class="h-8 w-8">

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Header, Footer, ContactForm, Hero, ServiceCard } from '$lib/components';
+	import { Header, Footer, ContactForm, Hero, ServiceCard, SEO } from '$lib/components';
 	import { Gauge, Brush } from 'lucide-svelte';
 	import { Skull } from 'lucide-svelte';
 
@@ -7,6 +7,14 @@
 
 	export let form: ActionData;
 </script>
+
+<svelte:head>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+	<link rel="manifest" href="/site.webmanifest" />
+	<SEO />
+</svelte:head>
 
 <Header class="bg-cyan-900/[.90] fixed z-10 top-0 left-0 w-full" />
 

@@ -4,5 +4,6 @@ import Logo from './Logo.svelte';
 import ContactForm from './ContactForm.svelte';
 import Hero from './Hero.svelte';
 import ServiceCard from './ServiceCard.svelte';
+import SEO from './SEO.svelte'
 
-export { Header, Footer, Logo, ContactForm, Hero, ServiceCard };
+export { Header, Footer, Logo, ContactForm, Hero, ServiceCard, SEO };

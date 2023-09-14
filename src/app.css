@@ -7,3 +7,9 @@
 		font-family: 'Nunito Variable', sans-serif;
 	}
 }
+
+@layer components {
+	.text-wrap-balance {
+		text-wrap: balance;
+	}
+}

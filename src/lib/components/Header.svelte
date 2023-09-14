@@ -1,17 +1,13 @@
 <script>
 	import { Logo } from '$lib/components';
-	import { onMount } from 'svelte';
 	let y = 26;
-	$: atTop = y > 25;
-	onMount(() => {});
 </script>
 
 <svelte:window bind:scrollY={y} />
 
 <header
-	class={`${$$props.class} h-12 ${
-		atTop ? 'h-12' : 'h-12 sm:h-24'
-	} py-1 transition-all duration-200`}
+	class={`${$$props.class} h-12 py-1 transition-all duration-200 \
+	${y > 25 ? 'h-12' : 'h-16 sm:h-24'}`}
 >
 	<div class="container h-full flex flex-wrap items-center justify-between">
 		<Logo class="text-cyan-300 h-full" />

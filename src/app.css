@@ -8,7 +8,7 @@
 	}
 }
 
-@layer components {
+@layer utilities {
 	.text-wrap-balance {
 		text-wrap: balance;
 	}

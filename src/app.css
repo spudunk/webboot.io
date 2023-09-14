@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		font-family: 'Nunito Variable', sans-serif;
+	}
+}
+
+@layer utilities {
+	.text-wrap-balance {
+		text-wrap: balance;
+	}
+}

@@ -19,7 +19,7 @@ export const actions = {
             return fail(400, { name, missing: true });
         }
 
-        sendEmail({
+        const p1 = sendEmail({
             to: email,
             from: 'chris@webboot.io',
             subject: 'Thanks for contacting webboot.io!',
@@ -29,9 +29,9 @@ export const actions = {
             `Christopher Hicks\n` +
             `(360) 827-2736\n` +
             `chris@webboot.io`
-        });
+        })
 
-        sendEmail({
+        const p2 = sendEmail({
             to: 'chris@webboot.io',
             from: 'forms@webboot.io',
             subject: `New submission${business?` from ${business}`:''}`,
@@ -43,9 +43,17 @@ export const actions = {
             `website: ${website}`
         })
 
-        // console.log(email, name, tel, business, website);
+        const res1 = await p1;
+        const res2 = await p2;
 
+        if (res1.ErrorCode) {
+            console.error(res1)
+            return fail(res1.ErrorCode)
+        }
+        if (res2.ErrorCode) {
+            console.error(res2)
+            return fail(res2.ErrorCode)
+        } 
         return { success: true };
-
     },
 } satisfies Actions;

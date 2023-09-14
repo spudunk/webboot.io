@@ -19,8 +19,8 @@ const client = new postmark.ServerClient(token || "");
  * @param {EmailData} data 
  * @returns 
  */
-export const sendEmail = (data) => {
-  const msg = client.sendEmail({
+export const sendEmail = async (data) => {
+  return await client.sendEmail({
     "From": data.from,
     "To": data.to,
     "Subject": data.subject,
@@ -28,8 +28,6 @@ export const sendEmail = (data) => {
     "TextBody": data.textBody,
     "MessageStream": "outbound"
   });
-  console.log(msg);
-  return msg;
 }
 
 

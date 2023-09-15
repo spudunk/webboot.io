@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { Header, Footer, ContactForm, Hero, ServiceCard, SEO } from '$lib/components';
 	import { Gauge, Brush, Skull } from 'lucide-svelte';
-
 	import type { ActionData } from './$types';
-
 	export let form: ActionData;
 </script>
 

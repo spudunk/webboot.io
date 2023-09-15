@@ -136,7 +136,7 @@
 			share your information or send spam.
 		</p>
 
-		<div class="mt-6 md:ml-6 md:w-2/3 lg:w-1/2 text-lg">
+		<div class="mt-2 md:ml-6 md:w-2/3 lg:w-1/2 text-lg">
 			<ContactForm {form} />
 		</div>
 	</section>

@@ -20,45 +20,50 @@ export const actions = {
             return fail(400, { name, nameMissing: true });
         }
 
+        try {
+            const p1 = sendEmail({
+                to: email,
+                from: 'chris@webboot.io',
+                subject: 'Thanks for contacting webboot.io!',
+                textBody: 
+                `Hi ${name}, I'll reach out within a few days to discuss your project.` + 
+                `If you need immediate assistance please call my cell.\n\n` +
+                `Christopher Hicks\n` +
+                `(360) 827-2736\n` +
+                `chris@webboot.io`
+            })
+    
+            const p2 = sendEmail({
+                to: 'chris@webboot.io',
+                from: 'forms@webboot.io',
+                subject: `New submission${business?` from ${business}`:''}`,
+                textBody: 
+                `email: ${email}\n` + 
+                `name: ${name}\n` +
+                `tel: ${tel}\n` +
+                `business: ${business}\n` +
+                `website: ${website}`
+            })
+            
+            // wait for both emails
+            const res1 = await p1;
+            const res2 = await p2;
+            
+            if (!res1.ok) {
+                const json = await res1.json();
+                console.error(res1, json)
+                return fail(res1.status, {error: JSON.stringify(json)})
+            }
+            if (!res2.ok) {
+                const json = await res2.json();
+                console.error(res2, json)
+                return fail(res2.status, {error: JSON.stringify(json)})
+            } 
+            return { success: true };
 
-        const p1 = sendEmail({
-            to: email,
-            from: 'chris@webboot.io',
-            subject: 'Thanks for contacting webboot.io!',
-            textBody: 
-            `Hi ${name}, I'll reach out within a few days to discuss your project.` + 
-            `If you need immediate assistance please call my cell.\n\n` +
-            `Christopher Hicks\n` +
-            `(360) 827-2736\n` +
-            `chris@webboot.io`
-        })
-
-        const p2 = sendEmail({
-            to: 'chris@webboot.io',
-            from: 'forms@webboot.io',
-            subject: `New submission${business?` from ${business}`:''}`,
-            textBody: 
-            `email: ${email}\n` + 
-            `name: ${name}\n` +
-            `tel: ${tel}\n` +
-            `business: ${business}\n` +
-            `website: ${website}`
-        })
-
-        // wait for both emails
-        const res1 = await p1;
-        const res2 = await p2;
-
-        if (!res1.ok) {
-            const json = await res1.json();
-            console.error(res1, json)
-            return fail(res1.status, {error: JSON.stringify(json)})
+        } catch (err) {
+            console.error(err);
+            return fail(500, {error: "500: Network Error"});
         }
-        if (!res2.ok) {
-            const json = await res2.json();
-            console.error(res2, json)
-            return fail(res2.status, {error: JSON.stringify(json)})
-        } 
-        return { success: true };
     },
 } satisfies Actions;

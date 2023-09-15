@@ -2,11 +2,8 @@
 	import { Phone, Mail, User, Building, Link2 } from 'lucide-svelte';
 	import type { ActionData } from '../../routes/$types';
 	import { enhance } from '$app/forms';
-	import { error } from '@sveltejs/kit';
-
+	// import { error } from '@sveltejs/kit';
 	export let form: ActionData;
-
-
 </script>
 
 <form

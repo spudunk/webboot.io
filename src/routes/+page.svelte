@@ -32,8 +32,7 @@
 	<section class="container mt-20" id="services">
 		<h2 class="">How We Work</h2>
 		<p class="text-xl mt-4">
-			Our process makes building your online presence as smooth as possible. For questions why we
-			operate this way feel free to reach out.
+			Our process makes building your online presence as smooth as possible. For questions about our process feel free to reach out.
 		</p>
 		<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
 			<ServiceCard heading="Web Success Guide" num="1">

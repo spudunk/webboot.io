@@ -13,14 +13,17 @@
 	on:submit={(e) => e.preventDefault}
 	class="flex flex-col gap-2 w-full"
 >
-	{#if form?.emailMissing}<p class="text-red-600">The email field is required</p>{/if}
-	{#if form?.nameMissing}<p class="text-red-600">The name field is required</p>{/if}
-	{#if form?.error}<p class="text-red-600">{form.error}</p>{/if}
-	{#if form?.success}
-		<!-- this message is ephemeral; it exists because the page was rendered in
-           response to a form submission. it will vanish if the user reloads -->
-		<p class="text-green-600">Successfully submitted!</p>
-	{/if}
+	<div class="min-h-4">
+		{#if form?.emailMissing}<p class="text-red-600">The email field is required</p>{/if}
+		{#if form?.nameMissing}<p class="text-red-600">The name field is required</p>{/if}
+		{#if form?.error}<p class="text-red-600">{form.error}</p>{/if}
+		{#if form?.success}
+			<!-- this message is ephemeral; it exists because the page was rendered in
+						 response to a form submission. it will vanish if the user reloads -->
+			<p class="text-green-600">Successfully submitted!</p>
+		{/if}
+		&nbsp;
+	</div>
 	<label for="email" class="flex gap-4">
 		<div class="h-8 w-8">
 			<Mail class="h-8 w-8 text-cyan-700" />

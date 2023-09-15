@@ -6,13 +6,8 @@
 	export let form: ActionData;
 </script>
 
-<form
-	use:enhance
-	method="POST"
-	id="contactForm"
-	class="flex flex-col gap-2 w-full"
->
-	<div class="min-h-4">
+<form use:enhance method="POST" id="contactForm" class="flex flex-col gap-2 w-full">
+	<div class="min-h-[1.75rem]">
 		{#if form?.emailMissing}<p class="text-red-600">The email field is required</p>{/if}
 		{#if form?.nameMissing}<p class="text-red-600">The name field is required</p>{/if}
 		{#if form?.error}<p class="text-red-600">{form.error}</p>{/if}
@@ -21,7 +16,6 @@
 						 response to a form submission. it will vanish if the user reloads -->
 			<p class="text-green-600">Successfully submitted!</p>
 		{/if}
-		&nbsp;
 	</div>
 	<label for="email" class="flex gap-4">
 		<div class="h-8 w-8">

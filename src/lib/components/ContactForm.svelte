@@ -10,7 +10,6 @@
 	use:enhance
 	method="POST"
 	id="contactForm"
-	on:submit={(e) => e.preventDefault}
 	class="flex flex-col gap-2 w-full"
 >
 	<div class="min-h-4">

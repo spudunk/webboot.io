@@ -15,8 +15,8 @@ import { DKIMKEY } from "$env/static/private";
  * @param {EmailData} data 
  * @returns 
  */
-export const sendEmail = async (data) => {
-  return await fetch('https://api.mailchannels.net/tx/v1/send', {
+export const sendEmail = (data) => {
+  return fetch('https://api.mailchannels.net/tx/v1/send', {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
@@ -40,5 +40,5 @@ export const sendEmail = async (data) => {
         },
       ],
     })
-  });
+  })
 }

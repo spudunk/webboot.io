@@ -13,7 +13,7 @@
 	<SEO />
 </svelte:head>
 
-<Header class="bg-cyan-900/[.90] fixed z-10 top-0 left-0 w-full" />
+<Header expand class="bg-cyan-900/[.90] fixed z-10 top-0 left-0 w-full" />
 
 <main>
 	<Hero />

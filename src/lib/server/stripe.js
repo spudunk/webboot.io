@@ -9,5 +9,6 @@ export const stripe = new Stripe(
 	STRIPEAPIKEY,
 	{
 		apiVersion: '2023-08-16',
+		httpClient: Stripe.createFetchHttpClient(),
 	}
 );

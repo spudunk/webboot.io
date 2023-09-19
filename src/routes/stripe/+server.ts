@@ -5,8 +5,9 @@ import { sendEmail } from '$lib';
 import { stripe, endpointSecret, webCrypto } from '$lib/server/stripe';
 
 const fulfillOrder = async (session) => {
+	console.log('getting expanded session with line items')
 	const sessionExpanded = await stripe.checkout.sessions.retrieve(session.id, {
-		expand: ['line_items', 'customer']
+		expand: ['line_items']
 	});
 
 	const email = session.customer_details.email || ''; 

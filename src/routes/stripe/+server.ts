@@ -9,12 +9,15 @@ import type Stripe from 'stripe';
 const fulfillOrder = async (session: Stripe.Checkout.Session) => {
 	const email = session.customer_details?.email || '';
 	console.log('Customer Email: ', email);
-	console.log('getting expanded session with line items');
+	console.log('getting expanded session with line items...');
 	let lineItems;
 
 	// not getting cloudflare workers to execute beyond this point
 	try {
 		lineItems = await stripe.checkout.sessions.listLineItems(session.id);
+		// second way to get line_items
+		// const session2 = await stripe.checkout.sessions.retrieve(session, { expand: ['line_items'] });
+		// const lineItems2 = session2.line_items
 		console.log('lineItems: ', lineItems);
 	} catch (err) {
 		console.error('Error retrieving expanded session: \n', err);

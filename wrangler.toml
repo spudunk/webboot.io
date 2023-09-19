@@ -1,0 +1,10 @@
+name = "webboot-io"
+main = "./.svelte-kit/cloudflare/_worker.js"
+compatibility_date = "2022-06-30"
+
+account_id = "b4ef1aa0fe0e6bff020837c47b6f41bf" # ← Replace with your Account ID.
+workers_dev = true
+
+[[r2_buckets]]
+binding = 'R2' # <~ valid JavaScript variable name
+bucket_name = 'guide'

@@ -9,9 +9,10 @@ const fulfillOrder = async (session) => {
 		expand: ['line_items', 'customer']
 	});
 
-	const email = sessionExpanded.customer?.email || ''; 
+	const email = session.customer_details.email || ''; 
 	const lineItems = sessionExpanded.line_items;
-	// console.log('Line Items: \n', lineItems);
+	console.log('Line Item 0', lineItems?.data[0]);
+	console.log('Customer Email: ', email)
 
 	if(lineItems?.data[0].description == 'web success guide') {
 		const p = sendEmail({
@@ -65,6 +66,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		case 'checkout.session.completed': {
 			const session = event.data.object;
 			if (session.payment_status === 'paid') {
+				console.log("paid, fulfilling order")
 				fulfillOrder(session);
 			}
 			break;
@@ -72,6 +74,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		case 'checkout.session.async_payment_succeeded': {
 			const session = event.data.object;
 			// Fulfill the purchase...
+			console.log("async paid, fulfilling order")
 			fulfillOrder(session);
 			break;
 		}

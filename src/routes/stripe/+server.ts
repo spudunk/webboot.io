@@ -1,7 +1,7 @@
 // import type { RequestHandler } from './$types';
 import { json, text } from '@sveltejs/kit';
 import { sendEmail } from '$lib';
-import { stripe, endpointSecret, webCrypto } from '$lib/server/stripe';
+import { stripe, endpointSecret, webCrypto, listLineItems } from '$lib/server/stripe';
 
 import type { RequestHandler } from './$types';
 import type Stripe from 'stripe';
@@ -9,22 +9,30 @@ import type Stripe from 'stripe';
 const fulfillOrder = async (session: Stripe.Checkout.Session) => {
 	const email = session.customer_details?.email || '';
 	console.log('Customer Email: ', email);
+	console.log('Session ID: ', session.id);
 	console.log('getting expanded session with line items...');
 	let lineItems;
+	let lineItem;
 
 	// not getting cloudflare workers to execute beyond this point
 	try {
-		lineItems = await stripe.checkout.sessions.listLineItems(session.id);
+		const r = await listLineItems(session.id);
+		if(r.status === 200) {
+			lineItems = await r.json();
+		} else {
+			console.error(`API Fetch Error: ${r.status}: ${r.statusText}`);
+		}
+		// lineItems = await stripe.checkout.sessions.listLineItems(session.id);
 		// second way to get line_items
 		// const session2 = await stripe.checkout.sessions.retrieve(session.id, { expand: ['line_items'] });
 		// const lineItems2 = session2.line_items
 		console.log('lineItems: ', lineItems);
+		lineItem = lineItems?.data[0];
+		console.log('Line Item 0: \n', lineItem);
 	} catch (err) {
 		console.error('Error retrieving expanded session: \n', err);
 	}
 
-	const lineItem = lineItems?.data[0];
-	console.log('Line Item 0: \n', lineItem);
 
 	if (lineItem?.description == 'web success guide') {
 		const p = sendEmail({
@@ -46,6 +54,7 @@ const fulfillOrder = async (session: Stripe.Checkout.Session) => {
 };
 
 const emailCustomerAboutFailedPayment = async (session: Stripe.Checkout.Session) => {
+	console.log("todo: send failed payment email");
 	return session.id;
 };
 

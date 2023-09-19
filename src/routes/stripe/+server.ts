@@ -46,7 +46,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	console.log("event before validation:\n", event);
 
 	try {
-		event = stripe.webhooks.constructEventAsync(body, sig, endpointSecret, undefined, webCrypto);
+		event = await stripe.webhooks.constructEventAsync(body, sig, endpointSecret, undefined, webCrypto);
 		// console.log("Stripe Event Validated", event.id)
 	} catch (err) {
 		console.error(`Webhook Error: ${err}`);

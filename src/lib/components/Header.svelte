@@ -12,7 +12,7 @@
 >
 	<div class="container h-full flex flex-wrap items-center justify-between">
 		<Logo class="text-cyan-300 h-full" />
-		<!-- <span>{'' + Math.floor(y) + expand}</span> -->
+		<!-- <span>{`scrollY=${Math.floor(y)} expand=${expand}`}</span> -->
 		<a
 			href="https://buy.stripe.com/test_fZe2a3dh85k68uc7ss"
 			class="bg-amber-600 opacity-100 text-white text-lg font-semibold px-4 py-1 rounded"

@@ -2,7 +2,7 @@
 import { text } from '@sveltejs/kit';
 import { sendEmail } from '$lib';
 
-import { stripe, endpointSecret } from '$lib/server/stripe';
+import { stripe, endpointSecret, webCrypto } from '$lib/server/stripe';
 
 const fulfillOrder = async (session) => {
 	const sessionExpanded = await stripe.checkout.sessions.retrieve(session.id, {
@@ -46,7 +46,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	// console.log("event before validation:\n", event);
 
 	try {
-		event = stripe.webhooks.constructEvent(body, sig, endpointSecret);
+		event = stripe.webhooks.constructEventAsync(body, sig, endpointSecret, undefined, webCrypto);
 		// console.log("Stripe Event Validated", event.id)
 	} catch (err) {
 		console.error(`Webhook Error: ${err}`);

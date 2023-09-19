@@ -16,6 +16,7 @@ const fulfillOrder = async (session: Stripe.Checkout.Session) => {
 		sessionExpanded = await stripe.checkout.sessions.retrieve(session.id, {
 			expand: ['line_items']
 		});
+		console.log("sessionExpanded: \n", sessionExpanded)
 	} catch (err) {
 		console.error('Error retrieving expanded session: \n', err);
 	}
@@ -79,20 +80,21 @@ export const POST: RequestHandler = async ({ request }) => {
 		case 'checkout.session.completed': {
 			const session = event.data.object;
 			if (session.payment_status === 'paid') {
-				console.log('paid, fulfilling order');
+				console.log('checkout.session.completed paid, fulfilling order');
 				fulfillOrder(session);
 			}
 			break;
 		}
 		case 'checkout.session.async_payment_succeeded': {
 			const session = event.data.object;
+			console.log('checkout.session.async paid, fulfilling order');
 			// Fulfill the purchase...
-			console.log('async paid, fulfilling order');
 			fulfillOrder(session);
 			break;
 		}
 		case 'checkout.session.async_payment_failed': {
 			const session = event.data.object;
+			console.log("checkout.session.async failed, emailing notice")
 			// Send an email to the customer asking them to retry their order
 			emailCustomerAboutFailedPayment(session);
 
@@ -101,7 +103,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
 		default:
 			// Unexpected event type
-			console.log(`Unhandled event type ${event.type}.\n`);
+			console.log(`Unhandled event type: ${event.type}.\n`);
 	}
 
 	// console.log(event);

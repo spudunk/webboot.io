@@ -1,31 +1,29 @@
 // import type { RequestHandler } from './$types';
 import { text } from '@sveltejs/kit';
 import { sendEmail } from '$lib';
-
 import { stripe, endpointSecret, webCrypto } from '$lib/server/stripe';
+
 import type { RequestHandler } from './$types';
 import type Stripe from 'stripe';
 
 const fulfillOrder = async (session: Stripe.Checkout.Session) => {
-	console.log('getting expanded session with line items');
-	let sessionExpanded;
 	const email = session.customer_details?.email || '';
 	console.log('Customer Email: ', email);
-
+	
+	console.log('getting expanded session with line items');
+	let lineItems;
 	try {
-		sessionExpanded = await stripe.checkout.sessions.retrieve(session.id, {
-			expand: ['line_items']
-		});
-		console.log("sessionExpanded: \n", sessionExpanded)
+		lineItems = await stripe.checkout.sessions.listLineItems(session.id);
+		console.log("lineItems: ", lineItems)
 	} catch (err) {
 		console.error('Error retrieving expanded session: \n', err);
 	}
 
-	const lineItems = (sessionExpanded as Stripe.Checkout.Session).line_items;
-	console.log('Line Item 0: \n', lineItems?.data[0]);
+	const lineItem = lineItems?.data[0];
+	console.log('Line Item 0: \n', lineItem);
 
-	if (lineItems?.data[0].description == 'web success guide') {
-		const p = sendEmail({
+	if (lineItem?.description == 'web success guide') {
+	const p = sendEmail({
 			to: email,
 			from: 'chris@webboot.io',
 			subject: 'Your link to Web Success Guide',

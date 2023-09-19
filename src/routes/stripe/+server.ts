@@ -16,7 +16,7 @@ const fulfillOrder = async (session: Stripe.Checkout.Session) => {
 	try {
 		lineItems = await stripe.checkout.sessions.listLineItems(session.id);
 		// second way to get line_items
-		// const session2 = await stripe.checkout.sessions.retrieve(session, { expand: ['line_items'] });
+		// const session2 = await stripe.checkout.sessions.retrieve(session.id, { expand: ['line_items'] });
 		// const lineItems2 = session2.line_items
 		console.log('lineItems: ', lineItems);
 	} catch (err) {

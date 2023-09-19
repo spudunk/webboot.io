@@ -43,7 +43,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	let event = JSON.parse(body);
 	const sig = request.headers.get('stripe-signature') ?? '';
 
-	// console.log("event before validation:\n", event);
+	console.log("event before validation:\n", event);
 
 	try {
 		event = stripe.webhooks.constructEventAsync(body, sig, endpointSecret, undefined, webCrypto);
@@ -52,7 +52,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		console.error(`Webhook Error: ${err}`);
 		return text(`Webhook Error: ${err}`, { status: 400 });
 	}
-	// console.log("event after validation:\n", event);
+	console.log("event after validation:\n", event);
 
 	// Handle the event
 	switch (event.type) {

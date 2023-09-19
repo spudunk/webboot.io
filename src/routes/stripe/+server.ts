@@ -1,5 +1,5 @@
 // import type { RequestHandler } from './$types';
-import { text } from '@sveltejs/kit';
+import { json, text } from '@sveltejs/kit';
 import { sendEmail } from '$lib';
 import { stripe, endpointSecret, webCrypto } from '$lib/server/stripe';
 
@@ -9,12 +9,13 @@ import type Stripe from 'stripe';
 const fulfillOrder = async (session: Stripe.Checkout.Session) => {
 	const email = session.customer_details?.email || '';
 	console.log('Customer Email: ', email);
-	
 	console.log('getting expanded session with line items');
 	let lineItems;
+
+	// not getting cloudflare workers to execute beyond this point
 	try {
 		lineItems = await stripe.checkout.sessions.listLineItems(session.id);
-		console.log("lineItems: ", lineItems)
+		console.log('lineItems: ', lineItems);
 	} catch (err) {
 		console.error('Error retrieving expanded session: \n', err);
 	}
@@ -23,7 +24,7 @@ const fulfillOrder = async (session: Stripe.Checkout.Session) => {
 	console.log('Line Item 0: \n', lineItem);
 
 	if (lineItem?.description == 'web success guide') {
-	const p = sendEmail({
+		const p = sendEmail({
 			to: email,
 			from: 'chris@webboot.io',
 			subject: 'Your link to Web Success Guide',
@@ -69,12 +70,6 @@ export const POST: RequestHandler = async ({ request }) => {
 
 	// Handle the event
 	switch (event.type) {
-		// case 'charge.succeeded':
-		// 	const chargeSucceeded = event.data.object;
-		// 	console.log(`Charge for ${chargeSucceeded.amount} was successful!\n`);
-		// 	handleChargeSucceeded(chargeSucceeded);
-		// 	break;
-
 		case 'checkout.session.completed': {
 			const session = event.data.object;
 			if (session.payment_status === 'paid') {
@@ -92,21 +87,21 @@ export const POST: RequestHandler = async ({ request }) => {
 		}
 		case 'checkout.session.async_payment_failed': {
 			const session = event.data.object;
-			console.log("checkout.session.async failed, emailing notice")
+			console.log('checkout.session.async failed, emailing notice');
 			// Send an email to the customer asking them to retry their order
 			emailCustomerAboutFailedPayment(session);
-
 			break;
 		}
-
 		default:
 			// Unexpected event type
 			console.log(`Unhandled event type: ${event.type}.\n`);
 	}
 
 	// console.log(event);
-
-	return text('', {
-		status: 200
-	});
+	return json(
+		{ received: true },
+		{
+			status: 200
+		}
+	);
 };

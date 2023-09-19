@@ -3,11 +3,13 @@ import { text } from '@sveltejs/kit';
 import { sendEmail } from '$lib';
 
 import { stripe, endpointSecret, webCrypto } from '$lib/server/stripe';
+import type { RequestHandler } from './$types';
+import type Stripe from 'stripe';
 
-const fulfillOrder = async (session) => {
+const fulfillOrder = async (session: Stripe.Checkout.Session) => {
 	console.log('getting expanded session with line items');
 	let sessionExpanded;
-	const email = session.customer_details.email || '';
+	const email = session.customer_details?.email || '';
 	console.log('Customer Email: ', email);
 
 	try {
@@ -18,7 +20,7 @@ const fulfillOrder = async (session) => {
 		console.error('Error retrieving expanded session: \n', err);
 	}
 
-	const lineItems = sessionExpanded.line_items;
+	const lineItems = (sessionExpanded as Stripe.Checkout.Session).line_items;
 	console.log('Line Item 0: \n', lineItems?.data[0]);
 
 	if (lineItems?.data[0].description == 'web success guide') {
@@ -40,7 +42,7 @@ const fulfillOrder = async (session) => {
 	}
 };
 
-const emailCustomerAboutFailedPayment = async (session) => {
+const emailCustomerAboutFailedPayment = async (session: Stripe.Checkout.Session) => {
 	return session.id;
 };
 

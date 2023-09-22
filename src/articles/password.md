@@ -54,7 +54,7 @@ In this example I replace “not” with ! (the logical NOT operator in programm
 The characters you choose should be less intuitive to others to make it harder to reproduce for someone else. It won’t be too difficult to remember weird substitutions with some practice.
 
 
-Practice your new password while repeating the phrase in your head. The muscle memory associated with the words will engrave itself in your mind. 
+Practice typing your new password while repeating the phrase in your head. The muscle memory associated with the words will engrave itself in your mind. 
 
 ``I!”il2b1s^h,Bt^r@q<3``
 

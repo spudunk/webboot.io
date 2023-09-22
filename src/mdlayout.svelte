@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-	<SEO title={`webboot.io - ${title}`} {description} url={$page.url.href} type="article" {...att} />
+	<SEO title={`${title} - webboot.io`} {description} url={$page.url.href} type="article" {...att} />
 </svelte:head>
 
 <article class="max-w-prose">

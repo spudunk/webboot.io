@@ -8,8 +8,10 @@
 	}
 }
 
+/*! purgecss start ignore */
 @layer utilities {
 	.text-wrap-balance {
 		text-wrap: balance;
 	}
 }
+/*! purgecss end ignore */

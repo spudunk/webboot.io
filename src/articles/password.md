@@ -36,13 +36,18 @@ Start with a phrase that’s at least 12 words. Pick one that’s unique and mem
 Replace the words with characters, letters, numbers, or whatever is memorable to you. Use abbreviations for words without a memorable replacement. Try to use at least 1 symbol and number. 
 
 ```
-I’m not saying I’d like to build a summer home here, 
-I   !   “      i   l    2  b     1 s      ^    h   ,
+I’m not saying I’d like 
+I   !   “      i   l    
 
-but the trees are actually quite lovely
-B   t   ^     r   @        q     <3
+to build a summer home here, 
+2  b     1 s      ^    h   ,
+
+but the trees are 
+B   t   ^     r   
+
+actually quite lovely
+@        q      <3
 ```
-
 
 In this example I replace “not” with ! (the logical NOT operator in programming)
 “Home” and “trees” I replace with ^ because of the shape. 

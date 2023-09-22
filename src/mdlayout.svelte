@@ -50,7 +50,7 @@
       @apply text-2xl font-bold inline-block mt-8;
     }
     code {
-      @apply whitespace-break-spaces;
+      @apply text-sm sm:text-base md:text-lg whitespace-break-spaces;
     }
   </style>
 </article>

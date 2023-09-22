@@ -49,3 +49,4 @@
   </style>
 </article>
 
+<a href="/articles" class="inline-block py-4 text-blue-500 "> &larr; Back to Articles</a>

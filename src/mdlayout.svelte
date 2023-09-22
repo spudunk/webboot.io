@@ -27,7 +27,7 @@
 	<p class="mt-2">Date: <i>{date}</i></p>
 	<p class="">By: {author}</p>
 
-	<div class="mt-4 md:text-lg lg:text-xl space-y-3">
+	<div class="mt-4 md:text-lg lg:text-xl ">
 		<slot />
 	</div>
 
@@ -44,7 +44,13 @@
     }
 
     p {
-      @apply leading-7;
+      @apply leading-7 mt-2;
+    }
+    h2 {
+      @apply text-2xl font-bold inline-block mt-8;
+    }
+    code {
+      @apply whitespace-break-spaces;
     }
   </style>
 </article>

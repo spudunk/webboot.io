@@ -1,7 +1,10 @@
 <script>
+	import { SEO } from '$lib/components';
 	import { fetchMarkdownPosts } from '$lib/index';
 	const posts = fetchMarkdownPosts();
 </script>
+
+<SEO title="Articles - webboot.io" description="Index of all the articles on webboot.io" url="https://webboot.io/articles"  />
 
 <h1 class="text-4xl font-bold">Articles</h1>
 <ul class="mt-8 divide-y">

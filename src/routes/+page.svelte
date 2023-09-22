@@ -5,9 +5,9 @@
 	export let form: ActionData;
 </script>
 
-<svelte:head>
-	<SEO />
-</svelte:head>
+
+<SEO />
+
 
 <Hero />
 

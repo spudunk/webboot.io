@@ -37,7 +37,7 @@ Replace the words with characters, letters, numbers, or whatever is memorable to
 
 ```
 I’m not saying I’d like 
-I   !   “      i   l    
+I   !   “      I   l    
 
 to build a summer home here, 
 2  b     1 s      ^    h   ,
@@ -51,12 +51,12 @@ actually quite lovely
 
 In this example I replace “not” with ! (the logical NOT operator in programming)
 “Home” and “trees” I replace with ^ because of the shape. 
-The characters you choose should be less intuitive to others to make it harder to reproduce for someone else. It won’t be too difficult to remember weird substitutions with some practice.
+The characters you choose should be less intuitive to others to make it harder for someone else to reproduce. It won’t be too difficult to remember weird substitutions with some practice.
 
 
-Practice typing your new password while repeating the phrase in your head. The muscle memory associated with the words will engrave itself in your mind. 
+Practice typing your new password while repeating the phrase in your mind. The muscle memory associated with the words will engrave itself in your memory. 
 
-``I!”il2b1s^h,Bt^r@q<3``
+``I!”Il2b1s^h,Bt^r@q<3``
 
 
 If someone does look over your shoulder they’ll have a really hard time remembering it or understanding where it comes from (unless you say your phrase out loud while typing)

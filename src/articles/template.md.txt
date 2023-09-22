@@ -1,7 +1,7 @@
 ---
 title: 
 description: 
-date: August 11, 2023s
+date: August 11, 2023
 author: 
 canonical: 
 img: 

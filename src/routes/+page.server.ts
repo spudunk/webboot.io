@@ -1,6 +1,6 @@
 import type { Actions } from './$types';
 import { fail } from '@sveltejs/kit';
-import { sendEmail } from '$lib';
+import { sendEmail } from '$lib/server';
 
 export const actions = {
 	default: async ({ request }) => {

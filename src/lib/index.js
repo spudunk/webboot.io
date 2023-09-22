@@ -1,44 +1,19 @@
-// place files you want to import through the `$lib` alias in this folder.
-import { DKIMKEY } from "$env/static/private";
 
-/**
- * @typedef {Object} EmailData
- * @property {string} data.to
- * @property {string} data.from
- * @property {string} data.subject
- * @property {string} data.textBody 
- * @returns 
- */
+export const fetchMarkdownPosts = async () => {
+	const allPostFiles = import.meta.glob('/src/blog/*.md');
+	const iterablePostFiles = Object.entries(allPostFiles);
 
-/**
- * 
- * @param {EmailData} data 
- * @returns 
- */
-export const sendEmail = (data) => {
-  return fetch('https://api.mailchannels.net/tx/v1/send', {
-    method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      personalizations: [{
-          to: [{ email: data.to, name: '' }],
-          dkim_domain: "webboot.io",
-          dkim_selector: "dkim",
-          dkim_private_key: DKIMKEY
-        }],
-      from: {
-        email: data.from,
-        name: '',
-      },
-      subject: data.subject,
-      content: [
-        {
-          type: 'text/plain',
-          value: data.textBody,
-        },
-      ],
-    })
-  })
-}
+	const allPosts = await Promise.all(
+		iterablePostFiles.map(async (file) => {
+      const [path, resolver] = file;
+			const { metadata } = await resolver();
+			const postPath = path.slice(10, -3);
+			return {
+				meta: metadata,
+				path: postPath
+			};
+		})
+	);
+
+	return allPosts;
+};

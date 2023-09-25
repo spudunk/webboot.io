@@ -3,6 +3,7 @@ title: How I make and manage my passwords
 description: My process for creating and memorizing unique and secure master passwords
 date: September 22, 2023
 author: Christopher Hicks
+img: https://webboot.io/og/password.png
 ---
 
 This article is the result of many years of frustration and preaching good password security to people who generally just don’t understand the importance. I’m sure there will be plenty of critics who say revealing my process will make me more vulnerable. While this is technically true, I welcome the challenge. If you have a better process I really hope you’re willing to share it as well because in our current times securing our online lives is extremely important. It’s worth taking the time to improve our personal and business security. 

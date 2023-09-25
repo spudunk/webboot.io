@@ -1,6 +1,8 @@
 <script>
 	import { SEO } from '$lib/components';
 	import { page } from '$app/stores';
+	import { Facebook } from 'lucide-svelte';
+
 
 	export let canonical = $page.url.href;
 	export let img = '';
@@ -54,10 +56,13 @@
 </article>
 
 <a
-	class="block pt-4 pb-2 text-blue-700 underline hover:no-underline"
+	class="flex gap-2 pt-4 pb-2 text-blue-700 underline hover:no-underline"
 	href="https://www.facebook.com/sharer/sharer.php?u={$page.url.href}"
 	target="_blank"
-	rel="nofollow noopener">Share on FaceBook</a
+	rel="nofollow noopener">
+	<Facebook class="text-sm" />
+	Share on FaceBook
+	</a
 >
 
 <a href="/articles" class="block pt-2 text-blue-700 underline hover:no-underline">

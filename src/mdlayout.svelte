@@ -53,4 +53,13 @@
 	</style>
 </article>
 
-<a href="/articles" class="inline-block py-4 text-blue-500"> &larr; Back to Articles</a>
+<a
+	class="block pt-4 pb-2 text-blue-700 underline hover:no-underline"
+	href="https://www.facebook.com/sharer/sharer.php?u={$page.url.href}"
+	target="_blank"
+	rel="nofollow noopener">Share on FaceBook</a
+>
+
+<a href="/articles" class="block pt-2 text-blue-700 underline hover:no-underline">
+	&larr; Back to Articles</a
+>

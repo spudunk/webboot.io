@@ -3,6 +3,7 @@ title: Why web apps
 description: Why businesses may prefer web apps over websites
 date: August 11, 2023
 author: Christopher Hicks
+img: https://webboot.io/og/whywebapps.png
 ---
 
 The way big businesses engage with markets online has been evolving since the beginning of online marketing. Naturally smaller businesses' approach to online marketing is going to be behind the tech giants, but that gap seems to be opening instead of closing. I want to help change that. My suggestion: build something that can grow with you and won’t get in the way of your business. 

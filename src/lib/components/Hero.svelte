@@ -13,7 +13,7 @@
 		class="absolute flex justify-center flex-col gap-3 text-white items-center top-0 left-1/2 -translate-x-1/2 pt-12 h-full container"
 	>
 		<h1 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl text-center font-semibold text-wrap-balance">
-			Solve your <span class="text-amber-200"> growth constraints </span> with an
+			Solve <span class="text-amber-200"> growth constraints </span> with
 			<br class="hidden sm:inline" />
 			<i class="text-amber-200">intentional</i> online presence
 		</h1>

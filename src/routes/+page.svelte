@@ -6,8 +6,7 @@
 </script>
 
 
-<SEO />
-
+<SEO img="https://webboot.io/og/hero.png" />
 
 <Hero />
 

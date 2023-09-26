@@ -13,3 +13,10 @@ export const fetchMarkdownPosts =  () => {
 		});
 	return allPosts;
 };
+
+
+export const data = {
+	googleReview: "https://g.page/r/CaYMIJbiop3oEBI/review",
+	google: "https://local.google.com/place?id=16761732482207845542&use=srp",
+	facebook: "https://www.facebook.com/webboot.io",
+}

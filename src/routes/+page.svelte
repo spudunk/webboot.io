@@ -131,7 +131,6 @@
 		<ContactForm {form} />
 	</div>
 </section>
-<Skull size="2em" strokeWidth="2" class="h-4 w-4 text-red-400 opacity-25 fixed bottom-1 right-1" />
 
 <style lang="postcss">
 	p {

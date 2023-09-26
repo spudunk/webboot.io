@@ -465,21 +465,10 @@
 </div>
 
 <style lang="postcss">
-	body {
-		background: #fff;
-		color: #000;
-		font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-		font-size: 16px;
-		line-height: 28px;
-		margin: 0;
-	}
-
 	h1,
 	h2,
 	h3,
 	h4,
-	h5,
-	h6,
 	li,
 	p {
 		margin: 0 0 16px;
@@ -515,13 +504,6 @@
 		line-height: 30px;
 	}
 
-	h5,
-	h6 {
-		font-size: 16px;
-		line-height: 24px;
-		font-weight: 700;
-	}
-
 	a {
 		text-decoration: none;
 		cursor: pointer;
@@ -534,7 +516,7 @@
 	}
 
 	a[rel~='nofollow'] {
-    @apply text-blue-700
+		@apply text-blue-700;
 	}
 
 	a[rel~='nofollow']:hover {
@@ -545,71 +527,7 @@
 		display: block;
 	}
 
-	.hidden {
-		display: none;
+	a {
+		@apply text-blue-800 underline hover:no-underline;
 	}
-
-	.page {
-		width: 100%;
-	}
-
-	.container {
-		position: relative;
-		width: 90%;
-		max-width: 1024px;
-		margin: 0 auto;
-	}
-
-	.header {
-		padding: 16px 0;
-	}
-
-	.header .title {
-		font-size: 40px;
-		line-height: 60px;
-		font-weight: 700;
-		margin: 0;
-	}
-
-	.translations-list-container {
-		padding-bottom: 8px;
-		margin: 0 0 16px;
-	}
-
-	.translations-list-container .translations-list {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}
-
-	.translations-list-container .translations-list .translations-list-item {
-		display: inline-block;
-		padding: 0;
-		margin: 0 8px 8px 0;
-		font-weight: 700;
-		color: #553df4;
-	}
-
-	.translations-list-container .translations-list .translations-list-item a {
-		display: inline-block;
-		color: #553df4;
-		border: 1px solid #553df4;
-		border-radius: 32px;
-		padding: 4px 16px;
-	}
-
-	.translations-content-container {
-		padding-top: 16px;
-		border-top: 1px solid #eee;
-	}
-
-	.footer {
-		border-top: 1px solid #eee;
-		margin: 32px 0 0;
-		padding: 16px 0;
-	}
-
-  a {
-    @apply text-blue-800 underline hover:no-underline
-  }
 </style>

@@ -1,6 +1,7 @@
 {
 	"name": "webboot",
 	"short_name": "webboot",
+	"start_url": "/",
 	"icons": [
 		{
 			"src": "/icons/192.png",

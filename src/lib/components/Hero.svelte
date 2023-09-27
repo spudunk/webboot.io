@@ -68,7 +68,7 @@
 		clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 30% 97%, 0% 100%);
 	}
 	.hero-li {
-		@apply px-2 py-1 flex gap-2 justify-center items-center bg-cyan-700 rounded-lg drop-shadow-lg text-left;
+		@apply px-2 py-1 flex gap-2 justify-center items-center bg-cyan-800 rounded-lg drop-shadow-lg text-left border border-cyan-900 ;
 	}
 	.hero-span {
 		@apply break-inside-avoid inline-block text-wrap-balance;

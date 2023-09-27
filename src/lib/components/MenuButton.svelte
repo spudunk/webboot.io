@@ -10,6 +10,7 @@
 
 <button
 	class={`flex flex-col h-12 w-12 rounded justify-center items-center group ${$$props.class} `}
+	aria-label="navigation menu button"
 	on:click={toggleMenu}
 >
 	<div

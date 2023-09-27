@@ -12,7 +12,9 @@
 	<div
 		class="absolute flex justify-center flex-col gap-3 text-white items-center top-0 left-1/2 -translate-x-1/2 pt-12 h-full container"
 	>
-		<h1 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl text-center font-semibold text-wrap-balance">
+		<h1
+			class="text-xl sm:text-2xl md:text-4xl lg:text-5xl text-center font-semibold text-wrap-balance"
+		>
 			Solve <span class="text-amber-200"> growth constraints </span> with
 			<br class="hidden sm:inline" />
 			<i class="text-amber-200">intentional</i> online presence
@@ -24,7 +26,9 @@
 			<span class="hero-span"> With several years of combined experience, </span>
 			<span class="hero-span"> we build custom web-apps to: </span>
 		</p>
-		<ul class="flex flex-col lg:flex-row gap-4 lg:gap-6 text-sm md:text-lg lg:text-xl lg:mt-4">
+		<ul
+			class="flex flex-col lg:flex-row gap-4 lg:gap-6 text-sm sm:text-base md:text-lg lg:text-xl lg:mt-4 font-bold sm:font-semibold"
+		>
 			<li class="hero-li">
 				<div>
 					<Hammer size="2em" strokeWidth="2" class="text-white" />
@@ -64,7 +68,7 @@
 		clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 30% 97%, 0% 100%);
 	}
 	.hero-li {
-		@apply px-2 py-1 flex gap-2 justify-center items-center bg-cyan-600 rounded-lg font-semibold drop-shadow-lg text-left;
+		@apply px-2 py-1 flex gap-2 justify-center items-center bg-cyan-700 rounded-lg drop-shadow-lg text-left;
 	}
 	.hero-span {
 		@apply break-inside-avoid inline-block text-wrap-balance;

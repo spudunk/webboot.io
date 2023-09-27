@@ -119,7 +119,7 @@
 	</div>
 </section>
 
-<section class="container mt-16" id="contact">
+<section class="container mt-16 scroll-m-14" id="contact">
 	<h2>Contact</h2>
 	<p class="mt-8 text-xl">
 		If you’d like to work with us or need more information, feel free to reach out by email or

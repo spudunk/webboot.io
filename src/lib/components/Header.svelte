@@ -5,6 +5,7 @@
 	import { onMount } from 'svelte';
 	$: home = $page.url.pathname === '/';
 	let y = 0;
+	$: atTop = y < 25;
 	let toggled = false;
 	onMount(() => {
 		menuToggled.subscribe((v) => {
@@ -22,7 +23,7 @@
 
 <header
 	class={`${$$props.class} h-12 py-1 transition-all duration-200 z-30 \
-	${y < 25 && home && !toggled ? 'h-16 sm:h-24' : 'h-12'} \
+	${atTop && home ? 'h-16 sm:h-24' : 'h-12'} \
 	${toggled ? 'bg-cyan-900' : 'bg-cyan-900/[.90]'}	
 	`}
 >
@@ -43,7 +44,7 @@
 				>Get Our Guide</a
 			>
 			<MenuButton class="h-full" {toggled} />
-			<Menu {toggled} />
+			<Menu {toggled} padMenu={atTop && home} />
 		</div>
 	</div>
 </header>

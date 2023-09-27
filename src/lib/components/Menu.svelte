@@ -2,6 +2,7 @@
 	import { menuToggled, toggleMenu } from '$lib/stores';
 	import { navigating } from '$app/stores';
 	export let toggled = false;
+  export let padMenu;
 	const line =
 		'bg-cyan-50 w-7 sm:w-9 h-[.2rem]  sm:h-1 my-[.2rem] sm:my-1 rounded-full transition ease transform duration-300';
 	$: if ($navigating) {
@@ -25,8 +26,9 @@
 		toggled ? 'translate-x-0' : 'translate-x-full'
 	} bg-cyan-900 opacity-90 transform top-0 right-0 w-64 fixed h-full overflow-auto ease-in-out transition-all duration-300 -z-30`}
 >
-	<ul class="flex flex-col gap-2 mt-16 mx-4 text-xl md:text-2xl text-cyan-50 font-bold">
+	<ul class={`${padMenu ? "mt-20" : "mt-16" } flex flex-col gap-2 mx-4 text-xl md:text-2xl text-cyan-50 font-bold ease-in-out transition-all duration-300`}>
 		<li><a href="/">Home</a></li>
 		<li><a href="/articles">Articles</a></li>
+		<li><a href="/#contact" on:click={()=> menuToggled.set(false)}>Contact</a></li>
 	</ul>
 </nav>

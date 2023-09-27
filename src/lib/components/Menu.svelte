@@ -26,9 +26,9 @@
 		toggled ? 'translate-x-0' : 'translate-x-full'
 	} bg-cyan-900 opacity-90 transform top-0 right-0 w-64 fixed h-full overflow-auto ease-in-out transition-all duration-300 -z-30`}
 >
-	<ul class={`${padMenu ? "mt-20" : "mt-16" } mx-4 text-xl md:text-2xl text-cyan-50 font-bold ease-in-out transition-all duration-300`}>
-		<li><a class="inline-block py-1" href="/">Home</a></li>
-		<li><a class="inline-block py-1" href="/articles">Articles</a></li>
-		<li><a class="inline-block py-1" href="/#contact" on:click={()=> menuToggled.set(false)}>Contact</a></li>
+	<ul class={`${padMenu ? "mt-20" : "mt-16" } flex flex-col mx-4 text-xl md:text-2xl text-cyan-50 font-bold ease-in-out transition-all duration-300`}>
+		<li><a class="inline-block py-1 w-full" href="/">Home</a></li>
+		<li><a class="inline-block py-1 w-full" href="/articles">Articles</a></li>
+		<li><a class="inline-block py-1 w-full" href="/#contact" on:click={()=> menuToggled.set(false)}>Contact</a></li>
 	</ul>
 </nav>

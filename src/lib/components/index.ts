@@ -6,5 +6,6 @@ import Hero from './Hero.svelte';
 import ServiceCard from './ServiceCard.svelte';
 import SEO from './SEO.svelte'
 import MenuButton from './MenuButton.svelte';
+import Menu from './Menu.svelte';
 
-export { Header, Footer, Logo, ContactForm, Hero, ServiceCard, SEO, MenuButton };
+export { Header, Footer, Logo, ContactForm, Hero, ServiceCard, SEO, MenuButton, Menu };

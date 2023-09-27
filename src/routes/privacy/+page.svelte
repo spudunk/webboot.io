@@ -391,7 +391,7 @@
 		<li>
 			<p>
 				By visiting this page on our website: <a
-					href="https://webboot.io"
+					href="https://webboot.io#contact"
 					rel="external nofollow noopener"
 					target="_blank">https://webboot.io</a
 				>

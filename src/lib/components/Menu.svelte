@@ -14,7 +14,7 @@
 <div
 	id="overlay"
 	class={`${
-		toggled ? 'h-screen opacity-60' : 'h-0 opacity-0'
+		toggled ? 'fixed h-screen opacity-60' : 'hidden h-0 opacity-0'
 	} fixed -z-50 w-screen h-screen bg-cyan-900 top-0 left-0 transition-opacity ease-in duration-300`}
 	on:click={toggleMenu}
 	on:keyup={toggleMenu}

@@ -31,7 +31,7 @@
 		{#if home}
 			<Logo class="text-cyan-300 h-2/3 sm:h-full" />
 		{:else}
-			<a href="/" class="h-full" data-sveltekit-reloadpermalink>
+			<a href="/" class="h-full" aria-label="home" data-sveltekit-reloadpermalink>
 				<Logo class="text-cyan-300 h-2/3 sm:h-full" />
 			</a>
 		{/if}

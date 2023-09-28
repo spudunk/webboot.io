@@ -26,16 +26,14 @@
 		}
 	});
 
-	// $: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : ''
+	$: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '';
 
 	$: home = $page.url.pathname === '/';
 </script>
 
-<!-- 
 <svelte:head>
-	{@html webManifestLink} 
+	{@html webManifestLink}
 </svelte:head>
- -->
 
 <Header class="fixed z-10 top-0 left-0 w-full" />
 <div class="">

@@ -6,27 +6,6 @@
 	import { pwaInfo } from 'virtual:pwa-info';
 	import { onMount } from 'svelte';
 
-	onMount(async () => {
-		if (pwaInfo) {
-			const { registerSW } = await import('virtual:pwa-register');
-			registerSW({
-				immediate: true,
-				onRegistered(r) {
-					// uncomment following code if you want check for updates
-					r &&
-						setInterval(() => {
-							//    console.log('Checking for sw update')
-							r.update();
-						}, 5 * 60 * 1000 /* m * s * ms */);
-					// console.log(`SW Registered: ${r}`);
-				},
-				onRegisterError(error) {
-					console.error('SW registration error', error);
-				}
-			});
-		}
-	});
-
 	$: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '';
 
 	$: home = $page.url.pathname === '/';

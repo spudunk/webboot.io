@@ -23,8 +23,8 @@
 
 <header
 	class={`${$$props.class} h-12 py-1 transition-all duration-200 z-30 \
-	${atTop && home ? 'h-16 sm:h-24' : 'h-12'} \
-	${toggled ? 'bg-cyan-900' : 'bg-cyan-900/[.90]'}	
+	${atTop && home && ($page.status == 200) ? 'h-16 sm:h-24' : 'h-12'} \
+	${toggled ? 'bg-cyan-900' : 'bg-cyan-900/[.90]'} \
 	`}
 >
 	<div class="container h-full flex flex-wrap items-center justify-between">

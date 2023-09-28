@@ -4,7 +4,7 @@
 	import '../app.css';
 	import '@fontsource-variable/nunito';
 
-	// @ts-ignore
+
 	import { pwaInfo } from 'virtual:pwa-info'; 
   $: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '' 
 

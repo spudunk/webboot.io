@@ -1,6 +1,6 @@
 <script>
 	import { SEO } from '$lib/components';
-	import { fetchMarkdownPosts } from '$lib/index';
+	import { fetchMarkdownPosts } from '$lib';
 	const posts = fetchMarkdownPosts();
 </script>
 

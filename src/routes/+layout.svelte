@@ -37,7 +37,7 @@
 
 <Header class="fixed z-10 top-0 left-0 w-full" />
 <div class="">
-	<main class={`${home ? '' : 'container mt-16'} min-h-[65vh]`}>
+	<main class={`${home ? '' : 'container mt-16'} min-h-[50vh]`}>
 		<slot />
 	</main>
 	<Footer class="mb-8 mt-12" />

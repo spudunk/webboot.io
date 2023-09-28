@@ -1,9 +1,7 @@
 <script>
-	import { menuToggled, toggleMenu } from '$lib/stores';
-	import { navigating } from '$app/stores';
+	import { toggleMenu } from '$lib/stores';
 	const line =
 		'bg-cyan-50 w-7 sm:w-9 h-[.2rem]  sm:h-1 my-[.2rem] sm:my-1 rounded-full transition ease transform duration-300';
-
 	export let toggled = false;
 
 </script>

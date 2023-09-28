@@ -3,8 +3,6 @@
 	import { navigating } from '$app/stores';
 	export let toggled = false;
   export let padMenu = false;
-	const line =
-		'bg-cyan-50 w-7 sm:w-9 h-[.2rem]  sm:h-1 my-[.2rem] sm:my-1 rounded-full transition ease transform duration-300';
 	$: if ($navigating) {
 		menuToggled.set(false);
 	}
@@ -15,7 +13,7 @@
 	id="overlay"
 	class={`${
 		toggled ? 'h-screen opacity-60' : 'h-0 opacity-0'
-	} fixed -z-50 w-screen h-screen bg-cyan-900 top-0 left-0 transition-opacity ease-in duration-300`}
+	} fixed -z-50 w-screen bg-cyan-900 top-0 left-0 transition-opacity ease-in duration-300`}
 	on:click={toggleMenu}
 	on:keyup={toggleMenu}
 />

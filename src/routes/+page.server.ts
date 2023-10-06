@@ -1,32 +1,45 @@
-import type { Actions } from './$types';
 import { fail } from '@sveltejs/kit';
+import { z } from 'zod';
+import { setError, message, superValidate } from 'sveltekit-superforms/server';
+
 import { sendEmail } from '$lib/server';
 
-export const actions = {
-	default: async ({ request }) => {
-		// TODO log the user in
-		const data = await request.formData();
-		const email = data.get('email')?.toString();
-		const name = data.get('name')?.toString();
-		const tel = data.get('tel')?.toString();
-		const business = data.get('business')?.toString();
-		const website = data.get('website')?.toString();
+const schema = z.object({
+  name: z.string(),
+  email: z.string().email(),
+	tel: z.string().optional(),
+	business: z.string().optional(),
+	website: z.string().optional(),
+});
 
-		// form validation
-		if (!email) {
-			return fail(400, { email, emailMissing: true });
-		}
-		if (!name) {
-			return fail(400, { name, nameMissing: true });
-		}
+export const load = (async () => {
+  // Server API:
+  const form = await superValidate(schema);
+
+  // Always return { form } in load and form actions.
+  return { form };
+});
+
+export const actions = {
+  default: async ({ request }) => {
+    const form = await superValidate(request, schema);
+    // console.log('POST', form);
+
+    // Convenient validation check:
+    if (!form.valid) {
+      // Again, always return { form } and things will just work.
+      return fail(400, { form });
+    }
+
+    // TODO: Do something with the validated form.data
 
 		try {
 			const p1 = sendEmail({
-				to: email,
+				to: form.data.email,
 				from: 'chris@webboot.io',
 				subject: 'Thanks for contacting webboot.io!',
 				textBody:
-					`Hi ${name}, I'll reach out within a few days to discuss your project.` +
+					`Hi ${form.data.name}, I'll reach out within a few days to discuss your project.` +
 					`If you need immediate assistance please call my cell.\n\n` +
 					`Christopher Hicks\n` +
 					`(360) 827-2736\n` +
@@ -36,13 +49,13 @@ export const actions = {
 			const p2 = sendEmail({
 				to: 'chris@webboot.io',
 				from: 'forms@webboot.io',
-				subject: `New submission${business ? ` from ${business}` : ''}`,
+				subject: `New submission${form.data.business ? ` from ${form.data.business}` : ''}`,
 				textBody:
-					`email: ${email}\n` +
-					`name: ${name}\n` +
-					`tel: ${tel}\n` +
-					`business: ${business}\n` +
-					`website: ${website}`
+					`email: ${form.data.email}\n` +
+					`name: ${form.data.name}\n` +
+					`tel: ${form.data.tel}\n` +
+					`business: ${form.data.business}\n` +
+					`website: ${form.data.website}`
 			});
 
 			// wait for both emails
@@ -50,26 +63,29 @@ export const actions = {
 			const res2 = await p2;
 
 			const handleError = async (res: Response) => {
-				const type = res.headers.get('content-type');
-				// console.log('Response Type: ', type);
-				// console.error('Response: ', res);
-				if (type?.includes('json')) {
-					const json = await res.json();
-					// console.error(res, json);
-					return fail(res.status, { error: JSON.stringify(json) });
-				}
-				return fail(res.status, { error: res.status + ' ' + res.statusText });
+				// return fail(res.status, { form });
+				setError(form, `${res.status}: ${res.statusText}`);
+				return message(form, `${res.status}: ${res.statusText}`, {
+					status: 500 
+				});
 			};
+
 			if (!res1.ok) {
 				return handleError(res1);
 			}
 			if (!res2.ok) {
 				return handleError(res2);
 			}
-			return { success: true };
+
 		} catch (err) {
 			console.error(err);
-			return fail(500, { error: '500: Network Error ' + err });
+			return fail(500, {form});
 		}
-	}
-} satisfies Actions;
+
+
+    // Yep, return { form } here too
+    return message(form, "form submitted" );
+  }
+};
+
+

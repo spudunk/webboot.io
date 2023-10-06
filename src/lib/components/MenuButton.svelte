@@ -18,7 +18,7 @@
 				: 'opacity-80 group-hover:opacity-100'
 		}`}
 	/>
-	<div class={`${line} ${toggled ? 'opacity-0' : 'opacity-80 group-hover:opacity-100'}`} />
+	<div class={`${line} ${toggled ? 'opacity-0' : 'opacity-80 group-hover:opacity-100'} translate-x-1` } />
 	<div
 		class={`${line} ${
 			toggled

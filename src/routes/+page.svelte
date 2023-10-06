@@ -155,6 +155,7 @@
 				<input
 					type="text"
 					name="name"
+					id="name"
 					placeholder="Name (required)"
 					class="border rounded border-cyan-500 w-full px-2"
 					bind:value={$form.name}
@@ -173,6 +174,7 @@
 				<input
 					type="email"
 					name="email"
+					id="email"
 					placeholder="Email (required)"
 					class="border rounded border-cyan-500 w-full px-2"
 					bind:value={$form.email}
@@ -191,6 +193,7 @@
 				<input
 					type="tel"
 					name="tel"
+					id="tel"
 					placeholder="Phone"
 					class="border rounded border-cyan-500 w-full px-2"
 					bind:value={$form.tel}
@@ -209,6 +212,7 @@
 				<input
 					type="text"
 					name="business"
+					id="business"
 					class="border rounded border-cyan-500 w-full px-2"
 					placeholder="Business Name"
 					bind:value={$form.business}
@@ -227,6 +231,7 @@
 				<input
 					type="text"
 					name="website"
+					id="website"
 					placeholder="Website URL"
 					class="border rounded border-cyan-500 w-full px-2"
 					bind:value={$form.website}

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { page } from '$app/stores';
+
 	import { Hero, ServiceCard, SEO } from '$lib/components';
 
 	import { Gauge, Brush, Phone, Mail, User, Building, Link2 } from 'lucide-svelte';
@@ -10,7 +12,7 @@
 	export let data: PageData;
 
 	// Client API:
-	const { form, errors, constraints, enhance } = superForm(data.form);
+	const { form, message, errors, constraints, enhance } = superForm(data.form, {});
 </script>
 
 <SEO img="https://webboot.io/og/hero.png" />
@@ -134,8 +136,13 @@
 		your information or send spam.
 	</p>
 
-	<div class="mt-8 md:ml-6 md:w-2/3 lg:w-1/2 text-lg">
+	<div class="my-2 md:ml-6 md:w-2/3 lg:w-1/2 text-lg">
 		<!-- <SuperDebug data={$form} /> -->
+		<div class="my-2 h-8 ">
+			{#if $message}
+				<div class:success={$page.status == 200} class:error={$page.status >= 400}>{$message}</div>
+			{/if}
+		</div>
 
 		<form method="POST" use:enhance id="contactForm" class="flex flex-col gap-2 w-full">
 			<!-- Name Input -->
@@ -229,12 +236,21 @@
 			{#if $errors.website}<span class="text-red-500">{$errors.website}</span>{/if}
 
 			<!-- Submit Button -->
-			<div class="flex gap-4"><div class="h-8 w-8"></div><button class="border border-cyan-500 rounded px-4 font-semibold">Submit</button></div>
+			<div class="flex gap-4">
+				<div class="h-8 w-8" />
+				<button class="border border-cyan-500 rounded px-4 font-semibold">Submit</button>
+			</div>
 		</form>
 	</div>
 </section>
 
 <style lang="postcss">
+	.error {
+		@apply text-red-700;
+	}
+	.success {
+		@apply text-green-700;
+	}
 	input:focus {
 		@apply outline outline-amber-500 border-amber-500;
 	}

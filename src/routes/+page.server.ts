@@ -1,6 +1,6 @@
 import { fail } from '@sveltejs/kit';
 import { z } from 'zod';
-import { superValidate } from 'sveltekit-superforms/server';
+import { setError, message, superValidate } from 'sveltekit-superforms/server';
 
 import { sendEmail } from '$lib/server';
 
@@ -23,7 +23,7 @@ export const load = (async () => {
 export const actions = {
   default: async ({ request }) => {
     const form = await superValidate(request, schema);
-    console.log('POST', form);
+    // console.log('POST', form);
 
     // Convenient validation check:
     if (!form.valid) {
@@ -63,7 +63,11 @@ export const actions = {
 			const res2 = await p2;
 
 			const handleError = async (res: Response) => {
-				return fail(res.status, { form });
+				// return fail(res.status, { form });
+				setError(form, `${res.status}: ${res.statusText}`);
+				return message(form, `${res.status}: ${res.statusText}`, {
+					status: 500 
+				});
 			};
 
 			if (!res1.ok) {
@@ -72,14 +76,15 @@ export const actions = {
 			if (!res2.ok) {
 				return handleError(res2);
 			}
+
 		} catch (err) {
 			console.error(err);
-			return fail(500, { form });
+			return fail(500, {form});
 		}
 
 
     // Yep, return { form } here too
-    return { form };
+    return message(form, "form submitted" );
   }
 };
 

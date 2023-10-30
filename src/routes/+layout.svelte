@@ -4,7 +4,7 @@
 	import '../app.css';
 	import '@fontsource-variable/nunito';
 	import { pwaInfo } from 'virtual:pwa-info';
-	import { onMount } from 'svelte';
+	// import { onMount } from 'svelte';
 
 	$: webManifestLink = pwaInfo ? pwaInfo.webManifest.linkTag : '';
 

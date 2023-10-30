@@ -85,10 +85,10 @@
 					>
 					found that a <strong>0.1s</strong> speed improvement on sites increased:
 				</p>
-				<ul>
+				<ul class="list-inside list-disc ml-2">
 					<li>Contact Us page visits over 20%</li>
 					<li>booking rates by 10%</li>
-					<li>We build Web Apps that are highly performant and even offline capable.</li>
+					<li>We build web apps that are highly performant and even offline capable.</li>
 				</ul>
 			</div>
 		</div>

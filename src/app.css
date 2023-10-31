@@ -6,6 +6,7 @@
 	html {
 		font-family: 'Nunito Variable', sans-serif;
 		font-display: optional;
+		scroll-behavior: smooth;
 	}
 }
 
@@ -21,5 +22,11 @@
 	.scrollbar-hide {
 		-ms-overflow-style: none; /* IE and Edge */
 		scrollbar-width: none; /* Firefox */
+	}
+	.link {
+		@apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600;
+	}
+	.btn {
+		@apply inline-block font-extrabold sm:font-semibold text-sm sm:text-lg px-2 sm:px-4 py-1 bg-amber-700 sm:bg-amber-600 opacity-100 text-white rounded;
 	}
 }

@@ -39,8 +39,8 @@
 
 		<div class="flex gap-4 items-center">
 			<a
-				href="https://buy.stripe.com/5kAeWc6TRfrh1CE289"
-				class="hidden min-[300px]:block font-extrabold sm:font-semibold text-sm sm:text-lg px-2 sm:px-4 py-1 bg-amber-700 sm:bg-amber-600 opacity-100 text-white  rounded"
+				href="guide"
+				class="hidden min-[300px]:block btn"
 				>Get Our Guide</a
 			>
 			<MenuButton class="h-full" {toggled} />

@@ -7,6 +7,17 @@ export const data = {
 };
 
 export const articles = {
+	guide: {
+		slug: 'guide',
+		title: 'Web Sucess Guide',
+		heading: 'Our Entire Website and Marketing Blueprint Revealed',
+		date: 'October 30, 2023',
+		author: 'Christopher Hicks',
+		img: 'https://webboot.io/og/guide-sm.png',
+		description:
+			"We're offering our entire process as a DIY guide with an unbelievable gaurantee. \
+			For a limited time we're including additional discounts, consulting, and resources."
+	},
 	password: {
 		slug: 'password',
 		title: 'Password technique',
@@ -29,5 +40,6 @@ export const articles = {
 		description:
 			"Read this to learn why we DO NOT use Wordpress. What is a web app? What makes web apps better? \
 			Do you need to switch? We're sharing the candid TRUTH. Find out now."
-	}
+	},
+	
 };

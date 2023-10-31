@@ -83,7 +83,7 @@
 				class="bg-amber-700 sm:bg-amber-600 px-4 py-2 text-white rounded-t"
 				style="margin-top: 0;"
 			>
-				Web Success Guide
+				Website and Marketing Blueprint
 			</h3>
 			<p class="text-lg px-4" style="max-width: 80ch;">
 				Want to save money on your development? Want to use our process and work with someone else?

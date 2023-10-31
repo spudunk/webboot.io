@@ -123,8 +123,8 @@
 				<ul class="list-inside list-disc ml-2">
 					<li>Contact Us page visits over 20%</li>
 					<li>booking rates by 10%</li>
-					<li>We build web apps that are highly performant and even offline capable.</li>
 				</ul>
+				<p class="mt-4">We build web apps that are highly performant and even offline capable.</p>
 			</div>
 		</div>
 		<div class="grid md:grid-cols-5 items-center gap-8">

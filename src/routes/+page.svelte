@@ -113,9 +113,10 @@
 					Performance
 				</h3>
 				<p>
-					A study by Deloitte and 55 called <a
+					A study by <i>Deloitte and 55</i> called <a
+						class="link"
 						href="https://www2.deloitte.com/content/dam/Deloitte/ie/Documents/Consulting/Milliseconds_Make_Millions_report.pdf"
-						target="_blank">Milliseconds make millions</a
+						target="_blank">Milliseconds Make Millions</a
 					>
 					found that a <strong>0.1s</strong> speed improvement on sites increased:
 				</p>

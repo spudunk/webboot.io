@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { copyTextToClipboard } from '$lib';
+	import { Copy } from 'lucide-svelte';
+
 	$: buttonText = 'Click to Copy';
 </script>
 
-<p class="text-xl">Elevate your digital assets in 2 months guaranteed</p>
+<p class="text-xl md:text-2xl">Elevate your digital assets in 2 months guaranteed</p>
 
 <ul class="mt-4">
 	<li>35+ page guide to rebuild your online presence</li>
@@ -183,16 +185,16 @@
 	and subscribe you to every new version we put out.
 </p>
 
-<p>
+<p class="flex gap-2">
 	<span class="text-cyan-900 font-bold bg-amber-100 p-1"> Promo Code: SUCCESS20 </span>
 	<button
-		class="btn-secondary"
+		class="btn-secondary flex"
 		on:click={() => {
 			copyTextToClipboard('SUCCESS20');
 			buttonText = 'Copied!';
 		}}
 	>
-		&larr; {buttonText}
+		<Copy /> <span>{buttonText}</span>
 	</button>
 </p>
 

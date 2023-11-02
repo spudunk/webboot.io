@@ -7,22 +7,22 @@ export const data = {
 };
 
 export const articles = {
-	// guide: {
-	// 	slug: 'guide',
-	// 	title: 'Web Sucess Guide',
-	// 	heading: 'Our Entire Website and Marketing Blueprint Revealed',
-	// 	date: 'October 30, 2023',
-	// 	author: 'Christopher Hicks',
-	// 	img: 'https://webboot.io/og/guide-sm.png',
-	// 	description:
-	// 		"We're offering our entire process as a DIY guide with an unbelievable gaurantee. \
-	// 		For a limited time we're including additional discounts, consulting, and resources."
-	// },
+	guide: {
+		slug: 'guide',
+		title: 'Web Sucess Guide',
+		heading: 'Our Entire Website and Marketing Blueprint Revealed',
+		date: 'October 30, 2023',
+		author: 'Christopher Hicks',
+		img: 'https://webboot.io/og/guide-sm.png',
+		description:
+			"We're offering our entire process as a DIY guide with an unbelievable gaurantee. \
+			For a limited time we're including additional discounts, consulting, and resources."
+	},
 	process: {
 		slug: 'process',
 		title: 'Our Process',
 		heading: 'Our process for building brands online',
-		date: 'November 3, 2023',
+		date: 'November 2, 2023',
 		author: 'Christopher Hicks',
 		img: 'https://webboot.io/og/process-sm.png',
 		description: 

@@ -36,10 +36,11 @@
 
 <article class="max-w-prose mb-6">
 	<h1 class="text-3xl font-bold">{heading}</h1>
-	<p class="mt-2">Date: <i>{date}</i></p>
-	<p class="">By: {author}</p>
-
-	<div class="mt-4 md:text-lg lg:text-xl">
+	<p class="leading-5">{description}</p>
+	<p class="mt-2 font-semibold">Date: <i>{date}</i></p>
+	<p class="-mt-1 font-semibold">By: {author}</p>
+	<hr class="mt-4" />
+	<div class="mt-6 md:text-lg lg:text-xl">
 		<slot />
 	</div>
 

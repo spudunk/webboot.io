@@ -12,7 +12,8 @@
 	enhance that with a web page.&nbsp;
 </p>
 <p>It all starts with research, a message, and most importantly <em>a plan</em>.&nbsp;</p>
-<h2>Ugly inside and (sometimes) out - Provide Background Information</h2>
+
+<h2>Ugly inside and (sometimes) out</h2>
 <p>
 	Every day we look at newly created websites and see the same problem over and over again. Some of
 	the designs are good, and some even have decent media and copy, but they all seem to miss a few <em
@@ -32,38 +33,45 @@
 <p>
 	Also a common theme, many basic websites are super slooooowwww. Maybe you don&rsquo;t notice when
 	you have good internet service, but on a bad connection some sites take several seconds to load.
-	We&rsquo;ve all seen it, and it&rsquo;s actually not necessary. 
-</p> 
+	We&rsquo;ve all seen it, and it&rsquo;s not actually necessary.
+</p>
 <p>
-	Many websites are slow because
-	they are bloated, which means they send lots of extra code and data to work. Search engines
-	promote pages that don&rsquo;t have extra bloat slowing them down.&nbsp;
+	Many websites are slow because they are bloated, which means they send lots of extra unecessary
+	code and data to the browser, what has to download and process before the page displays. Search
+	engines promote pages that don&rsquo;t have extra bloat slowing them down.&nbsp;
 </p>
 <p>
 	But most importantly, we see a lot of new websites come up with no apparent plan to utilize some
-	of the <strong>most powerful digital marketing tools</strong> available today, like mailing lists,
-	funnels, or content.&nbsp;
+	of the <strong>most powerful digital marketing tools</strong> available today, like
+	<em> mailing lists, funnels, or content.&nbsp; </em>
 </p>
-<h2>What&rsquo;s wrong with these people!? - Present the Problem or Issue</h2>
+
+<h2>What&rsquo;s wrong with these people!?</h2>
 <p>
-	So why do businesses jump into getting a website developed without considering how it connects to
+	So why do businesses jump into getting a website developed without considering how it works with
 	their marketing plan as a whole? That question isn&rsquo;t rhetorical, I&rsquo;d actually love to
-	know. My best guess and hope is that <em>they just don&rsquo;t know their options.</em>
+	know. My best guess (and hope) is that <em>they just don&rsquo;t know their options.</em>
 </p>
 <p>
-	Websites can do a lot more than just serve as a destination for patrons. Amongst other things it
+	Websites can do a lot more than serve as just a destination for patrons. Amongst other things it
 	can be a powerful part of your advertising. Your website should help you get discovered. It should
 	connect with people who go by your business every week and never stop to try what you&rsquo;re
 	offering. It should pull them through the door by presenting an offer that they can&rsquo;t
 	refuse.&nbsp;
 </p>
 <p>
-	If you&rsquo;re not ready to start then I encourage you to read through some of the free content
-	on this site. We want to help you level up your online marketing just to make the internet better.
-	There are several articles you may find helpful that you don&rsquo;t have to pay for.&nbsp;
+	If you&rsquo;re not ready to take your online marketing to the next level then I encourage you to
+	read through some of the free content on this site. These next steps will require spending time
+	and money. 
 </p>
-<p>If you&rsquo;re ready to start, keep reading.</p>
-<h2>A goal oriented solution - Offer a Solution</h2>
+<p>
+	We want to help you level up your online marketing, just to make the internet better,
+	so regardless if you're ready to spend money or not, we want to help you. There are several
+	articles on this site you may find helpful that you don&rsquo;t have to pay for.&nbsp;
+</p>
+<p>If you are ready to take the next steps, keep reading.</p>
+
+<h2>A goal oriented solution</h2>
 <p>
 	So here&rsquo;s the skinny on <em>our process</em>. We&rsquo;re getting technical and pretty dense
 	here so be prepared.&nbsp;
@@ -89,7 +97,7 @@
 	time each day.&nbsp;
 </p>
 <p>Regardless if you do it or we do it, it starts with research.&nbsp;</p>
-<h3>Research &amp; Plan</h3>
+<h3>Step 1 - Research &amp; Plan</h3>
 <p>
 	Research the customer to understand what drives their purchasing decisions. Understand the barrier
 	between them and your product or service, then write an offer they&rsquo;ll jump at.&nbsp;
@@ -108,7 +116,7 @@
 	Integrate keywords and SEO structure, put together graphics and media, then finally&hellip; start
 	designing a website.&nbsp;
 </p>
-<h3>Design</h3>
+<h3>Step 2 - Design</h3>
 <p>
 	I&rsquo;ll be honest, I didn&rsquo;t get into this business to design. There are a lot of
 	designers out there more talented than me. A lot of the websites I bash on have good designs.
@@ -132,7 +140,7 @@
 	we outsource. And all designers like working with us because we make their job EASY, putting
 	together all the information they need to start making great design choices.&nbsp;
 </p>
-<h3>Development</h3>
+<h3>Step 3 - Development</h3>
 <p>
 	Now with a great design we figure out how to lay it all out in code. It needs to work nicely with
 	all the neat marketing tools that are going to bring your business into the 21st century. Plan,
@@ -153,7 +161,7 @@
 </p>
 <p>Website is up so&hellip; we&rsquo;re done? No.&nbsp;</p>
 <p>We&rsquo;re just getting started.&nbsp;</p>
-<h3>Management</h3>
+<h3>Step 4 - Management</h3>
 <p>I&rsquo;m going to breeze over this one because&hellip;&nbsp;</p>
 <p>Dare I say? <strong>It&rsquo;s not important.&nbsp;</strong></p>
 <p>
@@ -172,7 +180,7 @@
 	We&rsquo;ll manage it and make sure it keeps working nicely if you want. Moving on to the good
 	stuff&hellip;
 </p>
-<h3>Promotion</h3>
+<h3>Step 5 - Promotion</h3>
 <p>This is where things get interesting and profitable.&nbsp;</p>
 <p>
 	You&rsquo;ll have a powerful, traffic hungry, sales generating monster rumbling behind the gate of
@@ -243,6 +251,7 @@
 	<li>It reiterates your message and offer</li>
 	<li>It directs traffic</li>
 </ul>
+
 <h2>Easier Ways</h2>
 <p>
 	The way we work and build things is more involved than the typical digital agency. It&rsquo;s more
@@ -280,6 +289,7 @@
 		web.dev/learn/performance/why-speed-matters
 	</a>
 </p>
+
 <h2>Conclusion</h2>
 <p>
 	If you&rsquo;re ready to build a website for your business, <strong
@@ -303,4 +313,7 @@
 	Option 2: You take our blueprint and do it yourself. You can get help from us or anyone you
 	prefer.&nbsp;
 </p>
-<p>Learn more about the blueprint here: Website and Marketing Blueprint</p>
+<p>
+	Learn more about the blueprint here:
+	<a href="/guide" class="link"> Website and Marketing Blueprint </a>
+</p>

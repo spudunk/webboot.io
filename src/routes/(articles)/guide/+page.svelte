@@ -1,3 +1,8 @@
+<script lang="ts">
+	import { copyTextToClipboard } from '$lib';
+	$: buttonText = 'Click to Copy';
+</script>
+
 <p class="text-xl">Elevate your digital assets in 2 months guaranteed</p>
 
 <ul class="mt-4">
@@ -178,7 +183,18 @@
 	and subscribe you to every new version we put out.
 </p>
 
-<p><span class="text-cyan-900 font-bold bg-amber-100">Promo Code: SUCCESS20</span></p>
+<p>
+	<span class="text-cyan-900 font-bold bg-amber-100 p-1"> Promo Code: SUCCESS20 </span>
+	<button
+		class="btn-secondary"
+		on:click={() => {
+			copyTextToClipboard('SUCCESS20');
+			buttonText = 'Copied!';
+		}}
+	>
+		&larr; {buttonText}
+	</button>
+</p>
 
 <p>If you use the coupon, then I’ll expect some feedback in a couple months.</p>
 <p>

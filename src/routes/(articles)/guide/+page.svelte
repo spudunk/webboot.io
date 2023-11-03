@@ -192,6 +192,7 @@
 		on:click={() => {
 			copyTextToClipboard('SUCCESS20');
 			buttonText = 'Copied!';
+			setTimeout(()=>{buttonText = "Click to Copy"}, 2000)
 		}}
 	>
 		<Copy /> <span>{buttonText}</span>

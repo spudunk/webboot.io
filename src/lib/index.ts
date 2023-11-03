@@ -21,7 +21,7 @@ export const articles = {
 	},
 	guide: {
 		slug: 'guide',
-		title: 'Web Sucess Guide',
+		title: 'Website and Marketing Blueprint',
 		heading: 'Our Entire Website and Marketing Blueprint Revealed',
 		date: 'October 30, 2023',
 		author: 'Christopher Hicks',

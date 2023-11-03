@@ -15,9 +15,9 @@ export const articles = {
 		author: 'Christopher Hicks',
 		img: 'https://webboot.io/og/process-sm.png',
 		description:
-			"Why Refined Pitches Lead to More Effective Websites. \
-			Exactly how our process works. What's inside our blueprint. \
-			How to get more value from your website. And more. "
+			"Why Refined Pitches Lead to More Effective Websites. " +
+			"Exactly how our process works. What's inside our blueprint. " +
+			"How to get more value from your website. And more."
 	},
 	guide: {
 		slug: 'guide',
@@ -27,8 +27,8 @@ export const articles = {
 		author: 'Christopher Hicks',
 		img: 'https://webboot.io/og/guide-sm.png',
 		description:
-			"We're offering our entire process as a DIY guide with an unbelievable gaurantee. \
-			For a limited time we're including additional discounts, consulting, and resources."
+			"We're offering our entire process as a DIY guide with an unbelievable gaurantee. " +
+			"For a limited time we're including additional discounts, consulting, and resources."
 	},
 	password: {
 		slug: 'password',
@@ -38,9 +38,9 @@ export const articles = {
 		author: 'Christopher Hicks',
 		img: 'https://webboot.io/og/password-sm.png',
 		description:
-			"My secret process for creating and memorizing unique and secure passwords. \
-			You'll see exactly how I create and memorize secure and seemingly long random passwords in minutes. \
-			My personal process revealed for the first time ever!"
+			"My secret process for creating and memorizing unique and secure passwords. " +
+			"You'll see exactly how I create and memorize secure and seemingly long random passwords in minutes. " +
+			"My personal process revealed for the first time ever!"
 	},
 	whywebapps: {
 		slug: 'whywebapps',
@@ -50,8 +50,8 @@ export const articles = {
 		author: 'Christopher Hicks',
 		img: 'https://webboot.io/og/whywebapps-sm.png',
 		description:
-			"Read this to learn why we DO NOT use Wordpress. What is a web app? What makes web apps better? \
-			Do you need to switch? We're sharing the candid TRUTH. Find out now."
+			"Read this to learn why we DO NOT use Wordpress. What is a web app? What makes web apps better? " +
+			"Do you need to switch? We're sharing the candid TRUTH. Find out now."
 	}
 };
 

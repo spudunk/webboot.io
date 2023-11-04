@@ -13,27 +13,26 @@
 </p>
 <p>It all starts with research, a message, and most importantly <em>a plan</em>.&nbsp;</p>
 
-<h2>Ugly inside and (sometimes) out</h2>
+<h2>Inside the code</h2>
 <p>
 	Every day we look at newly created websites and see the same problem over and over again. Some of
 	the designs are good, and some even have decent media and copy, but they all seem to miss a few <em
 		>crucial</em
 	> points.&nbsp;
 </p>
-<p>
-	Call me a geek or whatever, but the code is ugly. Like, did the developers even look at it? Or did
-	they just draw the whole thing in an editor and click send without actually looking? Probably the
-	latter, actually.&nbsp;
-</p>
+<p>First, the code is ugly.</p>
 <p>
 	Who cares what the code looks like? Nobody looks at it anyways, right? Well, I do&hellip; and more
-	importantly search engines do. With SEO being necessary in the last decade, it&rsquo;s important
-	to write for the crawlers too.&nbsp;
+	importantly search engines do.
 </p>
 <p>
-	Also a common theme, many basic websites are super slooooowwww. Maybe you don&rsquo;t notice when
-	you have good internet service, but on a bad connection some sites take several seconds to load.
-	We&rsquo;ve all seen it, and it&rsquo;s not actually necessary.
+	With SEO being necessary in the last decade, it&rsquo;s important to write for the crawlers
+	too.&nbsp;
+</p>
+<p>
+	Many basic websites share another common theme, they're super slooooowwww. Maybe you don&rsquo;t
+	notice on a good internet connection, but on a slow connection some sites take several seconds to
+	load. We&rsquo;ve all experienced it, and it&rsquo;s actually not always necessary.
 </p>
 <p>
 	Many websites are slow because they are bloated, which means they send lots of extra unecessary
@@ -62,12 +61,12 @@
 <p>
 	If you&rsquo;re not ready to take your online marketing to the next level then I encourage you to
 	read through some of the free content on this site. These next steps will require spending time
-	and money. 
+	and money.
 </p>
 <p>
-	We want to help you level up your online marketing, just to make the internet better,
-	so regardless if you're ready to spend money or not, we want to help you. There are several
-	articles on this site you may find helpful that you don&rsquo;t have to pay for.&nbsp;
+	We want to help you level up your online marketing, just to make the internet better, so
+	regardless if you're ready to spend money or not, we want to help you. There are several articles
+	on this site you may find helpful that you don&rsquo;t have to pay for.&nbsp;
 </p>
 <p>If you are ready to take the next steps, keep reading.</p>
 
@@ -97,6 +96,8 @@
 	time each day.&nbsp;
 </p>
 <p>Regardless if you do it or we do it, it starts with research.&nbsp;</p>
+
+<!-- 1. Research & Plan -->
 <h3>Step 1 - Research &amp; Plan</h3>
 <p>
 	Research the customer to understand what drives their purchasing decisions. Understand the barrier
@@ -116,6 +117,8 @@
 	Integrate keywords and SEO structure, put together graphics and media, then finally&hellip; start
 	designing a website.&nbsp;
 </p>
+
+<!-- 2. Design -->
 <h3>Step 2 - Design</h3>
 <p>
 	I&rsquo;ll be honest, I didn&rsquo;t get into this business to design. There are a lot of
@@ -140,6 +143,8 @@
 	we outsource. And all designers like working with us because we make their job EASY, putting
 	together all the information they need to start making great design choices.&nbsp;
 </p>
+
+<!-- 3. Development -->
 <h3>Step 3 - Development</h3>
 <p>
 	Now with a great design we figure out how to lay it all out in code. It needs to work nicely with
@@ -154,13 +159,14 @@
 <p>Content? Check.</p>
 <p>Components? Organized and Check.</p>
 <p>
-	We&rsquo;ll wrap up this step with a lovely website that works <em>super fast</em> and has a
-	<em>super modern app-like feel</em>. Actually, it is an app. That&rsquo;s what gives it that
-	<em>super modern app-like feel.</em> It makes search engines super happy too. They&rsquo;ll gobble
-	your website content up! Yum!
+	We&rsquo;ll wrap up this step delivering a custom web app that works <em>super fast</em> and has a
+	<em> modern feel</em>. It makes search engines happy too, everything will show up on Google within
+	a few days.
 </p>
 <p>Website is up so&hellip; we&rsquo;re done? No.&nbsp;</p>
 <p>We&rsquo;re just getting started.&nbsp;</p>
+
+<!-- 4. Managment -->
 <h3>Step 4 - Management</h3>
 <p>I&rsquo;m going to breeze over this one because&hellip;&nbsp;</p>
 <p>Dare I say? <strong>It&rsquo;s not important.&nbsp;</strong></p>
@@ -180,6 +186,8 @@
 	We&rsquo;ll manage it and make sure it keeps working nicely if you want. Moving on to the good
 	stuff&hellip;
 </p>
+
+<!-- 5. PROMOTION -->
 <h3>Step 5 - Promotion</h3>
 <p>This is where things get interesting and profitable.&nbsp;</p>
 <p>

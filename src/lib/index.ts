@@ -10,11 +10,12 @@ export const articles = {
 	process: {
 		slug: 'process',
 		title: 'Our Process',
-		heading: 'The Problem with Filling in the Blanks',
+		heading: 'How Our Process Works',
 		date: 'November 2, 2023',
 		author: 'Christopher Hicks',
 		img: 'https://webboot.io/og/process-sm.png',
 		description:
+			"The Problem with Filling in the Blanks. " +
 			"Why Refined Pitches Lead to More Effective Websites. " +
 			"Exactly how our process works. What's inside our blueprint. " +
 			"How to get more value from your website. And more."

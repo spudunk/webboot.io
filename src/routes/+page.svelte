@@ -36,7 +36,7 @@
 		without comprimising on the effectiveness of your marketing as a whole.
 	</p>
 	<p class="text-xl mt-4">
-		For questions about our process feel free to <a href="#contact" class="link">reach out</a>.
+		For questions about our process check out <a href="/process" class="link" >How Our Process Works</a> or feel free to <a href="#contact" class="link">reach out</a>.
 	</p>
 	<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
 		<ServiceCard heading="Research and Planning" num="1">

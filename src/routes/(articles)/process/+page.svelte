@@ -58,17 +58,21 @@
 	offering. It should pull them through the door by presenting an offer that they can&rsquo;t
 	refuse.&nbsp;
 </p>
-<p>
-	If you&rsquo;re not ready to take your online marketing to the next level then I encourage you to
-	read through some of the free content on this site. These next steps will require spending time
-	and money.
-</p>
-<p>
-	We want to help you level up your online marketing, just to make the internet better, so
-	regardless if you're ready to spend money or not, we want to help you. There are several articles
-	on this site you may find helpful that you don&rsquo;t have to pay for.&nbsp;
-</p>
-<p>If you are ready to take the next steps, keep reading.</p>
+
+<div class="rounded bg-yellow-100 py-4 -mx-6 px-6 my-2">
+	<p>
+		If you&rsquo;re not ready to take your online marketing to the next level then I encourage you to
+		read through some of <a href="/articles" class="link">the free content on this site</a>. These next steps will require spending time
+		and money.
+	</p>
+	<p>
+		We want to help you level up your online marketing, just to make the internet better, so
+		regardless if you're ready to spend money or not, we want to help you. There are several articles
+		on this site you may find helpful that you don&rsquo;t have to pay for.&nbsp;
+	</p>
+	<p>If you are ready to take the next steps, keep reading.</p>
+</div>
+
 
 <h2>A goal oriented solution</h2>
 <p>

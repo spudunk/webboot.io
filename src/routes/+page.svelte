@@ -3,7 +3,7 @@
 
 	import { Hero, ServiceCard, SEO } from '$lib/components';
 
-	import { Gauge, Brush, Phone, Mail, User, Building, Link2 } from 'lucide-svelte';
+	import { Wrench, Gauge, Brush, Phone, Mail, User, Building, Link2 } from 'lucide-svelte';
 	import type { PageData } from './$types';
 	import { superForm } from 'sveltekit-superforms/client';
 	// import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
@@ -36,7 +36,10 @@
 		without comprimising on the effectiveness of your marketing as a whole.
 	</p>
 	<p class="text-xl mt-4">
-		For questions about our process check out <a href="/process" class="link" >How Our Process Works</a> or feel free to <a href="#contact" class="link">reach out</a>.
+		For questions about our process check out <a href="/process" class="link"
+			>How Our Process Works</a
+		>
+		or feel free to <a href="#contact" class="link">reach out</a>.
 	</p>
 	<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
 		<ServiceCard heading="Research and Planning" num="1">
@@ -89,16 +92,12 @@
 				Want to save money on your development? Want to use our process and work with someone else?
 			</p>
 			<p class="text-lg px-4 mt-2" style="max-width: 80ch;">
-				Our full web development blueprint will guide you through our entire process, from research and planning,
-				to creating a design and development breifs, and the basics of DIY maintenance.
+				Our full web development blueprint will guide you through our entire process, from research
+				and planning, to creating a design and development breifs, and the basics of DIY
+				maintenance.
 			</p>
-			<p class="text-lg px-4 mt-2 font-bold" style="max-width: 80ch;">
-				100% Money Back Guarantee
-			</p>
-			<a
-				class="m-4 btn "
-				href="guide">Learn More</a
-			>
+			<p class="text-lg px-4 mt-2 font-bold" style="max-width: 80ch;">100% Money Back Guarantee</p>
+			<a class="m-4 btn" href="guide">Learn More</a>
 		</div>
 	</div>
 </section>
@@ -113,7 +112,8 @@
 					Performance
 				</h3>
 				<p>
-					A study by <i>Deloitte and 55</i> called <a
+					A study by <i>Deloitte and 55</i> called
+					<a
 						class="link"
 						href="https://www2.deloitte.com/content/dam/Deloitte/ie/Documents/Consulting/Milliseconds_Make_Millions_report.pdf"
 						target="_blank">Milliseconds Make Millions</a
@@ -127,6 +127,7 @@
 				<p class="mt-4">We build web apps that are highly performant and even offline capable.</p>
 			</div>
 		</div>
+		<!-- Design -->
 		<div class="grid md:grid-cols-5 items-center gap-8">
 			<div class="col-span-4">
 				<h3 class="flex gap-4 items-center">
@@ -163,6 +164,23 @@
 						class="link">suggestions from Adobe</a
 					>.
 				</p>
+			</div>
+		</div>
+		<!-- Control -->
+		<div class="grid md:grid-cols-5 items-center gap-8">
+			<div class="col-span-4">
+				<h3 class="flex gap-4 items-center">
+					<Wrench class="hidden md:inline-block h-14 w-14 text-cyan-600 justify-self-center " />
+					Control
+				</h3>
+				<p>Controlling your own app code allows you to</p>
+				<ul class="list-inside list-disc">
+					<li>make any changes you want in a simple way</li>
+					<li>take your app to any platform</li>
+					<li>let multiple agencies collaborate on development</li>
+					<li>integrate and automate business processes</li>
+				</ul>
+				<!-- TODO: Implement control panel -->
 			</div>
 		</div>
 	</div>
@@ -306,7 +324,6 @@
 		@apply outline outline-amber-500 border-amber-500;
 	}
 
-
 	/* Page Text CSS */
 	p {
 		@apply max-w-prose;
@@ -317,5 +334,4 @@
 	h3 {
 		@apply text-xl md:text-2xl lg:text-3xl mt-4 mb-2 font-bold;
 	}
-
 </style>

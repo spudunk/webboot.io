@@ -1,14 +1,13 @@
 <script>
 	import { SEO } from '$lib/components';
-  import { page } from '$app/stores';
+	import { page } from '$app/stores';
 	import UsMap from '$lib/components/UsMap.svelte';
-  import { kkConsoleMessage } from '$lib';
-  import { onMount } from 'svelte';
+	import { kkConsoleMessage } from '$lib';
+	import { onMount } from 'svelte';
 
-  onMount(()=> {
-    kkConsoleMessage("King Kong");
-  });
-
+	onMount(() => {
+		kkConsoleMessage('King Kong');
+	});
 </script>
 
 <SEO
@@ -17,8 +16,9 @@
 	img="/lpcontent/kk-team-web.jpg"
 	url={$page.url.toString()}
 />
+<h1 class="text-7xl font-bold my-48">King Kong is in the House!</h1>
 <section class="max-w-prose">
-	<h1 class="text-3xl font-bold mb-4">King Kong is in the House!</h1>
+	<p class="text-4xl font-bold my-24">It's about time you showed up.</p>
 	<p class="mb-4">
 		You have no idea how excited I am. When I see that beautiful blue Southern Cross show up in my
 		analytics dashboard I&rsquo;ll be jumping out of my seat. I might even have notifications set up
@@ -253,7 +253,7 @@
 		still <em>every</em> invoice in my Stripe is sitting there unpaid. Unfortunately, I love these little
 		businesses too much to take their stuff offline, so I don&rsquo;t have any leverage.&nbsp;
 	</p>
-	<p class="mb-4">It's like the universe is pushing us together.</p>
+	<p class="my-8 text-2xl">It's like the universe is pushing us together.</p>
 	<p class="mb-4">
 		To be completely honest, my back is against the wall. My girlfriend has been paying the bills
 		and supporting my vision of creating something that can bring her home and give us both
@@ -264,21 +264,21 @@
 		while I&rsquo;m writing this. (forgot to take a picture, gone too fast)&nbsp;
 	</p>
 	<p class="mb-4">
-		It&rsquo;s been a year since this started (not our relationship, but her paying the
-		bills and me building a business), and I need to come up with something soon. For the sake of our relationship. <strong
-			>PLEASE HIRE ME</strong
-		>.&nbsp;
+		It&rsquo;s been a year since this started (not our relationship, but her paying the bills and me
+		building a business), and I need to come up with something soon. For the sake of our
+		relationship. <strong>PLEASE HIRE ME</strong>.&nbsp;
 	</p>
 	<p class="mb-4">
 		If you don&rsquo;t hire me I&rsquo;m going to keep at it, <em>whatever it takes.</em>
 	</p>
 	<p class="mb-4 font-bold">I&rsquo;m going to figure it out.</p>
 	<p class="mb-4">
-		I&rsquo;m building my own funnel from scratch because Sender.net has lame scheduling options and
+		I&rsquo;m building my own funnel from scratch because Sender.net has weak scheduling options and
 		doesn&rsquo;t make it to the Primary inbox after the second email&nbsp;
 	</p>
-	<p class="mb-4">
-		(I know what does make it to Primary, it just doesn&rsquo;t have scheduling <em>yet</em>).&nbsp;
+	<p class="mb-4 text-green-900">
+		I know what does make it to Primary, it just doesn&rsquo;t have scheduling <em>yet</em>. Stay
+		tuned for updates.
 	</p>
 	<p class="mb-4">I&rsquo;m writing HVCOs and opt-in pages.</p>
 	<p class="mb-4">I&rsquo;m writing SEO articles.&nbsp;</p>
@@ -293,30 +293,34 @@
 		relationship.&nbsp;
 	</p>
 	<p class="mb-4">
-		So right now, I have to get a job. Either one I&rsquo;ll stick with for a long time like King
-		Kong, or something just to fill the gap. I&rsquo;m seriously considering a <a
+		So right now, I have to get a job. Either I get one I&rsquo;ll stick with for a long time like
+		King Kong, or something just to fill the gap. I&rsquo;m seriously considering a <a
 			href="https://seattle.craigslist.org/oly/mnu/d/chehalis-assembly-technician/7683727441.html"
 			target="_blank"
+			class="text-blue-800 underline"
 			rel="noopener">cabinet assembly job</a
 		>
 		and a
 		<a
 			href="https://portland.craigslist.org/clk/mnu/d/chehalis-shop-laborer/7678443838.html"
 			target="_blank"
+			class="text-blue-800 underline"
 			rel="noopener">shop laborer job</a
 		> to pay the bills! Either one will take the weight off Angel&rsquo;s shoulders and fund some new
-		graphics for webboot.io (soon to be rebranded). I&rsquo;ve already started dropping applications!
+		graphics for webboot.io (soon to be rebranded unless you hire me). I&rsquo;ve already started dropping
+		applications!
 	</p>
-	<p class="mb-4 font-bold text-xl">But I recently discovered this:</p>
+	<p class="mb-4 font-bold text-xl">Then I discovered this:</p>
 
 	<picture class="block max-w-4xl my-4">
 		<source srcset="lpcontent/console.png" type="image/png" />
 		<img src="lpcontent/console.png" alt="King Kong console message" />
 	</picture>
+	<p>If you're wondering if I liked that idea... yes I did. Check it out :)</p>
 
 	<p class="mb-28 mt-20">
-		So now, feeling a special offer has been made to me, here I am; admitting you&rsquo;re better
-		and I should get on board.&nbsp;
+		So now, feeling a special invitation has been made to me, here I am; admitting you&rsquo;re
+		better and wanting to get on board.&nbsp;
 	</p>
 	<p class="mb-28">Take a minute to think about that&hellip;</p>
 	<p class="mb-4 text-2xl mb-28">You, me, Luke, all working together. Just picture it&hellip;</p>
@@ -327,11 +331,12 @@
 		<img src="lpcontent/kk-team-web.jpg" alt="King Kong team with Chris on it" />
 	</picture>
 
-	<p class="mb-4">Looks good right? I think so!</p>
+	<p class="mb-4 mt-12">Looks good right? I think so!</p>
 	<p class="mb-4 mt-12">
-		I could come in, synchronize with the team, and improve your customer&rsquo;s funnels.
-		I&rsquo;ll get all the technical SEO stuff <strong>singing</strong> to crawlers, with Open Graph
-		tags, JSON-LD structured data, and perfect HTML5 semantics.&nbsp;&nbsp;
+		I could come in, synchronize with the team, and learn how to do things the King Kong way. I can
+		help optimize your landing pages, your website, and everything for your clients that hasn't been
+		done. I&rsquo;ll get all the technical SEO stuff <strong>singing</strong> to crawlers, with Open
+		Graph tags, JSON-LD structured data, and perfect HTML5 semantics.&nbsp;&nbsp;
 	</p>
 	<p class="mb-4">
 		Or I could refactor and optimize the new sites and funnels to make sure they&rsquo;re super fast
@@ -347,9 +352,11 @@
 		Or, if nothing else, just get all the image optimizations working with long srcsets so your
 		funnels are even faster on mobile devices.
 	</p>
+	<p class="mb-4">I'll do the grunt work if it gets me in the door.</p>
+
 	<h2 class="mb-4 text-2xl font-bold mt-12">Are you hesitant...</h2>
 	<p class="mb-4">
-		to show me all your processes because I&rsquo;m technically a competitor? (very small one)
+		to show me all your processes because I&rsquo;m a competitor? (technically, but a small one)
 	</p>
 	<p class="mb-4">
 		I personally pledge my loyalty, and won&rsquo;t make webboot a higher priority than the King
@@ -365,8 +372,7 @@
 		get up to speed as fast as humanly possible.&nbsp;
 	</p>
 	<p class="mb-4">
-		I&rsquo;m sure you need proof that I can actually code. I hope this page shows a lot. I
-		even left you a console message like the one you left me :)&nbsp;
+		I&rsquo;m sure you need proof that I can actually code. I hope this page shows a lot.
 	</p>
 	<p class="mb-4">
 		Beyond this though, look at the rest of this website. It&rsquo;s totally mobile responsive, has
@@ -400,18 +406,20 @@
 		anyways.&nbsp;
 	</p>
 	<p class="mb-4">The point is, we can make it work!</p>
-	<h2 class="text-2xl font-bold mb-4  mt-12">So here&rsquo;s what&rsquo;s in store for us</h2>
+	<h2 class="text-2xl font-bold mb-4 mt-12">So here&rsquo;s what&rsquo;s in store for us</h2>
 	<ul class="list-inside list-disc mb-4">
 		<li class="">More enthusiasm on the team.</li>
 		<li class="">A stronger sense of purpose.&nbsp;</li>
 		<li class="">An <em>inside</em> connection in the US.&nbsp;</li>
 		<li class="">More capacity.&nbsp;&nbsp;</li>
 		<li class="">
-			My best friend sticking around to support me doing the best work I can do.&nbsp;
+			My best friend sticking around to support me doing the best work I can do <span class="italic"
+				>for you</span
+			>.&nbsp;
 		</li>
 	</ul>
 	<p class="mb-4">
-		That&rsquo;s a much better outcome than laughing at this landing page and moving on.&nbsp;
+		That&rsquo;s a much better outcome than laughing about this page and moving on.&nbsp;
 	</p>
 	<p class="mb-4">
 		It&rsquo;s the <span class="font-bold">fastest way you can increase your capacity </span>for
@@ -419,18 +427,18 @@
 	</p>
 	<p class="mb-4">Think about it&hellip; but not for too long.&nbsp;</p>
 
-  <div>
-    <div class="flex flex-col gap-6 mb-4 w-32">
-      <a
-        href="tel:+13608272736"
-        class="text-center font-bold px-4 py-1 bg-green-700 text-white rounded border border-green-200 hover:scale-105 transition-all"
-        >Call me</a
-      >
-      <a
-        href="mailto:chris@webboot.io?subject=Hey%20Chris%2C%20you're%20hired.&body=We're%20impressed%20by%20your%20cover%20letter.%20When%20can%20you%20schedule%20an%20interview%3F"
-        class="text-center font-bold px-4 py-1 bg-green-700 text-white rounded border border-green-200 hover:scale-105 transition-all"
-        >Email me</a
-      >
-    </div>
-  </div>
+	<div>
+		<div class="flex flex-col gap-6 mb-4 w-32">
+			<a
+				href="tel:+13608272736"
+				class="text-center font-bold px-4 py-1 bg-green-700 text-white rounded border border-green-200 hover:scale-105 transition-all"
+				>Call me</a
+			>
+			<a
+				href="mailto:chris@webboot.io?subject=Hey%20Chris%2C%20you're%20hired.&body=We're%20impressed%20by%20your%20cover%20letter.%20When%20can%20you%20schedule%20an%20interview%3F"
+				class="text-center font-bold px-4 py-1 bg-green-700 text-white rounded border border-green-200 hover:scale-105 transition-all"
+				>Email me</a
+			>
+		</div>
+	</div>
 </section>

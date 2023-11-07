@@ -27,12 +27,14 @@
 	</p>
 	<p class="mb-4">
 		I know exactly what brought you here. This page was created specifically for you and nobody else
-		should even find it. You're here to make your team better. <span
-			class="text-green-800 font-bold">I can help</span
-		>.
+		should even find it. It&rsquo;s the first page I've explicitly blocked crawlers, ever!. But this
+		page isn't for SEO, it's for <strong>you</strong>. You're here to make your team better. 
 	</p>
+  <p
+  class="mb-4 text-green-800 font-bold">I can help.</p
+  >
 	<p class="mb-4">
-		Let me just say that one more time, I&rsquo;m <em>excited</em> that you&rsquo;re here.
+		Let me just say this one more time, I&rsquo;m <em>excited</em> that you&rsquo;re here.
 	</p>
 	<p class="mb-4 text-xl">
 		You want to make your team bigger, the internet better, and marketing more engaging and fun for <strong

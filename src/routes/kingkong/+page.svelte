@@ -194,7 +194,7 @@
 		marketplace, what could I actually contribute? What can I bring to the table that isn&rsquo;t
 		out there?
 	</p>
-	<p class="mb-4"><em>What problems could I do better on?</em></p>
+	<p class="mb-4"><em>What problems could I solve better?</em></p>
 	<p class="mb-4">
 		I had it! Most small businesses, specifically the ones I love the most, have <em>terrible</em> websites!
 	</p>

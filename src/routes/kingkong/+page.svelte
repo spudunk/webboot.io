@@ -11,7 +11,7 @@
 </script>
 
 <SEO
-	title="King Kong Cover Letter"
+	title="Chris Hicks - King Kong Cover Letter"
 	description="This is an application letter to King Kong, a personal message to Sabri, and hopefully my ticket into the big leagues."
 	img="/lpcontent/kk-team-web.jpg"
 	url={$page.url.toString()}

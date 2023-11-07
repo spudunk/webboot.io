@@ -97,7 +97,7 @@
 				maintenance.
 			</p>
 			<p class="text-lg px-4 mt-2 font-bold" style="max-width: 80ch;">100% Money Back Guarantee</p>
-			<a class="m-4 btn" href="guide">Learn More</a>
+			<a class="m-4 btn" href="guide">More About our Blueprint</a>
 		</div>
 	</div>
 </section>

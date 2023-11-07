@@ -165,7 +165,7 @@
 	</p>
 	<p class="mb-4">
 		While I was there I learned about energy, development, business, and finance. I built some
-		really cool tools that really made a difference in the team's workflow.
+		really cool tools that made a big difference in the team's workflow.
 	</p>
 	<p class="mb-4">
 		Things were going pretty well. The company was completely funded by investors, but we were on

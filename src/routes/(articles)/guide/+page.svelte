@@ -145,7 +145,7 @@
 <p>I'll personally help you work through any parts that are confusing or unclear.</p>
 
 <h3>Refund Guarantee</h3>
-<p>Implement the first few sections within two months (less than 20 pages).</p>
+<p>Complete the first five sections within two months (costs $0 to do).</p>
 <p>If you’re not happy with it, I’ll give you a full refund.</p>
 <p>All you risk is putting some time into promoting your business.</p>
 

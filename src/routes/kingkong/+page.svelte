@@ -254,7 +254,7 @@
 	<p class="my-8 text-2xl">It's like the universe is pushing me toward you.</p>
 	<p class="mb-4">
 		To be completely honest, my back is against the wall. My girlfriend has been paying the bills
-		and supporting my vision of creating something that creates value and can give us both some
+		and supporting my vision of creating something that builds value and can give us both some
 		financial security.
 	</p>
 	<p class="mb-4">
@@ -374,7 +374,7 @@
 		decent form messages, and has great lighthouse scores.
 	</p>
 	<p class="mb-4">
-		Check out my <a href="http://github.com" target="_blank" rel="noopener">GitHub</a>. I&rsquo;ve
+		Check out my <a class="link" href="http://github.com" target="_blank" rel="noopener">GitHub</a>. I&rsquo;ve
 		done a lot that isn't there, but some stuff is worth showing.
 	</p>
 	<h2 class="text-2xl font-bold mb-4 mt-12">My biggest fear right now</h2>

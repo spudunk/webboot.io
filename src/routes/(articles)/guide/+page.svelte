@@ -5,7 +5,7 @@
 	$: buttonText = 'Click to Copy';
 </script>
 
-<p class="text-xl md:text-2xl">Elevate your digital assets in 2 months guaranteed</p>
+<p class="text-xl md:text-2xl">Double your online impression in 2 months guaranteed</p>
 
 <ul class="mt-4">
 	<li>35+ page guide to rebuild your online presence</li>
@@ -138,21 +138,14 @@
 <h3>Lifetime Updates</h3>
 <p>
 	It’s still new and we’re still improving it, so if you get it now you’ll get a lifetime
-	subscription to all future versions, including the app.
-</p>
-<p>
-	We’re going to do a few rounds of improvements, get it solidified, then make an app out of it.
+	subscription to all future versions, including the app once it's in beta.
 </p>
 
 <h3>Consult Included</h3>
-<p>You get direct access to me to help work through any parts that are confusing or unclear.</p>
-<p>
-	That’s basically the consult I charge hundreds of dollars for but you’re in charge of the
-	checklist.
-</p>
+<p>I'll personally help you work through any parts that are confusing or unclear.</p>
 
 <h3>Refund Guarantee</h3>
-<p>Implement the first few sections within a month (less than 20 pages).</p>
+<p>Implement the first few sections within two months (less than 20 pages).</p>
 <p>If you’re not happy with it, I’ll give you a full refund.</p>
 <p>All you risk is putting some time into promoting your business.</p>
 

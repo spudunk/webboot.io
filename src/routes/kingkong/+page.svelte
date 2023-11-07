@@ -27,7 +27,7 @@
 	</p>
 	<p class="mb-4">
 		I know exactly what brought you here. This page was created specifically for you and nobody else
-		should even find it. It&rsquo;s the first page I've explicitly blocked crawlers, ever!. But this
+		should even find it. It&rsquo;s the first page I've explicitly blocked crawlers, ever! But this
 		page isn't for SEO, it's for <strong>you</strong>. You're here to make your team better. 
 	</p>
   <p

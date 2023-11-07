@@ -127,7 +127,7 @@
 	</p>
 	<p class="mb-4">
 		Three months in to the most intense summer camp of my life, I was <em>medically separated</em>
-		for a &ldquo;condition&rdquo; that's not impairing, but it was a liability. They shipped me home
+		for a &ldquo;condition&rdquo; that's not impairing, but it was a &ldquo;liability&rdquo;. They shipped me home
 		<em>one day before graduation</em>.
 	</p>
 	<p class="mb-4 font-bold">That fell through too.</p>

@@ -56,6 +56,14 @@ export const articles = {
 	}
 };
 
+export const kkConsoleMessage = (name="") => {
+	console.log("%c👋  I see you lookin' under the hood there", "color: lime; font-size: 16px; margin: 12px 2px; background-color: #222;");
+	if (name) {
+		console.log(`%c🙌  ${name} is in the shell!!!`, "color: fuchsia; font-size: 16px; margin: 12px 2px; background-color: #222;");
+	}
+	console.log("%c🥷  You look like a cyber ninja\n👀  Like what you see?  🔥  Hire me! \n🙏  Thank you for coming ", "color: lime; font-size: 14px; margin: 16px 2px; background-color: #222;")
+}
+
 function fallbackCopyTextToClipboard(text: string) {
 	const textArea = document.createElement('textarea');
 	textArea.value = text;

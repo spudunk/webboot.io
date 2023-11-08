@@ -1,9 +1,12 @@
-<script>
-	import { SEO } from '$lib/components';
+<script lang="ts">
+	import { SEO, MessageForm } from '$lib/components';
 	import { page } from '$app/stores';
 	import UsMap from '$lib/components/UsMap.svelte';
 	import { kkConsoleMessage } from '$lib';
 	import { onMount } from 'svelte';
+
+	import type { PageData } from './$types';
+	export let data: PageData;
 
 	onMount(() => {
 		kkConsoleMessage('King Kong');
@@ -432,5 +435,7 @@
 				>Email me</a
 			>
 		</div>
+
+		<MessageForm data={data.messageForm} />
 	</div>
 </section>

@@ -24,7 +24,7 @@ export const actions = {
 				from: 'chris@webboot.io',
 				subject: 'Thanks for messaging webboot.io!',
 				textBody:
-					`Hi ${form.data.name}, I'll reach out within a few days to discuss your inquiry.` +
+					`Hi ${form.data.name}, I got your message. I'll reach out soon.` +
 					`If you need immediate assistance please call my cell.\n\n` +
 					`Christopher Hicks\n` +
 					`(360) 827-2736\n` +
@@ -70,7 +70,7 @@ export const actions = {
 
 	contact: async ({ request }) => {
 		const form = await superValidate(request, contactSchema);
-		console.log('POST', form);
+		// console.log('POST', form);
 
 		// Convenient validation check:
 		if (!form.valid) {

@@ -21,10 +21,10 @@
 		</h1>
 		<p class=" md:text-lg lg:text-2xl lg:mt-4 text-center">
 			<span class="hero-span">
-				We work with growing businesses to level-up their digital assets.
+				We develop digital assets for business.
 			</span>
-			<span class="hero-span"> With several years of combined experience, </span>
-			<span class="hero-span"> we build custom web-apps to: </span>
+			<span class="hero-span"> We offer fast custom web apps, funnels, and SEO. </span>
+			<span class="hero-span"> Start growing your brand online today. </span>
 		</p>
 		<ul
 			class="flex flex-col lg:flex-row gap-4 lg:gap-6 text-sm sm:text-base md:text-lg lg:text-xl lg:mt-4 font-bold sm:font-semibold"
@@ -33,19 +33,19 @@
 				<div>
 					<Hammer size="2em" strokeWidth="2" class="text-white" />
 				</div>
-				Solve specific growth constraints
+				Develop Digital Assets
 			</li>
 			<li class="hero-li">
 				<div>
 					<TrendingUp size="2em" strokeWidth="2" class="text-white" />
 				</div>
-				Maximize online marketing
+				Maximize Ad Potential
 			</li>
 			<li class="hero-li">
 				<div>
 					<Users2 size="2em" strokeWidth="2" class="text-white" />
 				</div>
-				Attract and keep users
+				Build a User Base
 			</li>
 		</ul>
 	</div>
@@ -68,7 +68,7 @@
 		clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 30% 97%, 0% 100%);
 	}
 	.hero-li {
-		@apply px-2 py-1 flex gap-2 justify-center items-center bg-cyan-800 rounded-lg drop-shadow-lg text-left border border-cyan-900 ;
+		@apply px-2 py-1 flex gap-2 justify-center items-center bg-cyan-900 bg-opacity-50 rounded drop-shadow-lg text-left ;
 	}
 	.hero-span {
 		@apply break-inside-avoid inline-block text-wrap-balance;

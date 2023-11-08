@@ -50,13 +50,13 @@
 		</ServiceCard>
 		<ServiceCard heading="Web App Development" num="2">
 			<p>
-				We design and build <i>fast</i> custom web apps for businesses to achieve their specific goals.
-				It starts with a website home page then grows to your needs.
+				We design and build <em>fast</em> custom web apps for businesses to achieve their specific goals.
+				It can start with a home page then grow to your needs.
 			</p>
 			<p>We provide the source code for your web app so you maintain complete control.</p>
 		</ServiceCard>
 		<ServiceCard heading="Management " num="3">
-			<p>Optionally, we can host, manage, and update web apps we build for a very fair price.</p>
+			<p>Optionally, we can host, manage, and update web apps we build for a fair price.</p>
 			<p>
 				We’ll provide hosting, analytics, form delivery, and any other services your app requires in
 				a single subscription.

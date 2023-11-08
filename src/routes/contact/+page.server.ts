@@ -34,12 +34,12 @@ export const actions = {
 			const p2 = sendEmail({
 				to: 'chris@webboot.io',
 				from: 'forms@webboot.io',
-				subject: `New message from ${form.data.name}` ,
+				subject: `New message from ${form.data.name}`,
 				textBody:
 					`email: ${form.data.email}\n` +
 					`name: ${form.data.name}\n` +
 					`tel: ${form.data.tel}\n` +
-					`message: ${form.data.message}\n` 
+					`message: ${form.data.message}\n`
 			});
 
 			// wait for both emails in parallel
@@ -62,7 +62,7 @@ export const actions = {
 			}
 		} catch (err) {
 			console.error(err);
-			return fail(500, { form });
+			return message(form, err, { status: 500 });
 		}
 
 		return message(form, 'form submitted');
@@ -124,7 +124,7 @@ export const actions = {
 			}
 		} catch (err) {
 			console.error(err);
-			return fail(500, { form });
+			return message(form, err, { status: 500 });
 		}
 
 		return message(form, 'form submitted');

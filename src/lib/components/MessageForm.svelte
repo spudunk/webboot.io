@@ -8,7 +8,13 @@
 	import type { MessageSchema } from '$lib/schemas';
 
 	export let data: SuperValidated<MessageSchema>;
-	const { form, message, errors, constraints, enhance } = superForm(data, {});
+	const { form, message, errors, submitting, delayed, timeout, constraints, enhance } = superForm(
+		data,
+		{
+			delayMs: 500,
+			timeoutMs: 5000
+		}
+	);
 </script>
 
 <!-- <SuperDebug data={$form} /> -->
@@ -16,11 +22,19 @@
 <div class="my-2 h-8">
 	{#if $message}
 		<div class:success={$page.status == 200} class:error={$page.status >= 400}>{$message}</div>
+		{#if $delayed} <div>a few more seconds...</div> {/if}
+
 	{/if}
 </div>
 
 <!-- CONTACT FORM  -->
-<form method="POST" action="/contact?/message" use:enhance id="messageForm" class="flex flex-col gap-2 w-full">
+<form
+	method="POST"
+	action="/contact?/message"
+	use:enhance
+	id="messageForm"
+	class="flex flex-col gap-2 w-full"
+>
 	<!-- Name Input -->
 	<div class="flex gap-4">
 		<label for="name"

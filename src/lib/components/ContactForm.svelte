@@ -8,7 +8,13 @@
 	import type { ContactSchema } from '$lib/schemas';
 
 	export let data: SuperValidated<ContactSchema>;
-	const { form, message, errors, constraints, enhance } = superForm(data, {});
+	const { form, message, errors, submitting, delayed, timeout, constraints, enhance } = superForm(
+		data,
+		{
+			delayMs: 500,
+			timeoutMs: 5000
+		}
+	);
 </script>
 
 <!-- <SuperDebug data={$form} /> -->
@@ -17,10 +23,17 @@
 	{#if $message}
 		<div class:success={$page.status == 200} class:error={$page.status >= 400}>{$message}</div>
 	{/if}
+	{#if $delayed} <div>a few more seconds...</div> {/if}
 </div>
 
 <!-- CONTACT FORM  -->
-<form method="POST" action="/contact?/contact" use:enhance id="contactForm" class="flex flex-col gap-2 w-full">
+<form
+	method="POST"
+	action="/contact?/contact"
+	use:enhance
+	id="contactForm"
+	class="flex flex-col gap-2 w-full"
+>
 	<!-- Name Input -->
 	<div class="flex gap-4">
 		<label for="name"
@@ -35,6 +48,7 @@
 			placeholder="Name (required)"
 			class="border rounded border-cyan-500 w-full px-2"
 			bind:value={$form.name}
+			aria-invalid={$errors.name ? 'true' : undefined}
 			{...$constraints.name}
 		/>
 	</div>
@@ -54,6 +68,7 @@
 			placeholder="Email (required)"
 			class="border rounded border-cyan-500 w-full px-2"
 			bind:value={$form.email}
+			aria-invalid={$errors.email ? 'true' : undefined}
 			{...$constraints.email}
 		/>
 	</div>
@@ -72,6 +87,7 @@
 			id="tel"
 			placeholder="Phone"
 			class="border rounded border-cyan-500 w-full px-2"
+			aria-invalid={$errors.tel ? 'true' : undefined}
 			bind:value={$form.tel}
 			{...$constraints.tel}
 		/>
@@ -91,6 +107,7 @@
 			id="business"
 			class="border rounded border-cyan-500 w-full px-2"
 			placeholder="Business Name"
+			aria-invalid={$errors.business ? 'true' : undefined}
 			bind:value={$form.business}
 			{...$constraints.business}
 		/>
@@ -110,6 +127,7 @@
 			id="website"
 			placeholder="Website URL"
 			class="border rounded border-cyan-500 w-full px-2"
+			aria-invalid={$errors.website ? 'true' : undefined}
 			bind:value={$form.website}
 			{...$constraints.website}
 		/>

@@ -436,6 +436,8 @@
 			>
 		</div>
 
+		<p class="mb-4">Or drop me a message here.</p>
+
 		<MessageForm data={data.messageForm} />
 	</div>
 </section>

@@ -1,9 +1,11 @@
 User-Agent: *
 Allow: /
 Disallow: /kingkong
+Disallow: /resume
 
 User-agent: Googlebot
 User-agent: AdsBot-Google
 Disallow: /kingkong
+Disallow: /resume
 
 Sitemap: https://webboot.io/sitemap.xml

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { jobData, allSkills, tradeSkills } from '$lib/cv';
+	import { SEO } from '$lib/components';
+import { jobData, allSkills, tradeSkills } from '$lib/cv';
 
   let activeSkills = [...allSkills];
 	$: activeResume = getActiveResume(activeSkills);
@@ -42,6 +43,8 @@
 		}
 	};
 </script>
+
+<SEO title="Chris Hicks Resume - webboot.io" description="My digital resume" />
 
 <!-- Print only header -->
 <div class="hidden print:block mb-4">

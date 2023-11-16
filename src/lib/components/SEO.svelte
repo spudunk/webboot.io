@@ -1,5 +1,6 @@
 <script lang="ts">
-  export let url = "https://webboot.io"
+  import { page } from "$app/stores";
+  export let url = String($page.url);
   export let title = "webboot.io";
   export let description = "We're a digital marketing agency for the businesses we care about. We specialize in custom web app design, development, and promotion."; // prop but use lib/info as default
   export let img = "";

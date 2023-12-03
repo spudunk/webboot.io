@@ -1,0 +1,16 @@
+/* TEAM */
+	Developer: Christopher Hicks
+	Contact: chris [at] webboot.io
+	Twitter: @topher_hicks
+	From: Washington, USA
+
+
+/* THANKS */
+	Design and front-end help: Brydon Leclair
+	Twitter: @uwunetes
+	From: USA
+		
+
+/* SITE */
+	Last update: 2023/12/03
+	Language: English 

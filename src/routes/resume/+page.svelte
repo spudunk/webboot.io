@@ -44,7 +44,7 @@ import { jobData, allSkills, tradeSkills } from '$lib/cv';
 	};
 </script>
 
-<SEO title="Chris Hicks Resume - webboot.io" description="My digital resume" />
+<SEO title="Chris Hicks Resume - webboot.io" description="Christopher Hicks, web developer, content writer - digital resume - Svelte, TypeScript, Cloudflare, Web App" />
 
 <!-- Print only header -->
 <div class="hidden print:block mb-4">

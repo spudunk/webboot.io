@@ -5,14 +5,12 @@ import { sendEmail } from '$lib/server';
 
 export const load = async () => {
 	// Server API:
-	
+
 	// Send contact form data to the client
 	const contactForm = await superValidate(contactSchema);
 	// Always return { form } in load and form actions.
 	return { contactForm };
-	
 };
-
 
 export const actions = {
 	// Always return { form } in load and form actions.
@@ -59,6 +57,7 @@ export const actions = {
 
 			const handleError = async (res: Response) => {
 				// return fail(res.status, { form });
+				console.error(`${res.status}: ${res.statusText}`);
 				setError(form, `${res.status}: ${res.statusText}`);
 				return message(form, `${res.status}: ${res.statusText}`, {
 					status: 500

@@ -2,7 +2,7 @@
 	import { superForm } from 'sveltekit-superforms/client';
 	import { page } from '$app/stores';
 	import { Phone, Mail, User, Building, Link2 } from 'lucide-svelte';
-	import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
+	// import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
 
 	import type { SuperValidated } from 'sveltekit-superforms';
 	import type { ContactSchema } from '$lib/schemas';
@@ -17,7 +17,7 @@
 	);
 </script>
 
-<SuperDebug data={$form} />
+<!-- <SuperDebug data={$form} /> -->
 
 <div class="my-2 h-8">
 	{#if $message}

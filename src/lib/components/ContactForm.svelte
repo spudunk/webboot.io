@@ -2,7 +2,7 @@
 	import { superForm } from 'sveltekit-superforms/client';
 	import { page } from '$app/stores';
 	import { Phone, Mail, User, Building, Link2 } from 'lucide-svelte';
-	// import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
+	import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
 
 	import type { SuperValidated } from 'sveltekit-superforms';
 	import type { ContactSchema } from '$lib/schemas';
@@ -17,19 +17,20 @@
 	);
 </script>
 
-<!-- <SuperDebug data={$form} /> -->
+<SuperDebug data={$form} />
 
 <div class="my-2 h-8">
 	{#if $message}
 		<div class:success={$page.status == 200} class:error={$page.status >= 400}>{$message}</div>
 	{/if}
 	{#if $delayed} <div>a few more seconds...</div> {/if}
+	{#if $submitting} <div>Submitting...</div> {/if}
 </div>
 
 <!-- CONTACT FORM  -->
 <form
 	method="POST"
-	action="/contact?/contact"
+	action="/?/contact"
 	use:enhance
 	id="contactForm"
 	class="flex flex-col gap-2 w-full"
@@ -158,14 +159,4 @@
 		@apply outline outline-amber-500 border-amber-500;
 	}
 
-	/* Page Text CSS */
-	p {
-		@apply max-w-prose;
-	}
-	h2 {
-		@apply text-3xl md:text-4xl lg:text-5xl font-bold;
-	}
-	h3 {
-		@apply text-xl md:text-2xl lg:text-3xl mt-4 mb-2 font-bold;
-	}
 </style>

@@ -136,13 +136,4 @@
 	}
 
 	/* Page Text CSS */
-	p {
-		@apply max-w-prose;
-	}
-	h2 {
-		@apply text-3xl md:text-4xl lg:text-5xl font-bold;
-	}
-	h3 {
-		@apply text-xl md:text-2xl lg:text-3xl mt-4 mb-2 font-bold;
-	}
 </style>

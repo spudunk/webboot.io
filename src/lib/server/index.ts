@@ -15,7 +15,12 @@ import { DKIMKEY } from '$env/static/private';
  * @param {EmailData} data
  * @returns
  */
-export const sendEmail = (data) => {
+export const sendEmail = (data: {
+	to: string;
+	from: string;
+	subject: string;
+	textBody: string;
+}) => {
 	return fetch('https://api.mailchannels.net/tx/v1/send', {
 		method: 'POST',
 		headers: {
@@ -26,7 +31,7 @@ export const sendEmail = (data) => {
 				{
 					to: [{ email: data.to, name: '' }],
 					dkim_domain: 'webboot.io',
-					dkim_selector: 'dkim',
+					dkim_selector: 'mailchannels',
 					dkim_private_key: DKIMKEY
 				}
 			],

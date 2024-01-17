@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Phone, Mail, MapPin, Facebook, Search } from 'lucide-svelte';
+	import { Phone, Mail, MapPin, Facebook, Search, CircleDollarSign } from 'lucide-svelte';
 	import { data } from '$lib';
 </script>
 
@@ -20,10 +20,11 @@
 			</li>
 			<li class="">
 				<Search />
-				<a
-					href={data.google}
-					target="_blank">webboot.io</a
-				>
+				<a href={data.google} target="_blank">webboot.io</a>
+			</li>
+			<li>
+				<CircleDollarSign />
+				<a href={data.stripe}> manage billing </a>
 			</li>
 		</ul>
 	</div>

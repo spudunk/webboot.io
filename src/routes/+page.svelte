@@ -93,6 +93,39 @@
 	</div>
 </section>
 
+<section class="bg-neutral-200 pt-8 pb-16 mt-16 text=lg" id="portfolio">
+	<div class="container">
+		<h2>Our Work</h2>
+		<div class="grid gap-8 mt-8 md:grid-cols-2">
+			<a href="https://marksmanexteriors.com?ref=webboot.io" target="_blank" class="block rounded">
+				<h3>Marksman Exteriors</h3>
+				<img
+					src="/portfolio/marksmanexteriors.com_.png"
+					alt="screenshot of Marksman Exteriors website"
+				/>
+			</a>
+			<a href="https://actc.pro?ref=webboot.io" target="_blank" class="block rounded">
+				<h3>A Custom Touch Construction</h3>
+				<img
+					src="/portfolio/actc.pro_.png"
+					alt="screenshot of A Custom Touch Construction website"
+				/>
+			</a>
+			<a href="https://fulldraw2.web.app?ref=webboot.io" target="_blank" class="block rounded">
+				<h3>Full Draw Electric</h3>
+				<img
+					src="/portfolio/fulldraw2.web.app_.png"
+					alt="screenshot of Full Draw Electric website"
+				/>
+			</a>
+			<a href="https://walkingcj.com?ref=webboot.io" target="_blank" class="block rounded">
+				<h3>Walking CJ Ranch</h3>
+				<img src="/portfolio/walkingcj.com_.png" alt="screenshot of Walking CJ Ranch website" />
+			</a>
+		</div>
+	</div>
+</section>
+
 <section class="container mt-16 text-lg" id="why">
 	<h2 class="">Why Custom Web-Apps</h2>
 	<div class="grid gap-8 mt-8">
@@ -191,7 +224,6 @@
 </section>
 
 <style lang="postcss">
-
 	/* Page Text CSS */
 	p {
 		@apply max-w-prose;

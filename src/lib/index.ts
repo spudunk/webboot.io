@@ -3,7 +3,8 @@ export const data = {
 	google: 'https://local.google.com/place?id=16761732482207845542&use=srp',
 	facebook: 'https://www.facebook.com/webboot.io',
 	email: 'mailto:info@webboot.io',
-	maps: 'https://g.page/r/CaYMIJbiop3oEBI/'
+	maps: 'https://g.page/r/CaYMIJbiop3oEBI/',
+	stripe: 'https://billing.stripe.com/p/login/00gaF963I4EB944288',
 };
 
 export const articles = {

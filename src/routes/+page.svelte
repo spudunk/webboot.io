@@ -6,7 +6,7 @@
 	export let data: PageData;
 </script>
 
-<SEO img="https://webboot.io/og/hero.png" />
+<SEO img="https://webboot.io/og/hero.png" title="Custom Web Apps and Digital Marketing - webboot.io"/>
 
 <Hero />
 

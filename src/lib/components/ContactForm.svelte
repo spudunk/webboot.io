@@ -46,6 +46,7 @@
 			type="text"
 			name="name"
 			id="name"
+			autocomplete="name"
 			placeholder="Name (required)"
 			class="border rounded border-cyan-500 w-full px-2"
 			bind:value={$form.name}
@@ -66,6 +67,7 @@
 			type="email"
 			name="email"
 			id="email"
+			autocomplete="email"
 			placeholder="Email (required)"
 			class="border rounded border-cyan-500 w-full px-2"
 			bind:value={$form.email}
@@ -86,6 +88,7 @@
 			type="tel"
 			name="tel"
 			id="tel"
+			autocomplete="tel"
 			placeholder="Phone"
 			class="border rounded border-cyan-500 w-full px-2"
 			aria-invalid={$errors.tel ? 'true' : undefined}
@@ -126,6 +129,7 @@
 			type="text"
 			name="website"
 			id="website"
+			autocomplete="url"
 			placeholder="Website URL"
 			class="border rounded border-cyan-500 w-full px-2"
 			aria-invalid={$errors.website ? 'true' : undefined}

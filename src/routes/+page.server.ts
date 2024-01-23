@@ -2,8 +2,9 @@ import { setError, message, superValidate } from 'sveltekit-superforms/server';
 import { contactSchema, messageSchema } from '$lib/schemas.js';
 import { fail } from '@sveltejs/kit';
 import { sendEmail } from '$lib/server';
+import type { PageServerLoad } from './$types';
 
-export const load = async () => {
+export const load: PageServerLoad = async () => {
 	// Server API:
 
 	// Send contact form data to the client

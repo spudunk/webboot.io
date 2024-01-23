@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Hero, ServiceCard, SEO, ContactForm } from '$lib/components';
 	import { Wrench, Gauge, Brush } from 'lucide-svelte';
+	import { portfolioSites } from '$lib';
 
 	import type { PageData } from './$types';
 	export let data: PageData;
@@ -9,11 +10,11 @@
 <SEO
 	img="https://webboot.io/og/hero.png"
 	title="Custom Web Apps and Digital Marketing - webboot.io"
-	
 />
 
 <Hero />
 
+<!-- ABOUT -->
 <section class="container mt-12" id="about">
 	<h2 class="">About Us</h2>
 	<p class="max-w-prose text-lg md:text-2xl mt-8">
@@ -24,6 +25,7 @@
 	</p>
 </section>
 
+<!-- PROCESS -->
 <section class="container mt-20" id="services">
 	<h2 class="">Our Process</h2>
 	<p class="text-xl mt-4">
@@ -97,39 +99,22 @@
 	</div>
 </section>
 
+<!-- PORTFOLIO -->
 <section class="bg-neutral-200 pt-8 pb-16 mt-16 text=lg" id="portfolio">
 	<div class="container">
 		<h2>Our Work</h2>
 		<div class="grid gap-8 mt-8 md:grid-cols-2">
-			<a href="https://marksmanexteriors.com?ref=webboot.io" target="_blank" class="block rounded">
-				<h3>Marksman Exteriors</h3>
-				<img
-					src="/portfolio/marksmanexteriors.com_.png"
-					alt="screenshot of Marksman Exteriors website"
-				/>
-			</a>
-			<a href="https://actc.pro?ref=webboot.io" target="_blank" class="block rounded">
-				<h3>A Custom Touch Construction</h3>
-				<img
-					src="/portfolio/actc.pro_.png"
-					alt="screenshot of A Custom Touch Construction website"
-				/>
-			</a>
-			<a href="https://fulldraw2.web.app?ref=webboot.io" target="_blank" class="block rounded">
-				<h3>Full Draw Electric</h3>
-				<img
-					src="/portfolio/fulldraw2.web.app_.png"
-					alt="screenshot of Full Draw Electric website"
-				/>
-			</a>
-			<a href="https://walkingcj.com?ref=webboot.io" target="_blank" class="block rounded">
-				<h3>Walking CJ Ranch</h3>
-				<img src="/portfolio/walkingcj.com_.png" alt="screenshot of Walking CJ Ranch website" />
-			</a>
+			{#each portfolioSites as site}
+				<a href={site.link} target="_blank" class="block rounded border border-neutral-500">
+					<h3>{site.title}</h3>
+					<img src={site.img} alt={site.imgAlt} />
+				</a>
+			{/each}
 		</div>
 	</div>
 </section>
 
+<!-- CREDIBILITY -->
 <section class="container mt-16 text-lg" id="why">
 	<h2 class="">Why Custom Web-Apps</h2>
 	<div class="grid gap-8 mt-8">
@@ -214,6 +199,7 @@
 	</div>
 </section>
 
+<!-- CONTACT -->
 <section class="container mt-16 scroll-m-14" id="contact">
 	<h2>Contact</h2>
 	<p class="mt-8 text-xl">

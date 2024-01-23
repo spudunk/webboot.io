@@ -7,6 +7,33 @@ export const data = {
 	stripe: 'https://billing.stripe.com/p/login/00gaF963I4EB944288',
 };
 
+export const portfolioSites = [
+	{
+		title: 'Marksman Exteriors',
+		link: 'https://marksmanexteriors.com?ref=webboot.io',
+		img: '/portfolio/marksmanexteriors.com_.png',
+		imgAlt: 'screenshot of Marksman Exteriors website'
+	},
+	{
+		title: 'A Custom Touch Construction',
+		link: 'https://actc.pro?ref=webboot.io',
+		img: '/portfolio/actc.pro_.png',
+		imgAlt: 'screenshot of A Custom Touch Construction website'
+	},
+	{
+		title: 'Full Draw Electric',
+		link: 'https://fulldraw2.web.app?ref=webboot.io',
+		img: '/portfolio/fulldraw2.web.app_.png',
+		imgAlt: 'screenshot of Full Draw Electric website'
+	},
+	{
+		title: 'Walking CJ Ranch',
+		link: 'https://walkingcj.com?ref=webboot.io',
+		img: '/portfolio/walkingcj.com_.png',
+		imgAlt: 'screenshot of Walking CJ Ranch website'
+	}
+];
+
 export const articles = {
 	process: {
 		slug: 'process',

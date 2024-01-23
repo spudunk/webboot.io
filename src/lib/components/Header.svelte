@@ -35,7 +35,8 @@
 				<Logo class="text-cyan-300 h-2/3 sm:h-full" />
 			</a>
 		{/if}
-		<!-- <span>{Math.floor(y)}</span> -->
+		<!-- DEBUG -->
+		<!-- <span>y: {Math.floor(y)}</span><span>home: {home}</span><span>status: {$page.status}</span> -->
 
 		<div class="flex gap-4 items-center">
 			<a

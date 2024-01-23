@@ -100,12 +100,12 @@
 </section>
 
 <!-- PORTFOLIO -->
-<section class="bg-neutral-200 pt-8 pb-16 mt-16 text=lg" id="portfolio">
+<section class="bg-neutral-200 pt-8 pb-16 mt-16 text-lg" id="portfolio">
 	<div class="container">
 		<h2>Our Work</h2>
 		<div class="grid gap-8 mt-8 md:grid-cols-2">
 			{#each portfolioSites as site}
-				<a href={site.link} target="_blank" class="block rounded border border-neutral-500">
+				<a href={site.link} target="_blank" class="block rounded border-2 border-neutral-100">
 					<h3>{site.title}</h3>
 					<img src={site.img} alt={site.imgAlt} />
 				</a>

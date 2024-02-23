@@ -56,6 +56,8 @@ export const actions = {
 			const res1 = await p1;
 			const res2 = await p2;
 
+			console.log(res1, res2);
+
 			const handleError = async (res: Response) => {
 				// return fail(res.status, { form });
 				console.error(`${res.status}: ${res.statusText}`);

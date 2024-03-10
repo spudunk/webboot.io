@@ -4,7 +4,7 @@ export const data = {
 	facebook: 'https://www.facebook.com/webboot.io',
 	email: 'mailto:info@webboot.io',
 	maps: 'https://g.page/r/CaYMIJbiop3oEBI/',
-	stripe: 'https://billing.stripe.com/p/login/00gaF963I4EB944288',
+	stripe: 'https://billing.stripe.com/p/login/00gaF963I4EB944288'
 };
 
 export const portfolioSites = [
@@ -43,10 +43,10 @@ export const articles = {
 		author: 'Christopher Hicks',
 		img: 'https://webboot.io/og/process-sm.png',
 		description:
-			"The Problem with Filling in the Blanks. " +
-			"Why Refined Pitches Lead to More Effective Websites. " +
+			'The Problem with Filling in the Blanks. ' +
+			'Why Refined Pitches Lead to More Effective Websites. ' +
 			"Exactly how our process works. What's inside our blueprint. " +
-			"How to get more value from your website. And more."
+			'How to get more value from your website. And more.'
 	},
 	guide: {
 		slug: 'guide',
@@ -67,9 +67,9 @@ export const articles = {
 		author: 'Christopher Hicks',
 		img: 'https://webboot.io/og/password-sm.png',
 		description:
-			"My secret process for creating and memorizing unique and secure passwords. " +
+			'My secret process for creating and memorizing unique and secure passwords. ' +
 			"You'll see exactly how I create and memorize secure and seemingly long random passwords in minutes. " +
-			"My personal process revealed for the first time ever!"
+			'My personal process revealed for the first time ever!'
 	},
 	whywebapps: {
 		slug: 'whywebapps',
@@ -79,18 +79,27 @@ export const articles = {
 		author: 'Christopher Hicks',
 		img: 'https://webboot.io/og/whywebapps-sm.png',
 		description:
-			"Read this to learn why we DO NOT use Wordpress. What is a web app? What makes web apps better? " +
+			'Read this to learn why we DO NOT use Wordpress. What is a web app? What makes web apps better? ' +
 			"Do you need to switch? We're sharing the candid TRUTH. Find out now."
 	}
 };
 
-export const kkConsoleMessage = (name="") => {
-	console.log("%c👋  I see you lookin' under the hood there", "color: lime; font-size: 16px; margin: 12px 2px; background-color: #222;");
+export const kkConsoleMessage = (name = '') => {
+	console.log(
+		"%c👋  I see you lookin' under the hood there",
+		'color: lime; font-size: 16px; margin: 12px 2px; background-color: #222;'
+	);
 	if (name) {
-		console.log(`%c🙌  ${name} is in the shell!!!`, "color: fuchsia; font-size: 16px; margin: 12px 2px; background-color: #222;");
+		console.log(
+			`%c🙌  ${name} is in the shell!!!`,
+			'color: fuchsia; font-size: 16px; margin: 12px 2px; background-color: #222;'
+		);
 	}
-	console.log("%c🥷  You look like a cyber ninja\n👀  Like what you see?  🔥  Hire me! \n🙏  Thank you for coming ", "color: lime; font-size: 14px; margin: 16px 2px; background-color: #222;")
-}
+	console.log(
+		'%c🥷  You look like a cyber ninja\n👀  Like what you see?  🔥  Hire me! \n🙏  Thank you for coming ',
+		'color: lime; font-size: 14px; margin: 16px 2px; background-color: #222;'
+	);
+};
 
 function fallbackCopyTextToClipboard(text: string) {
 	const textArea = document.createElement('textarea');

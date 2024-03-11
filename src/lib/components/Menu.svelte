@@ -8,15 +8,12 @@
 	}
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<div
+<button
 	id="overlay"
-	aria-modal="true"
 	class={`${
 		$menuToggled ? 'h-screen opacity-60' : 'h-0 opacity-0'
 	} fixed -z-50 w-screen bg-cyan-900 top-0 left-0 transition-opacity ease-in duration-300`}
 	on:click={toggleMenu}
-	on:keyup={toggleMenu}
 />
 
 <nav
@@ -51,7 +48,6 @@
 				class="inline-block py-1 w-full opacity-80 hover:opacity-100 transition ease-in duration-100"
 				href="/#contact"
 				on:click={toggleMenu}
-				on:keyup={toggleMenu}
 			>
 				Contact
 			</a>

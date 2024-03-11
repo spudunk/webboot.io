@@ -1,5 +1,11 @@
 <script lang="ts">
-	import { Phone, Mail, MapPin, Facebook, Search, CircleDollarSign } from 'lucide-svelte';
+	import Phone from 'lucide-svelte/icons/phone';
+	import Mail from 'lucide-svelte/icons/mail';
+	import MapPin from 'lucide-svelte/icons/map-pin';
+	import Facebook from 'lucide-svelte/icons/facebook';
+	import Search from 'lucide-svelte/icons/search';
+	import CircleDollarSign from 'lucide-svelte/icons/circle-dollar-sign';
+	
 	import { data } from '$lib';
 </script>
 

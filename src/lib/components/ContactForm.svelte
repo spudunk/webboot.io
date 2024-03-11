@@ -1,7 +1,12 @@
 <script lang="ts">
 	import { superForm } from 'sveltekit-superforms/client';
 	import { page } from '$app/stores';
-	import { Phone, Mail, User, Building, Link2 } from 'lucide-svelte';
+	import Phone from 'lucide-svelte/icons/phone';
+	import Mail from 'lucide-svelte/icons/mail';
+	import User from 'lucide-svelte/icons/user';
+	import Building from 'lucide-svelte/icons/building';
+	import Link2 from 'lucide-svelte/icons/link-2';
+
 	// import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
 
 	import type { SuperValidated } from 'sveltekit-superforms';
@@ -23,8 +28,8 @@
 	{#if $message}
 		<div class:success={$page.status == 200} class:error={$page.status >= 400}>{$message}</div>
 	{/if}
-	{#if $delayed} <div>a few more seconds...</div> {/if}
 	{#if $submitting} <div>Submitting...</div> {/if}
+	{#if $delayed} <div>a few more seconds...</div> {/if}
 </div>
 
 <!-- CONTACT FORM  -->

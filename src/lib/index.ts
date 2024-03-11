@@ -7,33 +7,6 @@ export const data = {
 	stripe: 'https://billing.stripe.com/p/login/00gaF963I4EB944288'
 };
 
-export const portfolioSites = [
-	{
-		title: 'Marksman Exteriors',
-		link: 'https://marksmanexteriors.com?ref=webboot.io',
-		img: '/portfolio/marksmanexteriors.com_.png',
-		imgAlt: 'screenshot of Marksman Exteriors website'
-	},
-	{
-		title: 'A Custom Touch Construction',
-		link: 'https://actc.pro?ref=webboot.io',
-		img: '/portfolio/actc.pro_.png',
-		imgAlt: 'screenshot of A Custom Touch Construction website'
-	},
-	{
-		title: 'Full Draw Electric',
-		link: 'https://fulldraw2.web.app?ref=webboot.io',
-		img: '/portfolio/fulldraw2.web.app_.png',
-		imgAlt: 'screenshot of Full Draw Electric website'
-	},
-	{
-		title: 'Walking CJ Ranch',
-		link: 'https://walkingcj.com?ref=webboot.io',
-		img: '/portfolio/walkingcj.com_.png',
-		imgAlt: 'screenshot of Walking CJ Ranch website'
-	}
-];
-
 export const articles = {
 	process: {
 		slug: 'process',
@@ -47,17 +20,6 @@ export const articles = {
 			'Why Refined Pitches Lead to More Effective Websites. ' +
 			"Exactly how our process works. What's inside our blueprint. " +
 			'How to get more value from your website. And more.'
-	},
-	guide: {
-		slug: 'guide',
-		title: 'Website and Marketing Blueprint',
-		heading: 'Our Entire Website and Marketing Blueprint Revealed',
-		date: 'October 30, 2023',
-		author: 'Christopher Hicks',
-		img: 'https://webboot.io/og/guide-sm.png',
-		description:
-			"We're offering our entire process as a DIY guide with an unbelievable gaurantee. " +
-			"For a limited time we're including additional discounts, consulting, and resources."
 	},
 	password: {
 		slug: 'password',

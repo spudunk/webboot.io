@@ -1,7 +1,8 @@
 <script>
-	import { SEO } from '$lib/components';
+	import SEO from '$lib/components/SEO.svelte';
 	import { page } from '$app/stores';
-	import { Facebook, ArrowLeft } from 'lucide-svelte';
+	import Facebook from 'lucide-svelte/icons/facebook';
+	import ArrowLeft from 'lucide-svelte/icons/arrow-left';
 
 	const route = $page.route.id?.split('/');
 	// @ts-ignore
@@ -34,7 +35,7 @@
 
 <SEO title={`${title} - webboot.io`} {description} url={$page.url.href} type="article" {...att} />
 
-<article class="max-w-prose mb-6">
+<article class="container mt-16 max-w-prose mb-6">
 	<h1 class="text-3xl font-bold">{heading}</h1>
 	<p class="leading-5">{description}</p>
 	<p class="mt-2 font-semibold">Date: <i>{date}</i></p>

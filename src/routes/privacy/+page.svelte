@@ -1,4 +1,4 @@
-<div class="tab-content translations-content-item en visible" id="en">
+<div class="container mt-16 tab-content translations-content-item en visible" id="en">
 	<h1>Privacy Policy</h1>
 	<p>Last updated: September 25, 2023</p>
 	<p>

@@ -1,14 +1,15 @@
 import { setError, message, superValidate } from 'sveltekit-superforms/server';
 import { contactSchema, messageSchema } from '$lib/schemas.js';
+import { zod } from 'sveltekit-superforms/adapters';
+
 import { fail } from '@sveltejs/kit';
 import { sendEmail } from '$lib/server';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async () => {
-	// Server API:
 
+export const load: PageServerLoad = async () => {
 	// Send contact form data to the client
-	const contactForm = await superValidate(contactSchema);
+	const contactForm = await superValidate(zod(contactSchema));
 	// Always return { form } in load and form actions.
 	return { contactForm };
 };
@@ -17,7 +18,7 @@ export const actions = {
 	// Always return { form } in load and form actions.
 
 	contact: async ({ request }) => {
-		const form = await superValidate(request, contactSchema);
+		const form = await superValidate(request, zod(contactSchema));
 		// console.log('POST', form);
 
 		// Convenient validation check:
@@ -81,7 +82,7 @@ export const actions = {
 	// End contact action
 
 	message: async ({ request }) => {
-		const form = await superValidate(request, messageSchema);
+		const form = await superValidate(request, zod(messageSchema));
 
 		// console.log('POST', form);
 

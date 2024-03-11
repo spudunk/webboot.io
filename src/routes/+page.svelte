@@ -1,9 +1,15 @@
 <script lang="ts">
-	import { Hero, ServiceCard, SEO, ContactForm } from '$lib/components';
-	import { Wrench, Gauge, Brush } from 'lucide-svelte';
-	import { portfolioSites } from '$lib';
+	import Hero from '$lib/components/Hero.svelte';
+	import ServiceCard from '$lib/components/ServiceCard.svelte';
+	import SEO from '$lib/components/SEO.svelte';
+	import ContactForm from '$lib/components/ContactForm.svelte';
+	import PfCard from '$lib/components/PfCard.svelte';
 
+	import Wrench from 'lucide-svelte/icons/wrench';
+	import Gauge from 'lucide-svelte/icons/gauge';
+	import Brush from 'lucide-svelte/icons/brush';
 	import type { PageData } from './$types';
+
 	export let data: PageData;
 </script>
 
@@ -83,18 +89,19 @@
 				class="bg-amber-700 sm:bg-amber-600 px-4 py-2 text-white rounded-t"
 				style="margin-top: 0;"
 			>
-				Website and Marketing Blueprint
+				Local Businesses!!!
 			</h3>
 			<p class="text-lg px-4" style="max-width: 80ch;">
-				Want to save money on your development? Want to use our process and work with someone else?
+				Because of the convenience, I can make special offers for local businesses in Lewis County,
+				WA. You won't get better value for a simple small business websites from another agency.
 			</p>
 			<p class="text-lg px-4 mt-2" style="max-width: 80ch;">
 				Our full web development blueprint will guide you through our entire process, from research
 				and planning, to creating a design and development breifs, and the basics of DIY
 				maintenance.
 			</p>
-			<p class="text-lg px-4 mt-2 font-bold" style="max-width: 80ch;">100% Money Back Guarantee</p>
-			<a class="m-4 btn" href="guide">More About our Blueprint</a>
+			<!-- <p class="text-lg px-4 mt-2 font-bold" style="max-width: 80ch;">100% Money Back Guarantee</p> -->
+			<a class="m-4 btn" href="guide">Send a Message</a>
 		</div>
 	</div>
 </section>
@@ -104,12 +111,42 @@
 	<div class="container">
 		<h2>Our Work</h2>
 		<div class="grid gap-8 mt-8 md:grid-cols-2">
-			{#each portfolioSites as site}
-				<a href={site.link} target="_blank" class="block rounded border-2 border-neutral-100">
-					<h3>{site.title}</h3>
-					<img src={site.img} alt={site.imgAlt} />
-				</a>
-			{/each}
+			<PfCard link="https://marksmanexteriors.com?ref=webboot.io" title="Marksman Exteriors">
+				<enhanced:img
+					src="$lib/portfolio/marksmanexteriors.com_.png"
+					alt="screenshot of Marksman Exteriors website"
+				/>
+			</PfCard>
+			<PfCard link="https://actc.pro?ref=webboot.io" title="A Custom Touch Construction">
+				<enhanced:img
+					src="$lib/portfolio/actc.pro_.png"
+					alt="screenshot of A Custom Touch Construction website"
+				/>
+			</PfCard>
+			<PfCard title="Full Draw Electric" link="https://fulldraw-electric.com?ref=webboot.io">
+				<enhanced:img
+					src="$lib/portfolio/fulldraw2.web.app_.png"
+					alt="screenshot of Full Draw Electric website"
+				/>
+			</PfCard>
+			<PfCard title="Walking CJ Ranch" link="https://walkingcj.com?ref=webboot.io">
+				<enhanced:img
+					src="$lib/portfolio/walkingcj.com_.png"
+					alt="screenshot of Walking CJ Ranch website"
+				/>
+			</PfCard>
+			<PfCard title="Eagans Diners" link="https://eagansdiner.com/?ref=webboot.io">
+				<enhanced:img
+					src="$lib/portfolio/eagansdiner.com_.png"
+					alt="screenshot of Eagans Diner website"
+				/>
+			</PfCard>
+			<PfCard title="Gods Closet Too" link="https://godsclosettoo.org/?ref=webboot.io">
+				<enhanced:img
+					src="$lib/portfolio/godsclosettoo.org_.png"
+					alt="screenshot of God\'s Closet Too website"
+				/>
+			</PfCard>
 		</div>
 	</div>
 </section>

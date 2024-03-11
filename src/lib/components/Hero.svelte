@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { Hammer, TrendingUp, Users2 } from 'lucide-svelte';
+	import Hammer from 'lucide-svelte/icons/hammer';
+	import TrendingUp from 'lucide-svelte/icons/trending-up';
+	import Users2 from 'lucide-svelte/icons/users';
 </script>
 
 <section class="relative bg-cyan-100 hero-height" id="hero">

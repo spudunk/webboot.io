@@ -11,9 +11,6 @@
 }
 
 @layer utilities {
-	.text-wrap-balance {
-		text-wrap: balance;
-	}
 	/* For Webkit-based browsers (Chrome, Safari and Opera) */
 	.scrollbar-hide::-webkit-scrollbar {
 		display: none;

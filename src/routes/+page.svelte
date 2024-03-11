@@ -89,19 +89,18 @@
 				class="bg-amber-700 sm:bg-amber-600 px-4 py-2 text-white rounded-t"
 				style="margin-top: 0;"
 			>
-				Local Businesses!!!
+				Attention Local Businesses!
 			</h3>
 			<p class="text-lg px-4" style="max-width: 80ch;">
-				Because of the convenience, I can make special offers for local businesses in Lewis County,
-				WA. You won't get better value for a simple small business websites from another agency.
+				I can make special offers for local businesses in Lewis County, WA. You won't get better
+				value for small business websites from another agency.
 			</p>
-			<p class="text-lg px-4 mt-2" style="max-width: 80ch;">
-				Our full web development blueprint will guide you through our entire process, from research
-				and planning, to creating a design and development breifs, and the basics of DIY
-				maintenance.
+			<p class="text-lg px-4">
+				I'd like to provide a free consult to help you get the most out of your new website,
+				regardless if I'm able to take on your project. I will provide helpful insights that will
+				save you time and money.
 			</p>
-			<!-- <p class="text-lg px-4 mt-2 font-bold" style="max-width: 80ch;">100% Money Back Guarantee</p> -->
-			<a class="m-4 btn" href="guide">Send a Message</a>
+			<a class="m-4 btn" href="/#contact">Send a Message</a>
 		</div>
 	</div>
 </section>

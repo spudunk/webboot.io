@@ -21,7 +21,7 @@
 			<br class="hidden sm:inline" />
 			<i class="text-amber-200">intentional</i> online presence
 		</h1>
-		<p class=" md:text-lg lg:text-2xl lg:mt-4 text-center">
+		<p class="md:text-lg lg:text-2xl lg:mt-4 text-center">
 			<span class="hero-span"> We develop digital assets for business. </span>
 			<span class="hero-span"> We offer fast custom web apps, funnels, and SEO. </span>
 			<span class="hero-span"> Start growing your brand online today. </span>
@@ -71,7 +71,7 @@
 		@apply px-2 py-1 flex gap-2 justify-center items-center bg-cyan-900 bg-opacity-50 rounded drop-shadow-lg text-left;
 	}
 	.hero-span {
-		@apply break-inside-avoid inline-block text-wrap-balance;
+		@apply break-inside-avoid inline-block;
 	}
 	.hero-height {
 		height: max(37rem, 90vh);

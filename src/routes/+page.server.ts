@@ -8,15 +8,11 @@ import type { PageServerLoad } from './$types';
 
 
 export const load: PageServerLoad = async () => {
-	// Send contact form data to the client
 	const contactForm = await superValidate(zod(contactSchema));
-	// Always return { form } in load and form actions.
 	return { contactForm };
 };
 
 export const actions = {
-	// Always return { form } in load and form actions.
-
 	contact: async ({ request }) => {
 		const form = await superValidate(request, zod(contactSchema));
 		// console.log('POST', form);

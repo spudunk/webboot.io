@@ -33,7 +33,7 @@
 				<div>
 					<Hammer size="2em" strokeWidth="2" class="text-white" />
 				</div>
-				Develop Digital Assets
+				Automate Sales
 			</li>
 			<li class="hero-li">
 				<div>

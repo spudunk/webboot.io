@@ -10,8 +10,6 @@
 		"sourceMap": true,
 		"strict": true,
 		"types": [
-			"vite-plugin-pwa/info", 
-			"vite-plugin-pwa/client",
 			"@cloudflare/workers-types/2023-07-01"
 		]
 	}

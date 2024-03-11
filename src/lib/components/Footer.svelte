@@ -34,7 +34,7 @@
 			</li>
 		</ul>
 	</div>
-	<div class="mx-auto w-full text-center mt-4">©2023 webboot.io</div>
+	<div class="mx-auto w-full text-center mt-4">©2023-2024 webboot.io</div>
 </div>
 
 <style lang="postcss">

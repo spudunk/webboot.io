@@ -7,9 +7,14 @@
 	import CircleDollarSign from 'lucide-svelte/icons/circle-dollar-sign';
 	
 	import { data } from '$lib';
+	interface Props {
+		[key: string]: any
+	}
+
+	let { ...props }: Props = $props();
 </script>
 
-<div class={`${$$props.class} container `}>
+<div class={`${props.class} container `}>
 	<div class="flex justify-between">
 		<ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-2">
 			<li class=""><Phone /> <a href="tel:3608272736" target="_blank">(360) 827-2736</a></li>

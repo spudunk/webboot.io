@@ -1,6 +1,11 @@
 <script lang="ts">
-	export let heading: string;
-	export let num: string;
+	interface Props {
+		heading: string;
+		num: string;
+		children?: import('svelte').Snippet;
+	}
+
+	let { heading, num, children }: Props = $props();
 </script>
 
 <div class="rounded-lg bg-cyan-100 p-0 min-h-fit card-grid">
@@ -15,7 +20,7 @@
 		</h3>
 
 		<div class="col-span-full mx-4 mb-2 text-lg">
-			<slot />
+			{@render children?.()}
 		</div>
 
 </div>

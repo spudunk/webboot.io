@@ -1,11 +1,19 @@
-<script>
+<script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import { menuToggled, toggleMenu } from '$lib/stores';
 	import { navigating } from '$app/stores';
 
-	export let padMenu = false;
-	$: if ($navigating) {
-		menuToggled.set(false);
+	interface Props {
+		padMenu?: boolean;
 	}
+
+	let { padMenu = false }: Props = $props();
+	run(() => {
+		if ($navigating) {
+			menuToggled.set(false);
+		}
+	});
 </script>
 
 <button
@@ -13,8 +21,8 @@
 	class={`${
 		$menuToggled ? 'h-screen opacity-60' : 'h-0 opacity-0'
 	} fixed -z-50 w-screen bg-cyan-900 top-0 left-0 transition-opacity ease-in duration-300`}
-	on:click={toggleMenu}
-/>
+	onclick={toggleMenu}
+></button>
 
 <nav
 	id="sidebar"
@@ -47,7 +55,7 @@
 			<a
 				class="inline-block py-1 w-full opacity-80 hover:opacity-100 transition ease-in duration-100"
 				href="/#contact"
-				on:click={toggleMenu}
+				onclick={toggleMenu}
 			>
 				Contact
 			</a>

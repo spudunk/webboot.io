@@ -1,17 +1,22 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import Facebook from 'lucide-svelte/icons/facebook';
 	import ArrowLeft from 'lucide-svelte/icons/arrow-left';
 	import { articles } from '$lib';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
 
-	const route = $page.route.id?.split('/');
+	let { children }: Props = $props();
+
+	const route = page.route.id?.split('/');
 	// @ts-ignore
 	const slug = route[route.length - 1];
 	
 	// @ts-ignore
 	const art = articles[slug];
-	const canonical = $page.url.href;
+	const canonical = page.url.href;
 	const img = art.img || '';
 	const title = art.title;
 	const heading = art.heading;
@@ -19,12 +24,12 @@
 	const date = art.date;
 	const author = art.author;
 
-	const att = { img: img, canonical: canonical };
+	const att = $state({ img: img, canonical: canonical });
 	if (canonical) att.canonical = canonical;
 	if (img) att.img = img;
 </script>
 
-<SEO title={`${title} - webboot.io`} {description} url={$page.url.href} type="article" {...att} />
+<SEO title={`${title} - webboot.io`} {description} url={page.url.href} type="article" {...att} />
 
 <div class="container mt-16">
 	<article class="max-w-prose mb-6">
@@ -34,7 +39,7 @@
 		<p class="-mt-1 font-semibold">By: {author}</p>
 		<hr class="mt-4" />
 		<div class="mt-6 md:text-lg lg:text-xl">
-			<slot />
+			{@render children?.()}
 		</div>
 	
 		<style lang="postcss">
@@ -71,7 +76,7 @@
 	<nav class="flex flex-col mt-4">
 		<a
 			class="flex gap-2 py-3 text-blue-700 underline hover:no-underline"
-			href="https://www.facebook.com/sharer/sharer.php?u={$page.url.href}"
+			href="https://www.facebook.com/sharer/sharer.php?u={page.url.href}"
 			target="_blank"
 			rel="nofollow noopener"
 		>

@@ -7,7 +7,11 @@
 	import type { SuperValidated } from 'sveltekit-superforms';
 	import type { MessageSchema } from '$lib/schemas';
 
-	export let data: SuperValidated<MessageSchema>;
+	interface Props {
+		data: SuperValidated<MessageSchema>;
+	}
+
+	let { data }: Props = $props();
 	const { form, message, errors, submitting, delayed, timeout, constraints, enhance } = superForm(
 		data,
 		{
@@ -113,7 +117,7 @@
 
 	<!-- Submit Button -->
 	<div class="flex gap-4">
-		<div class="h-8 w-8" />
+		<div class="h-8 w-8"></div>
 		<button class="border border-cyan-500 rounded px-4 font-semibold">Submit</button>
 	</div>
 </form>

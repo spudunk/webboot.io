@@ -10,7 +10,11 @@
 	import Brush from 'lucide-svelte/icons/brush';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 </script>
 
 <SEO

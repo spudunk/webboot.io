@@ -1,12 +1,24 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  export let url = String($page.url);
-  export let title = "webboot.io";
-  export let description = "We're a digital marketing agency for the businesses we care about. We specialize in custom web app design, development, and promotion."; // prop but use lib/info as default
-  export let img = "";
-  export let domain = "webboot.io";
-  export let type = "website"
-  export let canonical = url;
+  interface Props {
+    url?: any;
+    title?: string;
+    description?: string; // prop but use lib/info as default
+    img?: string;
+    domain?: string;
+    type?: string;
+    canonical?: any;
+  }
+
+  let {
+    url = String($page.url),
+    title = "webboot.io",
+    description = "We're a digital marketing agency for the businesses we care about. We specialize in custom web app design, development, and promotion.",
+    img = "",
+    domain = "webboot.io",
+    type = "website",
+    canonical = url
+  }: Props = $props();
 </script>
 
 <svelte:head>

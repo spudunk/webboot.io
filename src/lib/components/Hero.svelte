@@ -5,11 +5,11 @@
 </script>
 
 <section class="relative bg-cyan-100 hero-height" id="hero">
-	<div class="absolute top-0 left-0 h-[99%] w-full bg-cyan-300 bg5" />
-	<div class="absolute top-0 left-0 h-[98%] w-full bg-cyan-600 bg4" />
-	<div class="absolute top-0 left-0 h-[90%] w-full bg-cyan-700 bg3" />
-	<div class="absolute top-0 left-0 h-[60%] w-full bg-cyan-800 bg2" />
-	<div class="absolute top-0 left-0 h-[30%] w-full bg-cyan-900 bg1" />
+	<div class="absolute top-0 left-0 h-[99%] w-full bg-cyan-300 bg5"></div>
+	<div class="absolute top-0 left-0 h-[98%] w-full bg-cyan-600 bg4"></div>
+	<div class="absolute top-0 left-0 h-[90%] w-full bg-cyan-700 bg3"></div>
+	<div class="absolute top-0 left-0 h-[60%] w-full bg-cyan-800 bg2"></div>
+	<div class="absolute top-0 left-0 h-[30%] w-full bg-cyan-900 bg1"></div>
 
 	<div
 		class="absolute flex justify-center flex-col gap-3 text-white items-center top-0 left-1/2 -translate-x-1/2 pt-12 h-full container"

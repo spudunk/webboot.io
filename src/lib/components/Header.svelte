@@ -1,14 +1,19 @@
-<script>
+<script lang="ts">
 	import Logo from '$lib/components/Logo.svelte';
 	import MenuButton from '$lib/components/MenuButton.svelte';
 	import Menu from '$lib/components/Menu.svelte';
 	import { page } from '$app/stores';
 	import { menuToggled } from '$lib/stores';
 	import { onMount } from 'svelte';
+	interface Props {
+		[key: string]: any
+	}
 
-	$: home = $page.route.id == '/';
-	let y = 0;
-	$: atTop = y < 25;
+	let { ...props }: Props = $props();
+
+	let home = $derived($page.route.id == '/');
+	let y = $state(0);
+	let atTop = $derived(y < 25);
 
 	let toggled = false;
 	onMount(() => {
@@ -25,7 +30,7 @@
 <svelte:window bind:scrollY={y} />
 
 <header
-	class={`${$$props.class} h-12 py-1 transition-all duration-200 z-30 \
+	class={`${props.class} h-12 py-1 transition-all duration-200 z-30 \
 	${atTop && home && $page.status == 200 ? 'h-16 sm:h-24' : 'h-12'} \
 	${$menuToggled ? 'bg-cyan-900' : 'bg-cyan-900/[.90]'} \
 	`}

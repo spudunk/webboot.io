@@ -24,7 +24,8 @@ export const sendEmail = (data: {
 	return fetch('https://api.mailchannels.net/tx/v1/send', {
 		method: 'POST',
 		headers: {
-			'content-type': 'application/json'
+			'content-type': 'application/json',
+			'X-Api-Key': 'hwnNwz6WfLjrr2szoVqxfp8v3Tcj90ry'
 		},
 		body: JSON.stringify({
 			personalizations: [

@@ -1,20 +1,15 @@
 <script lang="ts">
-	import Phone from 'lucide-svelte/icons/phone';
-	import Mail from 'lucide-svelte/icons/mail';
-	import MapPin from 'lucide-svelte/icons/map-pin';
-	import Facebook from 'lucide-svelte/icons/facebook';
-	import Search from 'lucide-svelte/icons/search';
-	import CircleDollarSign from 'lucide-svelte/icons/circle-dollar-sign';
-	
+	import { Phone, Mail, MapPin, Facebook, Search, CircleDollarSign } from 'lucide-svelte';
 	import { data } from '$lib';
+
 	interface Props {
-		[key: string]: any
+		class?: string;
 	}
 
-	let { ...props }: Props = $props();
+	let { class: className }: Props = $props();
 </script>
 
-<div class={`${props.class} container `}>
+<div class={`${className} container `}>
 	<div class="flex justify-between">
 		<ul class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-2">
 			<li class=""><Phone /> <a href="tel:3608272736" target="_blank">(360) 827-2736</a></li>

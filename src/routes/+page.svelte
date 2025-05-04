@@ -4,17 +4,7 @@
 	import SEO from '$lib/components/SEO.svelte';
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import PfCard from '$lib/components/PfCard.svelte';
-
-	import Wrench from 'lucide-svelte/icons/wrench';
-	import Gauge from 'lucide-svelte/icons/gauge';
-	import Brush from 'lucide-svelte/icons/brush';
-	import type { PageData } from './$types';
-
-	interface Props {
-		data: PageData;
-	}
-
-	let { data }: Props = $props();
+	import { Wrench, Gauge, Brush } from 'lucide-svelte';
 </script>
 
 <SEO
@@ -60,8 +50,8 @@
 			</p>
 			<!-- 				
 			Everything you need to build your website or web app the most painless and effective way
-			possible. It’s the first step to making your business look great online while avoiding
-			common pitfalls. We’ll help you complete this before taking on your web design and custom
+			possible. It's the first step to making your business look great online while avoiding
+			common pitfalls. We'll help you complete this before taking on your web design and custom
 			app development project. -->
 		</ServiceCard>
 		<ServiceCard heading="Web App Development" num="2">
@@ -74,7 +64,7 @@
 		<ServiceCard heading="Management " num="3">
 			<p>Optionally, we can host, manage, and update web apps we build for a fair price.</p>
 			<p>
-				We’ll provide hosting, analytics, form delivery, and any other services your app requires in
+				We'll provide hosting, analytics, form delivery, and any other services your app requires in
 				a single subscription.
 			</p>
 		</ServiceCard>
@@ -161,7 +151,7 @@
 		<div class="grid md:grid-cols-5 items-center gap-8">
 			<div class="col-span-4">
 				<h3 class="flex gap-4 items-center">
-					<Gauge class="hidden md:inline-block h-14 w-14 text-cyan-600 justify-self-center " />
+					<Gauge class="hidden md:inline-block h-14 w-14 text-emerald-600 justify-self-center " />
 					Performance
 				</h3>
 				<p>
@@ -184,7 +174,7 @@
 		<div class="grid md:grid-cols-5 items-center gap-8">
 			<div class="col-span-4">
 				<h3 class="flex gap-4 items-center">
-					<Brush class="hidden md:inline-block h-14 w-14 text-cyan-600 justify-self-center " />
+					<Brush class="hidden md:inline-block h-14 w-14 text-emerald-600 justify-self-center " />
 					Design
 				</h3>
 				<p>
@@ -203,7 +193,7 @@
 				</p>
 
 				<p>
-					We start each design focusing on the user’s conversion journey.<br />
+					We start each design focusing on the user's conversion journey.<br />
 					Our design decisions are based on data, like
 					<a
 						href="https://credibility.stanford.edu/guidelines/index.html"
@@ -223,7 +213,7 @@
 		<div class="grid md:grid-cols-5 items-center gap-8">
 			<div class="col-span-4">
 				<h3 class="flex gap-4 items-center">
-					<Wrench class="hidden md:inline-block h-14 w-14 text-cyan-600 justify-self-center " />
+					<Wrench class="hidden md:inline-block h-14 w-14 text-emerald-600 justify-self-center " />
 					Control
 				</h3>
 				<p>Controlling your own app code allows you to</p>
@@ -243,13 +233,13 @@
 <section class="container mt-16 scroll-m-14" id="contact">
 	<h2>Contact</h2>
 	<p class="mt-8 text-xl">
-		If you’d like to work with us or need more information, feel free to reach out by email or
-		phone. Or, leave your info below and we’ll reach out within a few business days. We won’t share
+		If you'd like to work with us or need more information, feel free to reach out by email or
+		phone. Or, leave your info below and we'll reach out within a few business days. We won't share
 		your information or send spam.
 	</p>
 
 	<div class="my-2 md:ml-6 md:w-2/3 lg:w-1/2 text-lg">
-		<ContactForm data={data.contactForm} />
+		<ContactForm />
 	</div>
 </section>
 

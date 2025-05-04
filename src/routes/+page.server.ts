@@ -1,141 +1,75 @@
-import { setError, message, superValidate } from 'sveltekit-superforms/server';
-import { contactSchema, messageSchema } from '$lib/schemas.js';
-import { zod } from 'sveltekit-superforms/adapters';
+import { fail, error as kitError } from '@sveltejs/kit';
+import type { PageServerLoad, Actions } from './$types';
+import { z } from 'zod';
+import type { ContactFormData } from '$lib/types';
+import { EmailService } from '$lib/server/email';
 
-import { fail } from '@sveltejs/kit';
-import { sendEmail } from '$lib/server';
-import type { PageServerLoad } from './$types';
-
+const contactSchema = z.object({
+	name: z.string().min(1, 'Name is required'),
+	email: z.string().email('Invalid email address'),
+	tel: z.string().optional(),
+	business: z.string().optional(),
+	website: z.string().url('Invalid website URL').optional().or(z.literal(''))
+});
 
 export const load: PageServerLoad = async () => {
-	const contactForm = await superValidate(zod(contactSchema));
-	return { contactForm };
+	return {};
 };
 
 export const actions = {
-	contact: async ({ request }) => {
-		const form = await superValidate(request, zod(contactSchema));
-		// console.log('POST', form);
+	contact: async ({ request, getClientAddress, locals }) => {
+		const ip = getClientAddress();
 
-		// Convenient validation check:
-		if (!form.valid) {
-			// Again, always return { form } and things will just work.
-			return fail(400, { form });
+		// Check rate limit
+		const allowed = await locals.db.checkRateLimit(ip);
+		if (!allowed) {
+			return fail(429, {
+				message: 'Too many submissions. Please try again later.',
+				values: {}
+			});
 		}
 
-		// Email the validated form data
+		// Process and validate form
+		const formData = await request.formData();
+		const data = Object.fromEntries(formData) as ContactFormData;
+		const result = contactSchema.safeParse(data);
+
+		if (!result.success) {
+			return fail(400, {
+				errors: result.error.flatten().fieldErrors,
+				message: 'Please check your input and try again.',
+				values: data
+			});
+		}
+
+		// Store in D1
 		try {
-			const p1 = sendEmail({
-				to: form.data.email,
-				from: 'chris@webboot.io',
-				subject: 'Thanks for contacting webboot.io!',
-				textBody:
-					`Hi ${form.data.name}, I'll reach out within a few days to discuss your project.` +
-					`If you need immediate assistance please call my cell.\n\n` +
-					`Christopher Hicks\n` +
-					`(360) 827-2736\n` +
-					`chris@webboot.io`
+			const submissionId = await locals.db.createSubmission({
+				name: result.data.name,
+				email: result.data.email,
+				phone: result.data.tel,
+				company: result.data.business,
+				message: `Website: ${result.data.website || 'Not provided'}\nIP: ${ip}`
 			});
 
-			const p2 = sendEmail({
-				to: 'chris@webboot.io',
-				from: 'forms@webboot.io',
-				subject: `New submission${form.data.business ? ` from ${form.data.business}` : ''}`,
-				textBody:
-					`email: ${form.data.email}\n` +
-					`name: ${form.data.name}\n` +
-					`tel: ${form.data.tel}\n` +
-					`business: ${form.data.business}\n` +
-					`website: ${form.data.website}`
+			// Send emails
+			const emailResult = await EmailService.sendFormSubmissionEmails({
+				...result.data,
+				ip,
+				submissionId
 			});
 
-			// wait for both emails in parallel
-			const res1 = await p1;
-			const res2 = await p2;
-
-			const handleError = async (res: Response) => {
-				// return fail(res.status, { form });
-				console.error(`${res.status}: ${res.statusText}`);
-				setError(form, `${res.status}: ${res.statusText}`);
-				return message(form, `${res.status}: ${res.statusText}`, {
-					status: 500
-				});
-			};
-
-			if (!res1.ok) {
-				return handleError(res1); // returns form with error wrapper
+			if (!emailResult.userEmail.ok || !emailResult.adminEmail.ok) {
+				throw kitError(500, 'Failed to send email');
 			}
-			if (!res2.ok) {
-				return handleError(res2); // returns form with error wrapper
-			}
+
+			return { message: "Thanks for reaching out! I'll be in touch soon." };
 		} catch (err) {
-			console.error(err);
-			return message(form, err, { status: 500 });
-		}
-
-		return message(form, 'form submitted');
-	},
-	// End contact action
-
-	message: async ({ request }) => {
-		const form = await superValidate(request, zod(messageSchema));
-
-		// console.log('POST', form);
-
-		// Convenient validation check:
-		if (!form.valid) {
-			// Again, always return { form } and things will just work.
-			return fail(400, { form });
-		}
-
-		// Email the validated form data
-		try {
-			const p1 = sendEmail({
-				to: form.data.email,
-				from: 'chris@webboot.io',
-				subject: 'Thanks for messaging webboot.io!',
-				textBody:
-					`Hi ${form.data.name}, I got your message. I'll reach out soon.` +
-					`If you need immediate assistance please call my cell.\n\n` +
-					`Christopher Hicks\n` +
-					`(360) 827-2736\n` +
-					`chris@webboot.io`
+			console.error('Form submission error:', err);
+			return fail(500, {
+				message: 'Something went wrong. Please try again later.',
+				values: data
 			});
-
-			const p2 = sendEmail({
-				to: 'chris@webboot.io',
-				from: 'forms@webboot.io',
-				subject: `New message from ${form.data.name}`,
-				textBody:
-					`email: ${form.data.email}\n` +
-					`name: ${form.data.name}\n` +
-					`tel: ${form.data.tel}\n` +
-					`message: ${form.data.message}\n`
-			});
-
-			// wait for both emails in parallel
-			const res1 = await p1;
-			const res2 = await p2;
-
-			const handleError = async (res: Response) => {
-				// return fail(res.status, { form });
-				setError(form, `${res.status}: ${res.statusText}`);
-				return message(form, `${res.status}: ${res.statusText}`, {
-					status: 500
-				});
-			};
-
-			if (!res1.ok) {
-				return handleError(res1); // returns form with error wrapper
-			}
-			if (!res2.ok) {
-				return handleError(res2); // returns form with error wrapper
-			}
-		} catch (err) {
-			console.error(err);
-			return message(form, err, { status: 500 });
 		}
-
-		return message(form, 'form submitted');
 	}
-};
+} satisfies Actions;

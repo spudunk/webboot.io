@@ -1,0 +1,15 @@
+name = "webboot"
+main = "src/entry.ts"
+compatibility_date = "2024-05-04"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "webboot_crm"
+database_id = "1766519f-164f-4f32-83d0-55895feb3d41"
+
+[triggers]
+crons = ["0 9 * * *"]  # Run at 9 AM every day
+
+[vars]
+FROM_EMAIL = "chris@webboot.io"
+ADMIN_EMAIL = "chris@webboot.io" 

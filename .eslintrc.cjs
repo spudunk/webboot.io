@@ -11,7 +11,8 @@ module.exports = {
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2020,
-		extraFileExtensions: ['.svelte']
+		extraFileExtensions: ['.svelte'],
+		project: './tsconfig.json'
 	},
 	env: {
 		browser: true,
@@ -25,6 +26,17 @@ module.exports = {
 			parserOptions: {
 				parser: '@typescript-eslint/parser'
 			}
+		},
+		{
+			files: ['*.js', '*.cjs', '*.mjs'],
+			parser: 'espree',
+			parserOptions: {
+				ecmaVersion: 2020
+			}
 		}
-	]
+	],
+	rules: {
+		'@typescript-eslint/no-explicit-any': 'warn',
+		'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }]
+	}
 };

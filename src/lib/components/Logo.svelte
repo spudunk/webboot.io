@@ -1,16 +1,12 @@
 <script lang="ts">
 	interface Props {
-		[key: string]: any
+		class?: string;
 	}
 
-	let { ...props }: Props = $props();
+	let { class: className }: Props = $props();
 </script>
 
-<svg
-	viewBox="0 0 219 152"
-	xmlns="http://www.w3.org/2000/svg"
-	fill="currentcolor"
-	class={props.class}
+<svg viewBox="0 0 219 152" xmlns="http://www.w3.org/2000/svg" fill="currentcolor" class={className}
 	><path
 		fill-rule="evenodd"
 		clip-rule="evenodd"

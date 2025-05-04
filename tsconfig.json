@@ -9,9 +9,10 @@
 		"skipLibCheck": true,
 		"sourceMap": true,
 		"strict": true,
-		"types": [
-			"@cloudflare/workers-types/2023-07-01"
-		]
+		"types": ["@cloudflare/workers-types/2023-07-01", "svelte"],
+		"moduleResolution": "bundler",
+		"module": "ESNext",
+		"target": "ESNext"
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//

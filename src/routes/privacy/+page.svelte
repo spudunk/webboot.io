@@ -166,9 +166,10 @@
 	</p>
 	<h4>Tracking Technologies and Cookies</h4>
 	<p>
-		We <strong>DO NOT</strong> use Cookies to track the activity on Our Service. We use the privacy focused 
-		analytics tool <a href="https://www.simpleanalytics.com/?referral=fawet">Simple Analytics</a> to 
-		track information and to improve and analyze Our Service. 
+		We <strong>DO NOT</strong> use Cookies to track the activity on Our Service. We use the privacy
+		focused analytics tool
+		<a href="https://www.simpleanalytics.com/?referral=fawet">Simple Analytics</a> to track information
+		and to improve and analyze Our Service.
 	</p>
 
 	<h3>Use of Your Personal Data</h3>

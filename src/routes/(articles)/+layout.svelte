@@ -1,22 +1,22 @@
 <script lang="ts">
 	import SEO from '$lib/components/SEO.svelte';
-	import { page } from '$app/state';
-	import Facebook from 'lucide-svelte/icons/facebook';
-	import ArrowLeft from 'lucide-svelte/icons/arrow-left';
+	import { page } from '$app/stores';
+	import { Facebook, ArrowLeft } from 'lucide-svelte';
 	import { articles } from '$lib';
+
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
 
 	let { children }: Props = $props();
 
-	const route = page.route.id?.split('/');
-	// @ts-ignore
+	const route = $page.route.id?.split('/');
+	// @ts-expect-error - route is guaranteed to have at least one segment
 	const slug = route[route.length - 1];
-	
-	// @ts-ignore
+
+	// @ts-expect-error - articles[slug] is guaranteed to exist
 	const art = articles[slug];
-	const canonical = page.url.href;
+	const canonical = $page.url.href;
 	const img = art.img || '';
 	const title = art.title;
 	const heading = art.heading;
@@ -29,7 +29,7 @@
 	if (img) att.img = img;
 </script>
 
-<SEO title={`${title} - webboot.io`} {description} url={page.url.href} type="article" {...att} />
+<SEO title={`${title} - webboot.io`} {description} url={$page.url.href} type="article" {...att} />
 
 <div class="container mt-16">
 	<article class="max-w-prose mb-6">
@@ -41,7 +41,7 @@
 		<div class="mt-6 md:text-lg lg:text-xl">
 			{@render children?.()}
 		</div>
-	
+
 		<style lang="postcss">
 			ul {
 				@apply list-inside list-disc mb-4;
@@ -56,7 +56,7 @@
 			li {
 				@apply mt-1 leading-7;
 			}
-	
+
 			p {
 				@apply leading-7 mt-2;
 			}
@@ -71,19 +71,19 @@
 			}
 		</style>
 	</article>
-	
+
 	<hr />
 	<nav class="flex flex-col mt-4">
 		<a
 			class="flex gap-2 py-3 text-blue-700 underline hover:no-underline"
-			href="https://www.facebook.com/sharer/sharer.php?u={page.url.href}"
+			href="https://www.facebook.com/sharer/sharer.php?u={$page.url.href}"
 			target="_blank"
 			rel="nofollow noopener"
 		>
 			<Facebook class="text-sm" />
 			Share on FaceBook
 		</a>
-	
+
 		<a href="/articles" class="flex gap-2 py-3 text-blue-700 underline hover:no-underline">
 			<ArrowLeft class="text-sm" />
 			Back to Articles</a

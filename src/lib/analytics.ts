@@ -6,10 +6,9 @@ const analytics = Analytics({
 	plugins: [
 		// Load simple analytics! 🎉
 		simpleAnalyticsPlugin({
-      customDomain: 'sa.webboot.io',
-      collectDnt: true,
-      
-    })
+			customDomain: 'sa.webboot.io',
+			collectDnt: true
+		})
 	]
 });
 

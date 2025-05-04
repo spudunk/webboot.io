@@ -5,15 +5,19 @@
 	import { page } from '$app/stores';
 	import { menuToggled } from '$lib/stores';
 	import { onMount } from 'svelte';
+
 	interface Props {
-		[key: string]: any
+		class?: string;
 	}
 
-	let { ...props }: Props = $props();
+	let { class: className }: Props = $props();
 
-	let home = $derived($page.route.id == '/');
 	let y = $state(0);
 	let atTop = $derived(y < 25);
+	let home = $derived($page.route.id == '/');
+	let isExpanded = $derived(atTop && home && $page.status == 200);
+	let headerHeight = $derived(isExpanded ? 'h-16 sm:h-24' : 'h-12');
+	let headerBg = $derived($menuToggled ? 'bg-emerald-900' : 'bg-emerald-900/[.90]');
 
 	let toggled = false;
 	onMount(() => {
@@ -29,18 +33,13 @@
 
 <svelte:window bind:scrollY={y} />
 
-<header
-	class={`${props.class} h-12 py-1 transition-all duration-200 z-30 \
-	${atTop && home && $page.status == 200 ? 'h-16 sm:h-24' : 'h-12'} \
-	${$menuToggled ? 'bg-cyan-900' : 'bg-cyan-900/[.90]'} \
-	`}
->
+<header class={`${className} ${headerHeight} py-1 transition-all duration-200 z-30 ${headerBg}`}>
 	<div class="container h-full flex flex-wrap items-center justify-between">
 		{#if home}
-			<Logo class="text-cyan-300 h-2/3 sm:h-full" />
+			<Logo class="text-emerald-300 h-2/3 sm:h-full" />
 		{:else}
 			<a href="/" class="h-full flex items-center" aria-label="home" data-sveltekit-reloadpermalink>
-				<Logo class="text-cyan-300 h-2/3 sm:h-full" />
+				<Logo class="text-emerald-300 h-2/3 sm:h-full" />
 			</a>
 		{/if}
 		<!-- DEBUG -->
@@ -49,7 +48,7 @@
 		<div class="flex gap-4 items-center">
 			<a href="/#contact" class="hidden min-[300px]:block btn">Get Started</a>
 			<MenuButton class="h-full" {toggled} />
-			<Menu padMenu={atTop && home} />
+			<Menu padMenu={isExpanded} />
 		</div>
 	</div>
 </header>

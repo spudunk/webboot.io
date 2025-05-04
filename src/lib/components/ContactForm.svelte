@@ -1,42 +1,28 @@
 <script lang="ts">
-	import { superForm } from 'sveltekit-superforms/client';
+	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
-	import Phone from 'lucide-svelte/icons/phone';
-	import Mail from 'lucide-svelte/icons/mail';
-	import User from 'lucide-svelte/icons/user';
-	import Building from 'lucide-svelte/icons/building';
-	import Link2 from 'lucide-svelte/icons/link-2';
+	import { Phone, Mail, User, Building, Link2 } from 'lucide-svelte';
 
-	// import SuperDebug from 'sveltekit-superforms/client/SuperDebug.svelte';
-
-	import type { SuperValidated } from 'sveltekit-superforms';
-	import type { ContactSchema } from '$lib/schemas';
-
-	interface Props {
-		data: SuperValidated<ContactSchema>;
-	}
-
-	let { data }: Props = $props();
-	const { form, message, errors, submitting, delayed, timeout, constraints, enhance } = superForm(
-		data,
-		{
-			delayMs: 500,
-			timeoutMs: 5000
-		}
-	);
+	let formData = {
+		name: '',
+		email: '',
+		tel: '',
+		business: '',
+		website: ''
+	};
 </script>
 
-<!-- <SuperDebug data={$form} /> -->
-
 <div class="my-2 h-8">
-	{#if $message}
-		<div class:success={$page.status == 200} class:error={$page.status >= 400}>{$message}</div>
+	{#if $page.form?.message}
+		<div class:success={$page.status == 200} class:error={$page.status >= 400}>
+			{$page.form.message}
+		</div>
 	{/if}
-	{#if $submitting} <div>Submitting...</div> {/if}
-	{#if $delayed} <div>a few more seconds...</div> {/if}
+	{#if $page.form?.submitting}
+		<div>Submitting...</div>
+	{/if}
 </div>
 
-<!-- CONTACT FORM  -->
 <form
 	method="POST"
 	action="/?/contact"
@@ -48,7 +34,7 @@
 	<div class="flex gap-4">
 		<label for="name"
 			><div class="h-8 w-8">
-				<User class="h-8 w-8 text-cyan-700" />
+				<User class="h-8 w-8 text-emerald-700" />
 			</div>
 		</label>
 		<input
@@ -57,19 +43,17 @@
 			id="name"
 			autocomplete="name"
 			placeholder="Name (required)"
-			class="border rounded border-cyan-500 w-full px-2"
-			bind:value={$form.name}
-			aria-invalid={$errors.name ? 'true' : undefined}
-			{...$constraints.name}
+			class="border rounded border-emerald-500 w-full px-2"
+			bind:value={formData.name}
+			required
 		/>
 	</div>
-	{#if $errors.name}<span class="text-red-500">{$errors.name}</span>{/if}
 
 	<!-- Email input -->
 	<div class="flex gap-4">
 		<label for="email">
 			<div class="h-8 w-8">
-				<Mail class="h-8 w-8 text-cyan-700" />
+				<Mail class="h-8 w-8 text-emerald-700" />
 			</div>
 		</label>
 		<input
@@ -78,19 +62,17 @@
 			id="email"
 			autocomplete="email"
 			placeholder="Email (required)"
-			class="border rounded border-cyan-500 w-full px-2"
-			bind:value={$form.email}
-			aria-invalid={$errors.email ? 'true' : undefined}
-			{...$constraints.email}
+			class="border rounded border-emerald-500 w-full px-2"
+			bind:value={formData.email}
+			required
 		/>
 	</div>
-	{#if $errors.email}<span class="text-red-500">{$errors.email}</span>{/if}
 
 	<!-- Tel input -->
 	<div class="flex gap-4">
 		<label for="tel">
 			<div class="h-8 w-8">
-				<Phone class="h-8 w-8 text-cyan-700" />
+				<Phone class="h-8 w-8 text-emerald-700" />
 			</div>
 		</label>
 		<input
@@ -99,39 +81,33 @@
 			id="tel"
 			autocomplete="tel"
 			placeholder="Phone"
-			class="border rounded border-cyan-500 w-full px-2"
-			aria-invalid={$errors.tel ? 'true' : undefined}
-			bind:value={$form.tel}
-			{...$constraints.tel}
+			class="border rounded border-emerald-500 w-full px-2"
+			bind:value={formData.tel}
 		/>
 	</div>
-	{#if $errors.tel}<span class="text-red-500">{$errors.tel}</span>{/if}
 
 	<!-- Business input -->
 	<div class="flex gap-4">
 		<label for="business">
 			<div class="h-8 w-8">
-				<Building class="h-8 w-8 text-cyan-700" />
+				<Building class="h-8 w-8 text-emerald-700" />
 			</div>
 		</label>
 		<input
 			type="text"
 			name="business"
 			id="business"
-			class="border rounded border-cyan-500 w-full px-2"
+			class="border rounded border-emerald-500 w-full px-2"
 			placeholder="Business Name"
-			aria-invalid={$errors.business ? 'true' : undefined}
-			bind:value={$form.business}
-			{...$constraints.business}
+			bind:value={formData.business}
 		/>
 	</div>
-	{#if $errors.business}<span class="text-red-500">{$errors.business}</span>{/if}
 
 	<!-- Website input -->
 	<div class="flex gap-4">
 		<label for="website">
 			<div class="h-8 w-8">
-				<Link2 class="h-8 w-8 text-cyan-700" />
+				<Link2 class="h-8 w-8 text-emerald-700" />
 			</div>
 		</label>
 		<input
@@ -140,18 +116,29 @@
 			id="website"
 			autocomplete="url"
 			placeholder="Website URL"
-			class="border rounded border-cyan-500 w-full px-2"
-			aria-invalid={$errors.website ? 'true' : undefined}
-			bind:value={$form.website}
-			{...$constraints.website}
+			class="border rounded border-emerald-500 w-full px-2"
+			bind:value={formData.website}
 		/>
 	</div>
-	{#if $errors.website}<span class="text-red-500">{$errors.website}</span>{/if}
+
+	<!-- Error Messages -->
+	{#if $page.form?.errors}
+		<div class="flex gap-4">
+			<div class="h-8 w-8"></div>
+			<div class="text-red-500">
+				{#each Object.entries($page.form.errors) as [field, error]}
+					{error}{@const isLast = field === Object.keys($page.form.errors).pop()}{!isLast
+						? ', '
+						: ''}
+				{/each}
+			</div>
+		</div>
+	{/if}
 
 	<!-- Submit Button -->
 	<div class="flex gap-4">
 		<div class="h-8 w-8"></div>
-		<button class="border border-cyan-500 rounded px-4 font-semibold">Submit</button>
+		<button class="border border-emerald-500 rounded px-4 font-semibold">Submit</button>
 	</div>
 </form>
 
@@ -171,5 +158,4 @@
 	button:focus {
 		@apply outline outline-amber-500 border-amber-500;
 	}
-
 </style>

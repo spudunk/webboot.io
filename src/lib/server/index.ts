@@ -1,27 +1,19 @@
 // place files you want to import through the `$lib` alias in this folder.
 import { DKIMKEY, MCAPIKEY } from '$env/static/private';
+import { error } from '@sveltejs/kit';
+
+// Validate environment variables
+if (!DKIMKEY || !MCAPIKEY) {
+	throw new Error('Missing required environment variables for email configuration');
+}
 
 /**
- * @typedef {Object} EmailData
- * @property {string} data.to
- * @property {string} data.from
- * @property {string} data.subject
- * @property {string} data.textBody
- * @returns
+ * Sends an email using MailChannels API
+ * @param data Email data including recipient, sender, subject, and body
+ * @returns Promise<Response> The response from the MailChannels API
  */
-
-/**
- *
- * @param {EmailData} data
- * @returns
- */
-export const sendEmail = (data: {
-	to: string;
-	from: string;
-	subject: string;
-	textBody: string;
-}) => {
-	return fetch('https://api.mailchannels.net/tx/v1/send', {
+export const sendEmail = async (data: EmailData): Promise<Response> => {
+	const response = await fetch('https://api.mailchannels.net/tx/v1/send', {
 		method: 'POST',
 		headers: {
 			'content-type': 'application/json',
@@ -49,4 +41,12 @@ export const sendEmail = (data: {
 			]
 		})
 	});
+
+	if (!response.ok) {
+		throw error(response.status, {
+			message: `Email failed to send: ${response.statusText}`
+		});
+	}
+
+	return response;
 };

@@ -12,7 +12,8 @@
 		"types": ["@cloudflare/workers-types/2023-07-01", "svelte"],
 		"moduleResolution": "bundler",
 		"module": "ESNext",
-		"target": "ESNext"
+		"target": "ESNext",
+		"typeRoots": ["./node_modules/@types", "./src/types"]
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//

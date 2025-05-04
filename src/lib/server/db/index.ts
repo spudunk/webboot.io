@@ -1,4 +1,4 @@
-import { D1Database } from '@cloudflare/workers-types';
+import type { D1Database } from '@cloudflare/workers-types';
 
 // Rate limiting configuration
 const RATE_LIMIT_CONFIG = {

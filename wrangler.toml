@@ -1,5 +1,4 @@
 name = "webboot"
-main = "src/entry.ts"
 compatibility_date = "2024-05-04"
 pages_build_output_dir = ".svelte-kit/cloudflare"
 

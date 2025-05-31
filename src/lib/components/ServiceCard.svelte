@@ -2,9 +2,9 @@
 	let { num, heading, children } = $props();
 </script>
 
-<div class="rounded-lg bg-emerald-100 p-0 min-h-fit card-grid">
+<div class="rounded-lg bg-neutral-100 p-0 min-h-fit card-grid">
 	<div
-		class="h-14 w-14 inline-flex aspect-square rounded-none rounded-br-lg justify-center items-center bg-emerald-600 text-4xl text-amber-100"
+		class="h-14 w-14 inline-flex aspect-square rounded-none rounded-br-lg justify-center items-center bg-neutral-600 text-4xl text-neutral-100"
 	>
 		{num}
 	</div>

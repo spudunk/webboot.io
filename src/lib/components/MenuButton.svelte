@@ -1,12 +1,10 @@
 <script lang="ts">
 	import { menuToggled } from '$lib/stores';
-
-	interface Props {
-		class?: string;
-		toggled: boolean;
-	}
-
-	let { class: className, toggled }: Props = $props();
+	let toggled = $state(false);
+	menuToggled.subscribe((t) => {
+		toggled = t;
+	});
+	let { class: className } = $props();
 	const line = // horizontal line div of button
 		'bg-cyan-50 w-7 sm:w-9 h-[.2rem]  sm:h-1 my-[.2rem] sm:my-1 rounded-full transition ease-in-out transform duration-300';
 </script>

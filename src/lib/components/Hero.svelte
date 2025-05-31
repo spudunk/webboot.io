@@ -2,50 +2,63 @@
 	import { Hammer, TrendingUp, Users2 } from 'lucide-svelte';
 </script>
 
-<section class="relative bg-emerald-100 hero-height" id="hero">
-	<div class="absolute top-0 left-0 h-[99%] w-full bg-emerald-300 bg5"></div>
-	<div class="absolute top-0 left-0 h-[98%] w-full bg-emerald-600 bg4"></div>
-	<div class="absolute top-0 left-0 h-[90%] w-full bg-emerald-700 bg3"></div>
-	<div class="absolute top-0 left-0 h-[60%] w-full bg-emerald-800 bg2"></div>
-	<div class="absolute top-0 left-0 h-[30%] w-full bg-emerald-900 bg1"></div>
+<section class="relative hero-height" id="hero">
+	<div class="absolute top-0 left-0 h-[99%] w-full bg-neutral bg5"></div>
+	<div class="absolute top-0 left-0 h-[98%] w-full bg-neutral-600 bg4"></div>
+	<div class="absolute top-0 left-0 h-[90%] w-full bg-neutral-700 bg3"></div>
+	<div class="absolute top-0 left-0 h-[60%] w-full bg-neutral-800 bg2"></div>
+	<div class="absolute top-0 left-0 h-[30%] w-full bg-neutral-900 bg1"></div>
 
 	<div
 		class="absolute flex justify-center flex-col gap-3 text-white items-center top-0 left-1/2 -translate-x-1/2 pt-12 h-full container"
 	>
 		<h1
-			class="text-xl sm:text-2xl md:text-4xl lg:text-5xl text-center font-semibold text-wrap-balance"
+			class="flex flex-col gap-4 md:gap-6 text-xl sm:text-2xl md:text-4xl lg:text-5xl text-center font-semibold text-wrap-balance"
 		>
-			Solve <span class="text-amber-200"> growth constraints </span> with
-			<br class="hidden sm:inline" />
-			<i class="text-amber-200">intentional</i> online presence
+			<span>
+				we build <span class="text-lime-200"> custom digital assets </span>
+			</span>
+			<span>
+				to <span class="font-bold italic">SUPERCHARGE </span>
+			</span>
+			<!-- 
+			<span>conversion, </span>
+			<span>retention &amp; </span>
+			<span>staffing</span> -->
+
+			<!-- <p class="md:text-lg lg:text-2xl lg:mt-4 flex flex-col">
+			<span class="hero-span"> automation, rewards, </span>
+			<span class="hero-span"> text and email campaigns, </span>
+			<span class="hero-span">
+				one time cost,
+				<span class="text-lime-200"> no subscription </span>
+			</span>
+		</p> -->
+			<div class="flex justify-center">
+				<ul
+					class="flex flex-col items-baseline md:flex-row gap-4 md:gap-8 font-bold sm:font-semibold"
+				>
+					<li class="hero-span">
+						<div class=" border-white rounded border md:border-2 lg:border-4 p-1">
+							<TrendingUp size="1em" strokeWidth="2" class="text-lime-50" />
+						</div>
+						conversion
+					</li>
+					<li class="hero-span">
+						<div class=" border-white rounded border md:border-2 lg:border-4 p-1">
+							<Users2 size="1em" strokeWidth="2" class="text-lime-50" />
+						</div>
+						retention
+					</li>
+					<li class="hero-span">
+						<div class=" border-white rounded border md:border-2 lg:border-4 p-1">
+							<Hammer size="1em" strokeWidth="2" class="text-lime-50" />
+						</div>
+						staffing
+					</li>
+				</ul>
+			</div>
 		</h1>
-		<p class="md:text-lg lg:text-2xl lg:mt-4 text-center">
-			<span class="hero-span"> We develop digital assets for business. </span>
-			<span class="hero-span"> We offer fast custom web apps, funnels, and SEO. </span>
-			<span class="hero-span"> Start growing your brand online today. </span>
-		</p>
-		<ul
-			class="flex flex-col lg:flex-row gap-4 lg:gap-6 text-sm sm:text-base md:text-lg lg:text-xl lg:mt-4 font-bold sm:font-semibold"
-		>
-			<li class="hero-li">
-				<div>
-					<Hammer size="2em" strokeWidth="2" class="text-white" />
-				</div>
-				Automate Sales
-			</li>
-			<li class="hero-li">
-				<div>
-					<TrendingUp size="2em" strokeWidth="2" class="text-white" />
-				</div>
-				Maximize Ad Potential
-			</li>
-			<li class="hero-li">
-				<div>
-					<Users2 size="2em" strokeWidth="2" class="text-white" />
-				</div>
-				Build a User Base
-			</li>
-		</ul>
 	</div>
 </section>
 
@@ -130,13 +143,9 @@
 		transform: translateZ(0);
 		will-change: transform;
 	}
-	.hero-li {
-		@apply px-2 py-1 flex gap-2 justify-center items-center bg-emerald-900 bg-opacity-50 rounded drop-shadow-lg text-left;
-		transform: translateZ(0);
-		will-change: transform;
-	}
+
 	.hero-span {
-		@apply break-inside-avoid inline-block;
+		@apply px-2 py-1 flex gap-2 justify-center items-center break-inside-avoid;
 		transform: translateZ(0);
 		will-change: transform;
 	}

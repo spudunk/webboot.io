@@ -2,11 +2,9 @@
 	import { Phone, Mail, MapPin, Facebook, Search, CircleDollarSign } from 'lucide-svelte';
 	import { data } from '$lib';
 
-	interface Props {
-		class?: string;
-	}
-
-	let { class: className }: Props = $props();
+	let { className } = $props();
+	const date = new Date();
+	const year = date.getFullYear();
 </script>
 
 <div class={`${className} container `}>
@@ -34,12 +32,12 @@
 			</li>
 		</ul>
 	</div>
-	<div class="mx-auto w-full text-center mt-4">©2023-2024 webboot.io</div>
+	<div class="mx-auto w-full text-center mt-4 text-lime-900">©2023-{year} webboot.io</div>
 </div>
 
 <style lang="postcss">
 	li {
-		@apply flex gap-2 items-center text-cyan-900 font-semibold text-lg;
+		@apply flex gap-2 items-center text-lime-900 font-semibold text-lg;
 	}
 	a {
 		@apply rounded px-2 py-1;

@@ -1,13 +1,10 @@
 <script lang="ts">
 	import { menuToggled, toggleMenu } from '$lib/stores';
-	import { navigating } from '$app/stores';
+	import { navigating } from '$app/state';
 	import { onMount } from 'svelte';
 
-	interface Props {
-		padMenu?: boolean;
-	}
+	let { isExpanded = false } = $props();
 
-	let { padMenu = false }: Props = $props();
 	let menuElement: HTMLElement;
 	let firstFocusableElement: HTMLElement;
 	let lastFocusableElement: HTMLElement;
@@ -42,7 +39,7 @@
 	});
 
 	$effect(() => {
-		if ($navigating) {
+		if (navigating) {
 			menuToggled.set(false);
 		}
 	});
@@ -75,11 +72,14 @@
 		id="overlay"
 		class={`${
 			$menuToggled ? 'h-screen opacity-60 pointer-events-auto' : 'h-0 opacity-0 pointer-events-none'
-		} fixed w-screen bg-emerald-900 top-0 left-0 transition-opacity ease-in duration-300`}
+		}  ${
+			isExpanded ? 'mt-16 sm:mt-24' : 'mt-12'
+		} fixed w-full bg-lime-900 inset-0 transition-opacity ease-in duration-300 overscroll-contain`}
 		onclick={toggleMenu}
 		aria-label="Close menu"
 		tabindex={$menuToggled ? 0 : -1}
 	></button>
+
 
 	<!-- Navigation -->
 	<nav
@@ -87,12 +87,12 @@
 		aria-label="Main menu"
 		class={`${
 			$menuToggled ? 'translate-x-0 pointer-events-auto' : 'translate-x-full pointer-events-none'
-		} bg-emerald-900 opacity-90 transform top-0 right-0 w-64 fixed h-full overflow-auto ease-in-out transition-all duration-300`}
+		} ${
+			isExpanded ? 'mt-16 sm:mt-24' : 'mt-12'
+		} bg-lime-900 opacity-90 transform top-0 right-0 w-64 fixed h-full overflow-auto ease-in-out transition-all duration-300`}
 	>
 		<ul
-			class={`${
-				padMenu ? 'mt-20' : 'mt-16'
-			} flex flex-col mx-4 text-xl md:text-2xl text-emerald-50 font-bold ease-in-out transition-all duration-300 list-none`}
+			class={` flex flex-col mx-4 text-xl md:text-2xl text-lime-50 font-bold ease-in-out transition-all duration-300 list-none`}
 			role="menu"
 		>
 			<li role="none">

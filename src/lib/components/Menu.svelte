@@ -80,7 +80,6 @@
 		tabindex={$menuToggled ? 0 : -1}
 	></button>
 
-
 	<!-- Navigation -->
 	<nav
 		id="sidebar"
@@ -97,6 +96,7 @@
 		>
 			<li role="none">
 				<a
+					onclick={toggleMenu}
 					class="inline-block py-1 w-full opacity-80 hover:opacity-100 focus:opacity-100 transition ease-in duration-100"
 					href="/"
 					role="menuitem"
@@ -107,6 +107,7 @@
 			</li>
 			<li role="none">
 				<a
+					onclick={toggleMenu}
 					class="inline-block py-1 w-full opacity-80 hover:opacity-100 focus:opacity-100 transition ease-in duration-100"
 					href="/articles"
 					role="menuitem"
@@ -117,9 +118,9 @@
 			</li>
 			<li role="none">
 				<a
+					onclick={toggleMenu}
 					class="inline-block py-1 w-full opacity-80 hover:opacity-100 focus:opacity-100 transition ease-in duration-100"
 					href="/#contact"
-					onclick={toggleMenu}
 					role="menuitem"
 					tabindex={$menuToggled ? 0 : -1}
 				>

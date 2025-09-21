@@ -2,7 +2,7 @@
 	import Logo from '$lib/components/Logo.svelte';
 	import MenuButton from '$lib/components/MenuButton.svelte';
 	import Menu from '$lib/components/Menu.svelte';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import { menuToggled } from '$lib/stores';
 	import { onMount } from 'svelte';
 
@@ -14,8 +14,8 @@
 
 	let y = $state(0);
 	let atTop = $derived(y < 25);
-	let home = $derived($page.route.id == '/');
-	let isExpanded = $derived(atTop && home && $page.status == 200);
+	let home = $derived(page.route.id == '/');
+	let isExpanded = $derived(atTop && home && page.status == 200);
 	let headerHeight = $derived(isExpanded ? 'h-16 sm:h-24' : 'h-12');
 	let headerBg = $derived($menuToggled ? 'bg-neutral-900' : 'bg-neutral-900/[.90]');
 

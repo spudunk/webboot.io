@@ -114,7 +114,7 @@
 					alt="screenshot of Walking CJ Ranch website"
 				/>
 			</PfCard>
-			<PfCard title="Eagans Diners" link="https://eagansdiner.com/?ref=webboot.io">
+			<PfCard title="Eagans Diners" link="https://eaganscafe.pages.dev">
 				<enhanced:img
 					src="$lib/portfolio/eagansdiner.com_.png"
 					alt="screenshot of Eagans Diner website"

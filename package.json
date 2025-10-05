@@ -23,7 +23,7 @@
 		"lucide-svelte": "^0.356.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-cloudflare": "^4.9.0",
+		"@sveltejs/adapter-cloudflare": "^7.2.4",
 		"@sveltejs/enhanced-img": "^0.3.10",
 		"@sveltejs/kit": "^2.44.0",
 		"@typescript-eslint/eslint-plugin": "^7.18.0",

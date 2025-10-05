@@ -1,0 +1,19 @@
+{
+  "compatibility_date": "2025-10-05",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "name": "webboot",
+  "pages_build_output_dir": ".svelte-kit/cloudflare",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_id": "1766519f-164f-4f32-83d0-55895feb3d41",
+      "database_name": "webboot_crm"
+    }
+  ],
+  "vars": {
+    "ADMIN_EMAIL": "chris@webboot.io",
+    "FROM_EMAIL": "chris@webboot.io"
+  }
+}

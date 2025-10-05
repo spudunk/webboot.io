@@ -6,9 +6,7 @@
       "dependencies": {
         "@analytics/simple-analytics": "^0.4.1",
         "@fontsource-variable/nunito": "^5.2.7",
-        "@sveltejs/vite-plugin-svelte": "^6.2.1",
         "analytics": "^0.8.19",
-        "lucide-svelte": "^0.356.0",
       },
       "devDependencies": {
         "@sveltejs/adapter-cloudflare": "^7.2.4",
@@ -20,6 +18,7 @@
         "eslint": "^8.57.1",
         "eslint-config-prettier": "^9.1.2",
         "eslint-plugin-svelte": "^2.46.1",
+        "lucide-svelte": "^0.356.0",
         "postcss": "^8.5.6",
         "prettier": "^3.6.2",
         "prettier-plugin-svelte": "^3.4.0",

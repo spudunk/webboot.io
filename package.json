@@ -2,7 +2,7 @@
 	"name": "webboot.io",
 	"version": "0.0.1",
 	"private": true,
-	"description": "Webboot.io - Modern web development platform",
+	"description": "webboot.io - Modern web development agency",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev --host",
@@ -17,7 +17,6 @@
 		"elevate": "bun run scripts/elevate.ts"
 	},
 	"dependencies": {
-		"vite": "^7.1.9",
 		"@analytics/simple-analytics": "^0.4.1",
 		"@fontsource-variable/nunito": "^5.2.7",
 		"analytics": "^0.8.19"
@@ -34,7 +33,6 @@
 		"eslint-plugin-svelte": "^2.46.1",
 		"lucide-svelte": "^0.356.0",
 		"postcss": "^8.5.6",
-		"prettier": "^3.6.2",
 		"prettier-plugin-svelte": "^3.4.0",
 		"svelte": "^5.39.8",
 		"svelte-check": "^4.3.2",
@@ -42,6 +40,12 @@
 		"tslib": "^2.8.1",
 		"typescript": "^5.9.3",
 		"wrangler": "^4.42.0",
-		"zod": "^3.25.76"
+		"zod": "^3.25.76",
+		"@sveltejs/vite-plugin-svelte": "^6.2.1",
+		"@tailwindcss/vite": "^4.1.14",
+		"prettier": "^3.6.2",
+		"prettier-plugin-tailwindcss": "^0.6.14",
+		"vite": "^7.1.9",
+		"vite-plugin-devtools-json": "^1.0.0"
 	}
 }

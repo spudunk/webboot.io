@@ -1,8 +1,6 @@
 {
-  "compatibility_flags": [
-    "nodejs_compat"
-  ],
-  "compatibility_date": "2025-10-05",
+
+  "compatibility_date": "2025-09-15",
   "name": "webboot",
   "pages_build_output_dir": ".svelte-kit/cloudflare",
   "d1_databases": [

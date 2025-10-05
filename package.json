@@ -19,6 +19,7 @@
 	"dependencies": {
 		"@analytics/simple-analytics": "^0.4.1",
 		"@fontsource-variable/nunito": "^5.2.7",
+		"@sveltejs/vite-plugin-svelte": "^6.2.1",
 		"analytics": "^0.8.19",
 		"lucide-svelte": "^0.356.0"
 	},
